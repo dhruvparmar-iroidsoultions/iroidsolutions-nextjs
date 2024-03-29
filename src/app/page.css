@@ -221,10 +221,10 @@
   align-items: center;
 }
 
-/* .caseStudy {
+.caseStudy {
   color: white;
-  background-image: url("../../assets/csBG.svg");
-} */
+  background-image: url("/csBG.svg");
+}
 
 .caseStudy h3:nth-child(1) {
   opacity: 0.8 !important;
@@ -315,15 +315,15 @@
   pointer-events: none;
 }
 
-/* .swiper-button-next::after,
+.swiper-button-next::after,
 .swiper-button-next::after {
-  content: url("../../assets/testimonialArrowRight.svg") !important;
+  content: url("/testimonialArrowRight.svg") !important;
 }
 
 .swiper-button-prev::after,
 .swiper-button-prev::after {
-  content: url("../../assets/testimonialArrowLeft.svg") !important;
-} */
+  content: url("/testimonialArrowLeft.svg") !important;
+}
 
 .homePortfolio button svg,
 .testimonialsSwiper button svg {
@@ -378,7 +378,8 @@
 
 .project img {
   margin-top: 20px;
-  max-width: 395px;
+  /* max-width: 395px; */
+  max-width: 250px;
   width: 100%;
   align-self: center;
   border-radius: 20px;
@@ -464,9 +465,9 @@
   bottom: 0;
 }
 
-/* .skills {
-  background: url("../../assets/homeSkillBg.svg");
-} */
+.skills {
+  background: url("/homeSkillBg.svg");
+}
 
 .skills h3 {
   font-size: 24px;
@@ -778,7 +779,7 @@
 .homeContactUs form button {
   border-radius: 80px !important;
   color: white;
-  background-color: #005490;
+  background-color: #005490 !important;
   height: 60px;
   font-family: "Work Sans";
   font-size: 20px;

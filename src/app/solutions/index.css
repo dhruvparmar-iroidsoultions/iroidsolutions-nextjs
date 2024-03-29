@@ -1,0 +1,116 @@
+.solutionsSec h1 {
+  font-family: "Work Sans";
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 59px;
+  letter-spacing: 0em;
+  max-width: 1060px;
+  margin: auto !important;
+  text-indent: initial;
+}
+
+.solutionsSec h1 span {
+  color: #005490;
+}
+.para {
+  font-family: "Work Sans";
+  /* font-size: 30px; */
+  font-size: 22px;
+  font-weight: 400;
+  /* line-height: 50px; */
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: justify;
+  text-indent: 10rem;
+}
+
+.solutionsSec img {
+  width: 100%;
+}
+
+.fetureImgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.featureContainer .card {
+  border: 0.9px solid rgba(0, 84, 144, 0.5);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.featureContainer .card:hover {
+  box-shadow: 0 0 25px rgba(0, 84, 144, 0.3);
+}
+
+.featureContainer p.feature {
+  font-family: "Work Sans";
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+  text-indent: initial;
+}
+
+.featureContainer .card p.card-title {
+  font-family: "Public Sans";
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+  margin: 20px 30px;
+  flex: 1;
+  text-indent: initial;
+  word-wrap: normal;
+}
+
+.featureContainer .card img {
+  max-width: 60px;
+  margin: 20px 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .fetureImgContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* .para {
+      font-size: 27px;
+      line-height: 44px;
+    } */
+}
+
+@media only screen and (max-width: 576px) {
+  /* .solutionsSec h1.pt-5 {
+      padding-top: 75px !important;
+    } */
+  .solutionsSec h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .solutionsSec,
+  .para {
+    padding: 0 !important;
+    width: 95%;
+    text-indent: 4rem;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .solutionsSecGrid {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .featureContainer .card img {
+    margin: 20px 0px 20px 30px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .fetureImgContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .featureContainer .card {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+  }
+}

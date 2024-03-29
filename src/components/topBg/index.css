@@ -1,0 +1,44 @@
+.topBg img {
+  width: -webkit-fill-available;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.contentText {
+  width: auto;
+}
+
+.contentText p:nth-child(1) {
+  font-family: "Work Sans";
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 59px;
+  text-align: left;
+}
+.contentText p:nth-child(2) {
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 767px) {
+  .contentText {
+    width: 100%;
+  }
+  .contentText p {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .contentText p:nth-child(1) {
+    font-size: 30px;
+    line-height: normal;
+  }
+  .contentText p:nth-child(2) {
+    font-size: 22px;
+  }
+}

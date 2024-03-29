@@ -1,13 +1,11 @@
 import styles from "./page.module.css";
 import "./page.css";
-import HeroSection from "@/components/home/heroSection";
-import VideoTestimonial from "@/components/home/videoTestimonial";
+import HomePage from "@/pages/home/";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <main className={styles.main}>
-      <HeroSection />
-      <VideoTestimonial />
+      <HomePage />
     </main>
   );
 }

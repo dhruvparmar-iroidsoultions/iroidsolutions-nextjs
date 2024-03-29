@@ -1,0 +1,35 @@
+/* .QueAns .accordion-item .accordion-header{ */
+.QueAns button {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.8;
+}
+.QueAns .accordion-header {
+  margin-block: 10px;
+}
+
+.QueAns .accordion-body span {
+  color: black;
+}
+
+.QueAns .accordion-body {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #005490;
+}
+
+.QueAns .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: black;
+}
+
+.QueAns .accordion-button::after {
+  --bs-accordion-btn-icon: url("/add-square.png");
+  --bs-accordion-btn-active-icon: url("/minus-square.png");
+}

@@ -1,52 +1,57 @@
-import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
+"use client";
 
-// Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import { EffectFlip, Pagination, Navigation } from "swiper/modules";
-// import "swiper/css/effect-flip";
-import axiosApi from "@/api/axiosConfigu";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css/effect-flip";
 import ReactPlayer from "react-player";
+import Image from "next/image";
 
 const VideoTestimonial = ({ videoTestimonialArray }) => {
-  console.log("i'm consoling...", videoTestimonialArray);
-  //   const [videoTestimonial, setVideoTestimonial] = useState([]);
-  //   const [testimonialVdo, setTestimonialVdo] = useState("");
-  //   const mapUserVideo = videoTestimonial.map((video) => {
-  //     return (
-  //       <SwiperSlide key={video._id}>
-  //         <div className="col videoContainer position-relative">
-  //           <div
-  //             className="card text-white position-relative"
-  //             // onClick={() => testimonialVdoModal(video.youtubeVideoLink)}
-  //             style={{
-  //               height: "100%",
-  //               backgroundImage: `url(${video.thumbnail})`,
-  //               backgroundPosition: "center",
-  //               backgroundSize: "cover",
-  //               backgroundRepeat: "no-repeat",
-  //             }}
-  //           >
-  //             <div className="card-img-overlay d-flex  align-items-end justify-content-between">
-  //               <div className="videoDetail text-start z-3">
-  //                 <h5 className="card-title mb-0">{video.clientName}</h5>
-  //                 <p className="card-text">{video.position}</p>
-  //               </div>
-  //               <div className="playPause z-3">
-  //                 <img src={"/play.png"} alt="" />
-  //               </div>
-  //               <img
-  //                 src={"/testimonialVdoBg.png"}
-  //                 alt=""
-  //                 className="position-absolute bottom-0 start-0 w-100 pe-none z-1"
-  //               />
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </SwiperSlide>
-  //     );
-  //   });
+  // const [videoTestimonial, setVideoTestimonial] = useState([]);
+  // const [testimonialVdo, setTestimonialVdo] = useState("");
+  const mapUserVideo =
+    videoTestimonialArray &&
+    videoTestimonialArray.map((video) => {
+      return (
+        <SwiperSlide key={video._id}>
+          <div className="col videoContainer position-relative">
+            <div
+              className="card text-white position-relative"
+              // onClick={() => testimonialVdoModal(video.youtubeVideoLink)}
+              style={{
+                height: "100%",
+                backgroundImage: `url(${video.thumbnail})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="card-img-overlay d-flex  align-items-end justify-content-between">
+                <div className="videoDetail text-start z-3">
+                  <h5 className="card-title mb-0">{video.clientName}</h5>
+                  <p className="card-text">{video.position}</p>
+                </div>
+                <div className="z-3">
+                  <Image
+                    className="playBtn"
+                    src={"/play.png"}
+                    alt=""
+                    role="button"
+                    width={60}
+                    height={60}
+                  />
+                </div>
+                <img
+                  src={"/testimonialVdoBg.png"}
+                  alt=""
+                  className="position-absolute bottom-0 start-0 w-100 pe-none z-1"
+                />
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      );
+    });
 
   return (
     <div className="videoTestimonialContainer py-5 my-5 position-relative overflow-hidden w-100">
@@ -65,7 +70,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
           Built for Service Professionals, by Service Professionals
         </p>
 
-        {/* <Swiper
+        <Swiper
           loop={true}
           grabCursor={true}
           navigation={true}
@@ -91,7 +96,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
             data-bs-target="#testimonialVdoModal"
             id="modalBtn"
           ></button>
-        </Swiper> */}
+        </Swiper>
       </div>
       <div
         className="modal fade"
@@ -125,26 +130,5 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  try {
-    console.log("Fetching video testimonials...");
-    const response = await axiosApi.get("getAllVideoTestimonials");
-    const videoTestimonialArray = response.data;
-
-    return {
-      props: {
-        videoTestimonialArray,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching video testimonials:", error);
-    return {
-      props: {
-        videoTestimonialArray: [],
-      },
-    };
-  }
-}
 
 export default VideoTestimonial;
