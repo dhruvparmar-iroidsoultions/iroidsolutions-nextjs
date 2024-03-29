@@ -1,0 +1,55 @@
+.seeAllBtn {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0px;
+  max-width: 282px;
+  width: 100%;
+  height: 65px;
+  border-radius: 120px;
+  border: 1px solid #005490;
+  /* color: #005490; */
+  background-color: white;
+}
+
+.seeAllBtn a {
+  color: #005490;
+  text-decoration: none;
+}
+
+.seeAllBtn svg {
+  right: 20px;
+}
+
+.seeAllBtn:hover {
+  color: white !important;
+  background-color: #005490;
+}
+
+.seeAllBtn:hover a {
+  color: white;
+}
+
+@media only screen and (max-width: 1199px) {
+  .seeAllBtn {
+    font-size: 22px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .seeAllBtn {
+    font-size: 19px;
+    height: 40px;
+    max-width: 200px;
+  }
+  .seeAllBtn svg {
+    right: 5px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .seeAllBtn {
+    font-size: 15px;
+  }
+}

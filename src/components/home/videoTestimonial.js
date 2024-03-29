@@ -1,0 +1,150 @@
+import React from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import { EffectFlip, Pagination, Navigation } from "swiper/modules";
+// import "swiper/css/effect-flip";
+import axiosApi from "@/api/axiosConfigu";
+import ReactPlayer from "react-player";
+
+const VideoTestimonial = ({ videoTestimonialArray }) => {
+  console.log("i'm consoling...", videoTestimonialArray);
+  //   const [videoTestimonial, setVideoTestimonial] = useState([]);
+  //   const [testimonialVdo, setTestimonialVdo] = useState("");
+  //   const mapUserVideo = videoTestimonial.map((video) => {
+  //     return (
+  //       <SwiperSlide key={video._id}>
+  //         <div className="col videoContainer position-relative">
+  //           <div
+  //             className="card text-white position-relative"
+  //             // onClick={() => testimonialVdoModal(video.youtubeVideoLink)}
+  //             style={{
+  //               height: "100%",
+  //               backgroundImage: `url(${video.thumbnail})`,
+  //               backgroundPosition: "center",
+  //               backgroundSize: "cover",
+  //               backgroundRepeat: "no-repeat",
+  //             }}
+  //           >
+  //             <div className="card-img-overlay d-flex  align-items-end justify-content-between">
+  //               <div className="videoDetail text-start z-3">
+  //                 <h5 className="card-title mb-0">{video.clientName}</h5>
+  //                 <p className="card-text">{video.position}</p>
+  //               </div>
+  //               <div className="playPause z-3">
+  //                 <img src={"/play.png"} alt="" />
+  //               </div>
+  //               <img
+  //                 src={"/testimonialVdoBg.png"}
+  //                 alt=""
+  //                 className="position-absolute bottom-0 start-0 w-100 pe-none z-1"
+  //               />
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </SwiperSlide>
+  //     );
+  //   });
+
+  return (
+    <div className="videoTestimonialContainer py-5 my-5 position-relative overflow-hidden w-100">
+      <img src={"/bgTopLeft.svg"} alt="" className="wwr-bg" />
+      <img src={"/bgBottomLeft.svg"} alt="" className="wwr-bg" />
+      <img src={"/bgTopRight.svg"} alt="" className="wwr-bg" />
+      <img src={"/bgBottomRight.svg"} alt="" className="wwr-bg" />
+      <div className="videoTestimonial container d-flex flex-column align-items-center">
+        <h3 className="firstBlue wow animate__animated animate__fadeInDown">
+          Video Testimonials
+        </h3>
+        <p className="m-0 f38 wow animate__animated animate__fadeInLeft">
+          Over 1000+ People Trust Us
+        </p>
+        <p className="mb-5 f20 wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+          Built for Service Professionals, by Service Professionals
+        </p>
+
+        {/* <Swiper
+          loop={true}
+          grabCursor={true}
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper wow animate__animated animate__fadeIn"
+          data-wow-duration="2s"
+          slidesPerView={1}
+          breakpoints={{
+            1000: {
+              slidesPerView: 3,
+            },
+            767: {
+              slidesPerView: 2,
+            },
+          }}
+          id="vdoTestimonialSwiper"
+        >
+          {mapUserVideo}
+          <button
+            className="d-none"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#testimonialVdoModal"
+            id="modalBtn"
+          ></button>
+        </Swiper> */}
+      </div>
+      <div
+        className="modal fade"
+        id="testimonialVdoModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabIndex="-1"
+        aria-labelledby="testimonialVdoModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered d-flex flex-column align-items-center justify-content-center">
+          <div className="modal-content d-flex flex-column align-items-center justify-content-center position-relative">
+            <button
+              type="button"
+              className="btn-close position-absolute"
+              id="closeModal"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              //   onClick={() => setIsModalOpen(false)}
+            ></button>
+            {/* {isModalOpen && (
+              <ReactPlayer
+                className="react-player"
+                url={testimonialVdo}
+                controls
+              />
+            )} */}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export async function getServerSideProps() {
+  try {
+    console.log("Fetching video testimonials...");
+    const response = await axiosApi.get("getAllVideoTestimonials");
+    const videoTestimonialArray = response.data;
+
+    return {
+      props: {
+        videoTestimonialArray,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching video testimonials:", error);
+    return {
+      props: {
+        videoTestimonialArray: [],
+      },
+    };
+  }
+}
+
+export default VideoTestimonial;

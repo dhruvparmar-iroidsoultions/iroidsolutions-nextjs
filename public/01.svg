@@ -1,0 +1,26 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M829.146 301.522C739.499 -189.5 269.5 153.5 211.502 278" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2s" fill="freeze" />
+  </path>
+<path d="M829.144 301.522C780.5 -187 278.002 23 177.503 222.5" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2s" fill="freeze" />
+  </path>
+    <path d="M828.418 301.523C963 275 1142.5 361.5 1161.5 539.5" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+ <path d="M828.418 301.523C957.497 301.523 1056 340 1075 518" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+<path d="M828.418 301.523C860.062 210.502 974 202.5 1024.5 272" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+  <path d="M829.148 301.522C805 209 748 138.5 713.5 122" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+  <path d="M829 301.5C799.5 205.5 719.501 157.999 642.499 151" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+  <path d="M828.5 302.5C796.857 211.479 709.848 198.977 632.999 244.5" stroke="#005490" stroke-width="1.5" stroke-dasharray="1000" stroke-dashoffset="1000">
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" fill="freeze" />
+  </path>
+</svg>

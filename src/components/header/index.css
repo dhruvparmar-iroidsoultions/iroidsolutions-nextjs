@@ -1,0 +1,164 @@
+.navbar {
+  z-index: 999999;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.header_dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu {
+  display: none;
+  overflow: hidden;
+}
+
+.options ul li {
+  list-style: none;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-block: 10px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.options ul li div {
+  color: #005490;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Work Sans";
+}
+
+.options a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent;
+}
+
+.deepUl ul {
+  padding: 0;
+  overflow: hidden;
+}
+
+.deepUl li div:hover {
+  color: #005490;
+  background-color: transparent;
+}
+.deepUl li div ul:hover {
+  background-color: transparent;
+}
+#navbarSideCanavs,
+#canvasToggler {
+  background-color: #005490;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+#navbarSideCanavs:hover,
+#canvasToggler:hover {
+  background-color: white;
+  border: 1px solid #005490;
+}
+
+#navbarSideCanavs:hover path,
+#canvasToggler:hover path {
+  stroke: #005490;
+}
+
+#navbarToggler ul li {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#navbarToggler ul li a:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.shadowBtn {
+  color: #005490 !important;
+  padding-inline: 15px;
+  font-weight: 400;
+  border-radius: 120px;
+  border: 1px solid #005490;
+  background: #fff;
+  box-shadow: 0px 0px 14px 0px rgba(0, 84, 144, 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.shadowBtn a {
+  color: #005490;
+  text-decoration: none;
+}
+
+.shadowBtn:hover {
+  background-color: #005490;
+  color: white !important;
+}
+
+.shadowBtn:hover a {
+  color: white;
+}
+
+.secondCanvas ul li,
+.thirdCanvas ul li {
+  list-style: none;
+  margin-block: 5px;
+  font-size: 20px;
+  color: #005490;
+  font-weight: 600;
+}
+
+.secondCanvas {
+  font-size: larger;
+}
+
+.secondCanvas a,
+.thirdCanvas a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.secondCanvas a:hover,
+.thirdCanvas a:hover {
+  color: #005490;
+}
+
+.active {
+  color: #005490 !important;
+  border-bottom: 2px solid #005490;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
