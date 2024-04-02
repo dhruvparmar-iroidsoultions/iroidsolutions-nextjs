@@ -1,6 +1,6 @@
 import Solutions from "../page";
 
-const Ecommerce = () => {
+const Fintech = () => {
   const solution = {
     project: "Fintech App",
     paragraph1:
@@ -67,4 +67,4 @@ const Ecommerce = () => {
   );
 };
 
-export default Ecommerce;
+export default Fintech;

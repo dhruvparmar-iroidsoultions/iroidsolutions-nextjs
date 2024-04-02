@@ -1,6 +1,6 @@
 import Solutions from "../page";
 
-const FoodDeliveryApp = () => {
+const HotelBookingApp = () => {
   const solution = {
     project: "Food Delivery App",
     paragraph1:
@@ -78,4 +78,4 @@ const FoodDeliveryApp = () => {
   );
 };
 
-export default FoodDeliveryApp;
+export default HotelBookingApp;
