@@ -1,6 +1,6 @@
 import Solutions from "../page";
 
-const HealthCareApp = () => {
+const EducationManagementApp = () => {
   const solution = {
     project: "Health Care Software",
     paragraph1:
@@ -58,10 +58,10 @@ const HealthCareApp = () => {
   return (
     <>
       <Solutions
-        backgroundImg={"/healthCareTopBg.svg"}
-        appName={"Health Care App Development"}
+        backgroundImg={"/educationTopBg.svg"}
+        appName={"Education Management App Development"}
         topBGText={
-          "Reinforce Your Fitness App With Latest Features, Integrate Smart Fitness Coach, Workout Logging, Diet & Nutrition, and Activity Tracking."
+          "Enhancing the Academic Experience with the top Educational app development services."
         }
         project={solution.project}
         projectImg={"/solImg.svg"}
@@ -71,10 +71,10 @@ const HealthCareApp = () => {
         feature={solution.feature}
         bannerLine1={solution.line1}
         bannerLine2={solution.line2}
-        pathName={"/solutions/health-care-app"}
+        pathName={"/solutions/education-management-app"}
       />
     </>
   );
 };
 
-export default HealthCareApp;
+export default EducationManagementApp;

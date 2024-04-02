@@ -4,7 +4,7 @@ import TopBg from "@/components/topBg";
 import "./index.css";
 import EnquiryBanner from "@/components/enquiryBanner";
 import WhyChoose from "@/components/whyChooseUs";
-import { useRouter } from "next/router";
+import Quote from "@/components/quote";
 
 const Solutions = ({
   backgroundImg,
@@ -18,10 +18,8 @@ const Solutions = ({
   feature,
   bannerLine1,
   bannerLine2,
+  pathName,
 }) => {
-  const router = useRouter();
-  const { pathname } = router;
-  console.log("pathname ", pathname);
   const mapFeature = feature.map((f, idx) => {
     return (
       <div
@@ -92,9 +90,8 @@ const Solutions = ({
         {mapFeature}
       </div>
       <EnquiryBanner line1={bannerLine1} line2={bannerLine2} />
-      {/* <ChooseAndQuote project={project} /> */}
-      {/* <WhyChoose project={project + " App Development"} /> */}
-      {/* <Quote /> */}
+      <WhyChoose project={project + " App Development"} pathName={pathName} />
+      <Quote />
     </>
   );
 };
