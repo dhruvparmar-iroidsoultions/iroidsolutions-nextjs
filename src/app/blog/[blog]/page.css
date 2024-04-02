@@ -1,0 +1,102 @@
+.blogTopLine p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.blogTopLine p span {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.blogTitle h1 {
+  font-family: "Work Sans";
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 59px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.shareIcons svg {
+  cursor: pointer;
+}
+.shareIcons svg:hover {
+  fill: #005490;
+}
+
+.blogContentContainer {
+  width: 75%;
+}
+
+.blogTopic .card-title {
+  font-size: 38px;
+  font-weight: 300;
+  margin-block: 2.5rem;
+}
+
+.latestBlog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.latestBlog h1 {
+  font-size: 31pt;
+}
+
+.latestBlog p {
+  font-size: 17pt;
+}
+
+.latestBlog img {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.clientComment .iwsInfo {
+  box-shadow: none;
+  border: none;
+}
+
+.clientProfile img {
+  max-width: 90px;
+  width: 100%;
+}
+
+.clientProfile p {
+  font-family: "Inter";
+  font-size: 24pt;
+  font-weight: 600;
+}
+
+.clientComment .iwsText {
+  font-family: "Inter";
+  font-size: 24pt;
+  font-weight: 400;
+  line-height: 55px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .blogContentContainer {
+    width: 100%;
+  }
+  .latestBlog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .latestBlog img {
+    grid-area: 2/ 1 / span 1 / sp;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .latestBlog {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .latestBlog img {
+    grid-area: 2/ 1 / span 1 / span 1;
+  }
+}

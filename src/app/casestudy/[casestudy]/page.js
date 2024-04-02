@@ -3,6 +3,7 @@ import "./page.css";
 import CsTypo from "@/pages/casestudy/cstypo";
 import EnquiryBanner from "@/components/enquiryBanner";
 import CsSwiper from "@/pages/casestudy/csSwiper";
+import Quote from "@/components/quote";
 
 const CaseStudy = () => {
   return (
@@ -171,6 +172,7 @@ const CaseStudy = () => {
         <h1 className="mb-5 csSecTitle">Other Casestudies</h1>
         <CsSwiper otherCasestudies={caseStudy.otherCasestudies} />
       </div>
+      <Quote />
     </>
   );
 };

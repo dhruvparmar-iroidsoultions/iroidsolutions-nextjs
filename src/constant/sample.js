@@ -225,4 +225,96 @@ const caseStudy = {
   ],
 };
 
-export { serviceText, serviceSliders, caseStudyHomePage, caseStudy };
+const post = {
+  postDate: "Feb 22, 2024",
+  postBy: "iRoid Solutions",
+  postOn: "Design",
+  topic:
+    "Complete guide on React Native and its Uses for developing Mobile apps",
+  subTopic: [
+    {
+      title: "What is React Native?",
+      description: [
+        "React Native is a JavaScript framework for developing Android and iOS mobile applications. It allows you to create cross-platform mobile apps using only JavaScript, eliminating the need to learn platform-specific application development languages like Kotlin for Android or Swift for iOS.",
+        "React Native apps aren't just browser applets; they're full-fledged mobile apps. In March 2015, Facebook launched the initial version of React Native.",
+      ],
+    },
+    {
+      title: "What is React Native apps?",
+      description: [
+        "Web apps aren't the same as React Native apps. They're on a smartphone, and they're not loading in the browser. It's also not a WebView-based hybrid app created with Ionic, Phone Gap, or another framework that uses the WebView component. React Native apps are true native programmes, with JavaScript code remaining as such, and running in a separate thread from the built app. Everything, including the user interface, is written in native code.",
+      ],
+    },
+    {
+      title: "History is React Native:",
+      description: [
+        "In 2013, Facebook created React Native for an internal project called Hackathon. Later, in January 2015, it was renamed React.js, and in March 2015, Facebook announced that React Native was open source and available on GitHub.",
+        "React Native was built with the goal of being used in an iOS application. The Android operating system, on the other hand, is now supported.",
+      ],
+    },
+    {
+      title: "React Native Feature:",
+      description: [
+        "React: React is a JavaScript-based framework for creating online and mobile apps.",
+        "Native: You can use native components that are managed by JavaScript.",
+        "Platforms: React Native is compatible with both the iOS and Android platforms.",
+      ],
+    },
+  ],
+  latestBlogs: [
+    {
+      topic: "Develop Dating App: Must know these Features and Statistics",
+      text: "If you are an entrepreneur or business owner who is finding a company to build a React.js application for your business? ",
+      blogImg: "/blogImg.png",
+      createBy: "iRoid Solution",
+      date: "Feb 23,2024",
+      topicFor: ["Design", "Product", "Strategy"],
+    },
+    {
+      topic: "Develop Dating App: Must know these Features and Statistics",
+      text: "If you are an entrepreneur or business owner who is finding a company to build a React.js application for your business? ",
+      blogImg: "/blogImg.png",
+      createBy: "iRoid Solution",
+      date: "Feb 23,2024",
+      topicFor: ["Design", "Product", "Strategy"],
+    },
+    {
+      topic: "Develop Dating App: Must know these Features and Statistics",
+      text: "If you are an entrepreneur or business owner who is finding a company to build a React.js application for your business? ",
+      blogImg: "/blogImg.png",
+      createBy: "iRoid Solution",
+      date: "Feb 23,2024",
+      topicFor: ["Design", "Product", "Strategy"],
+    },
+    {
+      topic: "Develop Dating App: Must know these Features and Statistics",
+      text: "If you are an entrepreneur or business owner who is finding a company to build a React.js application for your business? ",
+      blogImg: "/blogImg.png",
+      createBy: "iRoid Solution",
+      date: "Feb 23,2024",
+      topicFor: ["Design", "Product", "Strategy"],
+    },
+  ],
+  clientComment: [
+    {
+      img: "/Avatar.png",
+      name: "Esther Howard",
+      comment:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      img: "/Avatar.png",
+      name: "Esther Howard",
+      comment:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+    {
+      img: "/Avatar.png",
+      name: "Esther Howard",
+      comment:
+        "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    },
+  ],
+};
+
+export { serviceText, serviceSliders, caseStudyHomePage, caseStudy, post };

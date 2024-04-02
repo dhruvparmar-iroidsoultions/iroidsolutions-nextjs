@@ -6,8 +6,10 @@ import React, { useCallback } from "react";
 import "./index.css";
 import Button from "../button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const closeCanvas = useCallback(() => {
     document.getElementById("closeCanvas").click();
     document.getElementById("closeSecondCanvas").click();
@@ -83,17 +85,17 @@ const Header = () => {
                         Mobile App
                         <ul className="dropdown-item dropMain">
                           <li>
-                            <Link href="/services/iphone-App-development">
+                            <Link href="/services/iphone-app-development">
                               iphone App development
                             </Link>
                           </li>
                           <li>
-                            <Link href="/services/Android-app-development">
+                            <Link href="/services/android-app-development">
                               Android app development
                             </Link>
                           </li>
                           <li>
-                            <Link href="/services/Flutter">Flutter</Link>
+                            <Link href="/services/flutter">Flutter</Link>
                           </li>
                         </ul>
                       </div>
@@ -124,7 +126,7 @@ const Header = () => {
                         product Design
                         <ul className="dropdown-item dropMain">
                           <li>
-                            <Link href="/services/Web-Frontend-Design">
+                            <Link href="/services/web-frontend-design">
                               Web Frontend Design
                             </Link>
                           </li>
@@ -136,12 +138,25 @@ const Header = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/portfolio">
+                <Link
+                  className={`nav-link ${
+                    pathname.includes("portfolio") ? "activeLink" : ""
+                  }`}
+                  href="/portfolio"
+                >
                   Portfolio
                 </Link>
               </li>
               <li className="nav-item header_dropdown">
-                <div className="dropdown-toggle options" role="button">
+                <div
+                  className={`dropdown-toggle options
+                   ${
+                     // pathname.includes("solutions") ? "activeLink" :
+                     ""
+                   }
+                  `}
+                  role="button"
+                >
                   Solutions
                   <ul className="dropdown-menu deepUl text-capitalize bg-light-subtle py-0">
                     <li className="m-0">
@@ -185,17 +200,32 @@ const Header = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/casestudy">
+                <Link
+                  className={`nav-link ${
+                    pathname.includes("casestudy") ? "activeLink" : ""
+                  }`}
+                  href="/casestudy"
+                >
                   Case Study
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="/blog">
+                <Link
+                  className={`nav-link ${
+                    pathname.includes("blog") ? "activeLink" : ""
+                  }`}
+                  href="/blog"
+                >
                   Blog
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="/about-us">
+                <Link
+                  className={`nav-link ${
+                    pathname.includes("about") ? "activeLink" : ""
+                  }`}
+                  href="/about-us"
+                >
                   About Us
                 </Link>
               </li>
@@ -263,7 +293,7 @@ const Header = () => {
                 id="closeCanvas"
               ></button>
             </div>
-            <div className="offcanvas-body">
+            <div className="offcanvas-body px-2">
               <ul
                 className="navbar-nav justify-content-end flex-grow-1 pe-3"
                 onClick={handleLiClick}
@@ -274,7 +304,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li
-                  className="nav-item dropdown-toggle my-1"
+                  className="nav-item dropdown-toggle my-1 mx-2"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#servicesCanvas"
                   aria-controls="offcanvasRightLabel"
@@ -303,7 +333,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/lifeAtIroid">
+                  <Link className="nav-link" href="/life-at-iroid">
                     Life at iRoid
                   </Link>
                 </li>
@@ -313,7 +343,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li
-                  className="nav-item dropdown-toggle my-1"
+                  className="nav-item dropdown-toggle my-1 mx-2"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#solutionsCanvas"
                   aria-controls="offcanvasSolutionsCanvasLabel"
@@ -389,28 +419,17 @@ const Header = () => {
                 Mobile App
                 <ul className="">
                   <li>
-                    <Link
-                      href="/services/iphone-App-development"
-                      state={"iphone app development"}
-                    >
+                    <Link href="/services/iphone-app-development">
                       iphone App development
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/services/Android-app-development"
-                      state={"Android App development"}
-                    >
+                    <Link href="/services/android-app-development">
                       Android app development
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/services/Flutter"
-                      state={"Flutter Development"}
-                    >
-                      Flutter
-                    </Link>
+                    <Link href="/services/flutter">Flutter</Link>
                   </li>
                 </ul>
               </div>
@@ -428,17 +447,13 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/WebApp" state={"Web App development"}>
-                      Web App
-                    </Link>
+                    <Link href="/services/Web-App">Web App</Link>
                   </li>
                   <li>
-                    <Link href="/services/PWA" state={"PWA Development"}>
-                      PWA
-                    </Link>
+                    <Link href="/services/PWA">PWA</Link>
                   </li>
                   <li>
-                    <Link href="/services/API&Backend">API & Backend</Link>
+                    <Link href="/services/API-Backend">API & Backend</Link>
                   </li>
                 </ul>
               </div>
@@ -448,10 +463,7 @@ const Header = () => {
                 product Design
                 <ul className="">
                   <li>
-                    <Link
-                      href="/services/Web-Frontend-Design"
-                      state={"Web Frontend Design"}
-                    >
+                    <Link href="/services/web-frontend-design">
                       Web Frontend Design
                     </Link>
                   </li>
@@ -489,23 +501,23 @@ const Header = () => {
         <div className="offcanvas-body thirdCanvas">
           <ul className="ps-1" onClick={handleLiClick}>
             <li>
-              <Link href="/solutions/HotelBookingApp">
+              <Link href="/solutions/hotel-booking-app">
                 Hotel Booking App Development
               </Link>
             </li>
 
             <li>
-              <Link href="/solutions/EducationManagementApp">
+              <Link href="/solutions/education-management-app">
                 Education Management App Development
               </Link>
             </li>
             <li>
-              <Link href="/solutions/FoodDeviveryApp">
+              <Link href="/solutions/food-delivery-app">
                 Food Delivery App Development
               </Link>
             </li>
             <li>
-              <Link href="/solutions/eCommerce">
+              <Link href="/solutions/ecommerce-app">
                 E-Commerce App Development
               </Link>
             </li>
@@ -513,7 +525,9 @@ const Header = () => {
               <Link href="/solutions/fintech">Fintech App Development</Link>
             </li>
             <li>
-              <Link href="/solutions/SocialNetworking">Social Networking</Link>
+              <Link href="/solutions/social-networking-app">
+                Social Networking
+              </Link>
             </li>
           </ul>
         </div>

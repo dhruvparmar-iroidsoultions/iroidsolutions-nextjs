@@ -1,6 +1,20 @@
+.activeLink {
+  color: #005490 !important;
+  border-bottom: 2px solid #005490;
+}
+.activeLink:hover {
+  border-bottom: 2px solid #005490 !important;
+}
+
 .navbar {
   z-index: 999999;
 }
+
+.nav-item a {
+  padding-inline: 0 !important;
+  margin-inline: 8px;
+}
+
 .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -136,11 +150,6 @@
 .secondCanvas a:hover,
 .thirdCanvas a:hover {
   color: #005490;
-}
-
-.active {
-  color: #005490 !important;
-  border-bottom: 2px solid #005490;
 }
 
 @keyframes fadeInRight {
