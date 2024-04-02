@@ -83,28 +83,17 @@ const Header = () => {
                         Mobile App
                         <ul className="dropdown-item dropMain">
                           <li>
-                            <Link
-                              href="services/iphone-App-development"
-                              state={"iphone app development"}
-                            >
+                            <Link href="/services/iphone-App-development">
                               iphone App development
                             </Link>
                           </li>
                           <li>
-                            <Link
-                              href="services/Android-app-development"
-                              state={"Android App development"}
-                            >
+                            <Link href="/services/Android-app-development">
                               Android app development
                             </Link>
                           </li>
                           <li>
-                            <Link
-                              href="services/Flutter"
-                              state={"Flutter Development"}
-                            >
-                              Flutter
-                            </Link>
+                            <Link href="/services/Flutter">Flutter</Link>
                           </li>
                         </ul>
                       </div>
@@ -114,28 +103,16 @@ const Header = () => {
                         Web Development
                         <ul className="dropdown-item dropMain">
                           <li>
-                            <Link
-                              href="services/Website"
-                              state={"Website development"}
-                            >
-                              Website
-                            </Link>
+                            <Link href="/services/Website">Website</Link>
                           </li>
                           <li>
-                            <Link
-                              href="services/WebApp"
-                              state={"Web App development"}
-                            >
-                              Web App
-                            </Link>
+                            <Link href="/services/Web-App">Web App</Link>
                           </li>
                           <li>
-                            <Link href="services/PWA" state={"PWA Development"}>
-                              PWA
-                            </Link>
+                            <Link href="/services/PWA">PWA</Link>
                           </li>
                           <li>
-                            <Link href="services/API&Backend">
+                            <Link href="/services/API-Backend">
                               API & Backend
                             </Link>
                           </li>
@@ -147,10 +124,7 @@ const Header = () => {
                         product Design
                         <ul className="dropdown-item dropMain">
                           <li>
-                            <Link
-                              href="services/Web-Frontend-Design"
-                              state={"Web Frontend Design"}
-                            >
+                            <Link href="/services/Web-Frontend-Design">
                               Web Frontend Design
                             </Link>
                           </li>
@@ -174,32 +148,32 @@ const Header = () => {
                       {/* <div className="dropdown-item " type="button"> */}
                       <ul className="dropdown-item px-3 bg-light-subtle">
                         <li>
-                          <Link href="/Solutions/HotelBookingApp">
+                          <Link href="/solutions/hotel-booking-app">
                             Hotel Booking App Development
                           </Link>
                         </li>
                         <li>
-                          <Link href="/Solutions/EducationManagementApp">
+                          <Link href="/solutions/education-management-app">
                             Education Management App Development
                           </Link>
                         </li>
                         <li>
-                          <Link href="/Solutions/FoodDeviveryApp">
+                          <Link href="/solutions/food-delivery-app">
                             Food Delivery App Development
                           </Link>
                         </li>
                         <li>
-                          <Link href="/Solutions/eCommerce">
+                          <Link href="/solutions/ecommerce-app">
                             E-Commerce App Development
                           </Link>
                         </li>
                         <li>
-                          <Link href="/Solutions/fintech">
+                          <Link href="/solutions/fintech">
                             Fintech App Development
                           </Link>
                         </li>
                         <li>
-                          <Link href="/Solutions/SocialNetworking">
+                          <Link href="/solutions/social-networking-app">
                             Social Networking
                           </Link>
                         </li>
@@ -211,7 +185,7 @@ const Header = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/caseStudy">
+                <Link className="nav-link" href="/casestudy">
                   Case Study
                 </Link>
               </li>
@@ -324,7 +298,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/caseStudy">
+                  <Link className="nav-link" href="/casestudy">
                     Case Study
                   </Link>
                 </li>
@@ -416,7 +390,7 @@ const Header = () => {
                 <ul className="">
                   <li>
                     <Link
-                      href="services/iphone-App-development"
+                      href="/services/iphone-App-development"
                       state={"iphone app development"}
                     >
                       iphone App development
@@ -424,14 +398,17 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      href="services/Android-app-development"
+                      href="/services/Android-app-development"
                       state={"Android App development"}
                     >
                       Android app development
                     </Link>
                   </li>
                   <li>
-                    <Link href="services/Flutter" state={"Flutter Development"}>
+                    <Link
+                      href="/services/Flutter"
+                      state={"Flutter Development"}
+                    >
                       Flutter
                     </Link>
                   </li>
@@ -443,22 +420,25 @@ const Header = () => {
                 Web Development
                 <ul className="">
                   <li>
-                    <Link href="services/Website" state={"Website development"}>
+                    <Link
+                      href="/services/Website"
+                      state={"Website development"}
+                    >
                       Website
                     </Link>
                   </li>
                   <li>
-                    <Link href="services/WebApp" state={"Web App development"}>
+                    <Link href="/services/WebApp" state={"Web App development"}>
                       Web App
                     </Link>
                   </li>
                   <li>
-                    <Link href="services/PWA" state={"PWA Development"}>
+                    <Link href="/services/PWA" state={"PWA Development"}>
                       PWA
                     </Link>
                   </li>
                   <li>
-                    <Link href="services/API&Backend">API & Backend</Link>
+                    <Link href="/services/API&Backend">API & Backend</Link>
                   </li>
                 </ul>
               </div>
@@ -469,7 +449,7 @@ const Header = () => {
                 <ul className="">
                   <li>
                     <Link
-                      href="services/Web-Frontend-Design"
+                      href="/services/Web-Frontend-Design"
                       state={"Web Frontend Design"}
                     >
                       Web Frontend Design
@@ -509,31 +489,31 @@ const Header = () => {
         <div className="offcanvas-body thirdCanvas">
           <ul className="ps-1" onClick={handleLiClick}>
             <li>
-              <Link href="/Solutions/HotelBookingApp">
+              <Link href="/solutions/HotelBookingApp">
                 Hotel Booking App Development
               </Link>
             </li>
 
             <li>
-              <Link href="/Solutions/EducationManagementApp">
+              <Link href="/solutions/EducationManagementApp">
                 Education Management App Development
               </Link>
             </li>
             <li>
-              <Link href="/Solutions/FoodDeviveryApp">
+              <Link href="/solutions/FoodDeviveryApp">
                 Food Delivery App Development
               </Link>
             </li>
             <li>
-              <Link href="/Solutions/eCommerce">
+              <Link href="/solutions/eCommerce">
                 E-Commerce App Development
               </Link>
             </li>
             <li>
-              <Link href="/Solutions/fintech">Fintech App Development</Link>
+              <Link href="/solutions/fintech">Fintech App Development</Link>
             </li>
             <li>
-              <Link href="/Solutions/SocialNetworking">Social Networking</Link>
+              <Link href="/solutions/SocialNetworking">Social Networking</Link>
             </li>
           </ul>
         </div>

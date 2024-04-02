@@ -2,7 +2,6 @@ import "./index.css";
 import CountUp from "react-countup";
 
 const WhyChoose = ({ project, line = true, pathName }) => {
-  console.log(pathName);
   return (
     <div
       className="container chooseGrid p-0 pb-5 wow animate__animated animate__fadeIn"

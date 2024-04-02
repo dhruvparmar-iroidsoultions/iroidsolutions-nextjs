@@ -1,6 +1,5 @@
 "use client";
 
-import axiosApi from "@/api/axiosConfig";
 import FormValidInput from "@/components/validInput";
 import axios from "axios";
 import { useState } from "react";

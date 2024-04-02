@@ -1,0 +1,180 @@
+.caseStudyContainer {
+  padding-block: 5rem;
+}
+.caseStudyContainer h1 {
+  font-family: "Work Sans";
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.csLeft span {
+  font-family: "Work Sans";
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.cspContainer {
+  background: #005490;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 22px;
+  text-wrap: nowrap;
+  padding: 1.5rem;
+}
+
+.techs img {
+  max-width: 58px;
+}
+
+.csOverview p,
+.csCRequirment p {
+  font-family: "Work Sans";
+  /* font-size: 25px; */
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.0005em;
+  text-align: justify;
+  text-indent: 5rem;
+}
+
+.csCRequirment p {
+  text-indent: 0;
+}
+
+.fop {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.fop p {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 2rem;
+  border: 1px solid rgba(0, 84, 144, 1);
+  box-shadow: 5px 5px 20px 0px rgba(0, 84, 144, 0.15);
+  border-radius: 20px;
+}
+
+.androidPortfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  width: 100%;
+}
+
+.androidPortfolio div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.androidPortfolio div:nth-child(2) img,
+.androidPortfolio div:nth-child(5) img {
+  transform: translateY(-2rem);
+}
+
+.techStack {
+  max-width: 170px;
+  height: 155px;
+  border: 1px solid rgba(0, 84, 144, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 5px 5px 20px 0px rgba(0, 84, 144, 0.15);
+  transition: all 0.3s ease;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.techImg:hover .techStack {
+  background: #005490;
+}
+
+.techStack img {
+  transition: all 0.5s ease;
+}
+
+.techImg:hover .techStack img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(38%) saturate(0%)
+    hue-rotate(158deg) brightness(108%) contrast(101%);
+  transform: translateY(-10%) scale(0.5);
+}
+
+.techStack p {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  text-wrap: nowrap;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+.techImg:hover .techStack p {
+  color: white;
+  bottom: 5%;
+  opacity: 1;
+}
+
+.techName {
+  font-family: "Work Sans";
+  font-size: 30px;
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+
+.techImg:hover .techName {
+  font-size: 20px;
+  opacity: 0;
+}
+
+.csResult {
+  font-family: "Work Sans";
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.0005em;
+  text-align: justify;
+}
+
+.csOtherCasestudies .swiper-slide {
+  height: 400px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .androidPortfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .androidPortfolio div img {
+    width: 100%;
+  }
+  .androidPortfolio div:nth-child(2) img,
+  .androidPortfolio div:nth-child(5) img {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .androidPortfolio {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .androidPortfolio div img {
+    width: fit-content !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .fop {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cspContainer {
+    padding: 0.5rem;
+    text-wrap: wrap;
+  }
+  .csLeft {
+    width: 100%;
+  }
+}
