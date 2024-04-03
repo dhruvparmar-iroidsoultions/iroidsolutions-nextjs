@@ -317,4 +317,75 @@ const post = {
   ],
 };
 
-export { serviceText, serviceSliders, caseStudyHomePage, caseStudy, post };
+const lifeAtiRoid = {
+  trip: {
+    tripimg: [
+      "/iroid trip (1).png",
+      "/demoPc.png",
+      "/iroid trip (1).png",
+      "/php logo.png",
+      "/iroid trip (1).png",
+      "/iroid trip (1).png",
+    ],
+  },
+  employeeTestimonials: [
+    {
+      eImg: "/laxman bhai.png",
+      eName: "Laxman Rajpurohit",
+      ePosition: "TL iOS Developer",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/hardik bhai.png",
+      eName: "Hardik Parmar",
+      ePosition: "Project Manager",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/employee3.png",
+      eName: "Arpit Mehta",
+      ePosition: "QA Tester",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/hardik bhai.png",
+      eName: "Hardik Parmar",
+      ePosition: "Project Manager",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/employee3.png",
+      eName: "Arpit Mehta",
+      ePosition: "QA Tester",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/hardik bhai.png",
+      eName: "Hardik Parmar",
+      ePosition: "Project Manager",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+    {
+      eImg: "/employee3.png",
+      eName: "Arpit Mehta",
+      ePosition: "QA Tester",
+      eReview:
+        "Id sit proin libero facilisi habitant egestas. Arcu congue quam potenti id cras iaculis ultricies. Sagittis risus risus lorem laoreet tempor massa mauris. Iaculis suspendisse vitae a viverra tincidunt. Nibh viverra id odio lectus in vel nisl vulputate aliquam.",
+    },
+  ],
+};
+
+export {
+  serviceText,
+  serviceSliders,
+  caseStudyHomePage,
+  caseStudy,
+  post,
+  lifeAtiRoid,
+};

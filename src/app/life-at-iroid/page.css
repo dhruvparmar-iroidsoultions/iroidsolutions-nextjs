@@ -1,0 +1,113 @@
+.trip p {
+  font-family: "Work Sans";
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 47px;
+  color: white;
+  text-shadow: 1px 0px 4px #005490;
+  text-wrap: nowrap;
+  margin-bottom: 2rem;
+  /* outline: 2px solid #005490; */
+  cursor: pointer;
+}
+
+.trip p:nth-child(1) {
+  color: #005490;
+  text-shadow: none;
+}
+
+.tripImg {
+  height: 500px;
+  object-fit: scale-down;
+}
+
+.tripLeft,
+.tripRight {
+  flex: 1;
+}
+
+.down img {
+  max-width: 125px;
+}
+
+.employeeTestimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.employeeTestimonial {
+  border: 1px solid #005490;
+  border-radius: 20px;
+}
+
+.eImgContainer {
+  position: relative;
+  height: 8rem;
+}
+
+.eImgContainer img {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #005490;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.review {
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: justify;
+}
+
+.review img:nth-child(1) {
+  position: absolute;
+  rotate: 180deg;
+  top: -30px;
+  left: -30px;
+}
+.review img:nth-child(2) {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+}
+
+.eName {
+  font-family: "Work Sans";
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #005490;
+}
+
+.ePosition {
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: rgba(0, 84, 144, 0.6);
+}
+
+@media only screen and (max-width: 1000px) {
+  .trip p {
+    text-wrap: wrap;
+  }
+  .employeeTestimonials {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .employeeTestimonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .tripImg {
+    height: auto;
+  }
+}

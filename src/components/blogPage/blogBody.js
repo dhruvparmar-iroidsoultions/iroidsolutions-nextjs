@@ -7,7 +7,6 @@ import WhyChoose from "../whyChooseUs";
 import Quote from "../quote";
 
 const BlogBody = ({ post }) => {
-  console.log(post);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const goToPreviousSlide = () => {
     setCurrentSlideIndex((prevIndex) =>

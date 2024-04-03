@@ -38,7 +38,7 @@ const CaseStudy = () => {
                 Build your e-commerce store With us! similar to Amazon, Walmart,
                 Flipkart
               </h3>
-              <Button linkPath={"/caseStudy"} text={"View Case Study"} />
+              <Button linkPath={"/casestudy"} text={"View Case Study"} />
             </div>
             <div className="caseRight wow animate__animated animate__fadeInRight d-flex align-items-center justify-content-center">
               <Tilt>
