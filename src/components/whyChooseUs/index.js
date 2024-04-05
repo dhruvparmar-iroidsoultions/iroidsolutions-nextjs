@@ -12,7 +12,7 @@ const WhyChoose = ({ project, line = true, pathName }) => {
           className="text-center py-3 py-sm-5 mx-auto w-sm-75 wow animate__animated animate__fadeIn"
           data-wow-duration="1.5s"
         >
-          {pathName.includes("solutions") ? (
+          {pathName?.includes("solutions") ? (
             <p>
               <span>Why Choose iRoid Solutions </span>
               <span>For Your {project}?</span>

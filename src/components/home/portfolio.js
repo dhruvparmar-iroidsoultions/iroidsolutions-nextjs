@@ -83,7 +83,9 @@ const PortfolioHome = ({ portfolio }) => {
         <div className="worldMap my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
           <h3 className="firstBlue">Our Clients</h3>
           <p className="mb-5 f38 wow animate__animated animate__fadeInLeft">
-            "We Are Global..."
+            Trusted by clients worldwide, we deliver exceptional mobile app and
+            website projects across 25+ countries and continue to expand our
+            global reach.
           </p>
           <img src={"/map.png"} alt="" />
           {/* <img src={mapAnimation} alt="" className="position-absolute" /> */}

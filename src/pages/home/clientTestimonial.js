@@ -3,10 +3,10 @@ import TestimonialReview from "@/components/home/testimonialReview";
 
 const ClientTestimonial = async () => {
   try {
-    const response = await axiosApi.get("getAllClientTestimonials");
-    const data = response.data;
+    // const response = await axiosApi.get("getAllClientTestimonials");
+    // const data = response.data;
 
-    return <TestimonialReview clientTestimonial={data} />;
+    return <TestimonialReview clientTestimonial={[]} />;
   } catch (error) {
     console.error(error);
     return <TestimonialReview clientTestimonial={[]} />;

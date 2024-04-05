@@ -3,10 +3,10 @@ import FAQs from "@/components/home/faqs";
 
 const FetchFAQs = async ({ show, btn }) => {
   try {
-    const response = await axiosApi.get("getFAQs");
-    const data = response.data;
+    // const response = await axiosApi.get("getFAQs");
+    // const data = response.data;
 
-    return <FAQs faqs={data} show={show} btn={btn} />;
+    return <FAQs faqs={[]} show={show} btn={btn} />;
   } catch (error) {
     console.error(error);
     return <FAQs faqs={[]} show={show} btn={btn} />;

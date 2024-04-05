@@ -3,10 +3,10 @@ import CaseStudy from "@/components/caseStudy";
 
 const CaseStudyHomePage = async () => {
   try {
-    const response = await axiosApi.get("getCaseStudies");
-    const caseStudy = response.data;
+    // const response = await axiosApi.get("getCaseStudies");
+    // const caseStudy = response.data;
 
-    return <CaseStudy caseStudyData={caseStudy} />;
+    return <CaseStudy caseStudyData={[]} />;
   } catch (error) {
     console.error("Error fetching case studies:", error);
     return <CaseStudy caseStudyData={[]} />;

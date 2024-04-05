@@ -5,6 +5,8 @@ import "./index.css";
 import EnquiryBanner from "@/components/enquiryBanner";
 import WhyChoose from "@/components/whyChooseUs";
 import Quote from "@/components/quote";
+import { usePathname, useRouter } from "next/navigation";
+import { useLayoutEffect } from "react";
 
 const Solutions = ({
   backgroundImg,
@@ -15,11 +17,20 @@ const Solutions = ({
   aboutProject1,
   aboutProject2,
   primeFeature,
-  feature,
+  feature = [],
   bannerLine1,
   bannerLine2,
   pathName,
 }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useLayoutEffect(() => {
+    if (pathname === "/solutions") {
+      router.back();
+    }
+  }, [pathname]);
+
   const mapFeature = feature.map((f, idx) => {
     return (
       <div

@@ -11,12 +11,11 @@ const Numbers = () => {
       <div className="container d-flex flex-column align-items-center">
         <h3 className="firstBlue">Who We Are</h3>
         <p className="f38 wow animate__animated animate__fadeInLeft">
-          Architects of Digital Success
+          Our Self-explanatory Statistics
         </p>
         <p className="mb-5 f20 wow animate__animated animate__fadeInRight">
-          "With a passion for technology and a commitment to excellence, we are
-          your trusted partner in navigating the ever-changing IT landscape and
-          unlocking new opportunities."
+          "Our self-explanatory statistics are a testament to our global reach
+          and unwavering dedication to excellence."
         </p>
         <div className="homeGridContainer">
           <div className="homeGridItem">

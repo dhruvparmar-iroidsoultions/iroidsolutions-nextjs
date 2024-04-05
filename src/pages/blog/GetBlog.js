@@ -6,8 +6,9 @@ const FetchBlog = async () => {
   try {
     // const response = await axiosApi.get("allBlogs");
     // const blogs = response.data;
-
-    return <Blogs blogData={post.latestBlogs} />;
+    const res = await axiosApi.get("/blog-category?page=1");
+    const names = res.data.data.map((item) => item.name);
+    return <Blogs blogData={post.latestBlogs} blogCategory={names} />;
   } catch (error) {
     console.error("Error fetching case studies:", error);
     return <Blogs blogData={[]} />;

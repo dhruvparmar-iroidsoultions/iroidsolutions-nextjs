@@ -6,7 +6,7 @@ const FetchBlogs = async ({ show }) => {
     const response = await axiosApi.get("allBlogsForWeb");
     const data = response.data;
 
-    return <Blogs blogs={data} show={show} />;
+    return <Blogs blogs={[]} show={show} />;
   } catch (error) {
     console.error(error);
     return <Blogs blogs={[]} show={show} />;

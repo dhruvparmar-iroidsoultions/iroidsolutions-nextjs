@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./blogHomePage.css";
 import { useRouter } from "next/navigation";
+import axiosApi from "@/api/axiosConfig";
 
-const Blogs = ({ blogData }) => {
+const Blogs = ({ blogData, blogCategory = [] }) => {
   const [searchText, setSearchText] = useState("");
   const [blogs, setBlogs] = useState(blogData);
   const [showBlogOn, setShowBlogOn] = useState("all");
@@ -23,6 +24,16 @@ const Blogs = ({ blogData }) => {
     "Ai",
     "Java",
   ];
+  console.log("blogCategory:", blogCategory);
+  // const getCategory = async () => {
+  //   try {
+
+  //     setBlogCategory(names);
+  //     console.log("blogCategory:", blogCategory);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const search = (e) => {
     setSearchText(e.target.value);
@@ -94,7 +105,7 @@ const Blogs = ({ blogData }) => {
           {blogPoints.map((points, idx) => (
             <li
               className={
-                showBlogOn === points.toLowerCase() && "activeBlogSelection"
+                showBlogOn === points.toLowerCase() ? "activeBlogSelection" : ""
               }
               key={idx}
               onClick={() => setShowBlogOn(points.toLowerCase())}

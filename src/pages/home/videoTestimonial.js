@@ -4,12 +4,12 @@ import React from "react";
 
 const GetVideoTestimonial = async () => {
   try {
-    const videoTestimonialResponse = await axiosApi.get(
-      "getAllVideoTestimonials"
-    );
-    const videoTestimonialArray = videoTestimonialResponse.data;
+    // const videoTestimonialResponse = await axiosApi.get(
+    //   "getAllVideoTestimonials"
+    // );
+    // const videoTestimonialArray = videoTestimonialResponse.data;
 
-    return <VideoTestimonial videoTestimonialArray={videoTestimonialArray} />;
+    return <VideoTestimonial videoTestimonialArray={[]} />;
   } catch (error) {
     console.error("Error fetching video testimonials:", error);
     return <VideoTestimonial videoTestimonialArray={[]} />;
