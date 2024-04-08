@@ -2,9 +2,11 @@
 
 import { Fragment, useState } from "react";
 import "./blogbody.css";
-import TransitionGroupComponent from "../react-transition-group";
+// import TransitionGroupComponent from "../react-transition-group";
 import WhyChoose from "../whyChooseUs";
 import Quote from "../quote";
+import dynamic from "next/dynamic";
+import HtmlContent from "../htmlContent";
 
 const BlogBody = ({ post }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -36,7 +38,7 @@ const BlogBody = ({ post }) => {
         className="blogTitle d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-1 wow animate__animated animate__fadeIn"
         data-wow-delay="0.5s"
       >
-        <h1>{post.topic}</h1>
+        <h1>{post.title}</h1>
         <div className="shareIcons d-flex align-items-center justify-content-md-between gap-5 gap-md-3 my-3 my-md-0 ms-lg-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,10 +83,11 @@ const BlogBody = ({ post }) => {
         </div>
       </p>
       <div className="blogImg w-100 mt-3 mb-5 d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-        <img src={"/demoBlog.webp"} alt="" className="w-100" />
+        <img src={post.thumbnail} alt="" className="w-100" />
       </div>
       <div className="blogContentContainer my-5 mx-auto wow animate__animated animate__fadeIn">
-        {post.subTopic.map((topic, idx) => {
+        <HtmlContent htmlContent={post.description} />
+        {/* {post.subTopic.map((topic, idx) => {
           return (
             <div className="blogTopic" key={idx}>
               <div className="card-body">
@@ -97,12 +100,12 @@ const BlogBody = ({ post }) => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
       <h1 className="text-center twoColor my-5 wow animate__animated animate__fadeIn">
         Latest <span>Blogs</span>
       </h1>
-      {post.latestBlogs.map((blog, idx) => (
+      {/* {post.latestBlogs.map((blog, idx) => (
         <Fragment key={idx}>
           <div className="latestBlog w-100 my-2 my-md-5 wow animate__animated animate__fadeIn">
             <h1>{blog.topic}</h1>
@@ -111,13 +114,13 @@ const BlogBody = ({ post }) => {
           </div>
           {idx !== post.latestBlogs.length - 1 && <hr />}
         </Fragment>
-      ))}
+      ))} */}
       <div className="clientComment py-5 wow animate__animated animate__fadeIn">
         <h1 className="twoColor text-center my-5">
           What Our <span>Clients Says</span>
         </h1>
         <div className="iwsInfo d-flex flex-column-reverse flex-lg-row  text-start wow animate__animated animate__fadeInUp">
-          <div className="iwsInfoLeft d-flex flex-column justify-content-evenly overflow-hidden">
+          {/* <div className="iwsInfoLeft d-flex flex-column justify-content-evenly overflow-hidden">
             <div className="ccHeader d-flex align-items-center justify-content-between gap-3">
               <div className="clientProfile d-flex align-items-center gap-4">
                 <TransitionGroupComponent currentSlideIndex={currentSlideIndex}>
@@ -144,7 +147,7 @@ const BlogBody = ({ post }) => {
                 <img src={"/read more.png"} alt="read more" />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="ourInsights">
@@ -158,4 +161,5 @@ const BlogBody = ({ post }) => {
   );
 };
 
-export default BlogBody;
+// export default BlogBody;
+export default dynamic(() => Promise.resolve(BlogBody), { ssr: false });

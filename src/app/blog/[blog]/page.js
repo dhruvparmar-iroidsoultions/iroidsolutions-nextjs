@@ -3,7 +3,7 @@ import BlogComp from "@/pages/blog/blog";
 const Blog = ({ params }) => {
   return (
     <>
-      <BlogComp />
+      <BlogComp slug={params.blog} />
     </>
   );
 };

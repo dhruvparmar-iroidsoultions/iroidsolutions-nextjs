@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import "./blogHomePage.css";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import axiosApi from "@/api/axiosConfig";
 
 const Blogs = ({ blogData, blogCategory = [] }) => {
@@ -24,16 +25,6 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
     "Ai",
     "Java",
   ];
-  console.log("blogCategory:", blogCategory);
-  // const getCategory = async () => {
-  //   try {
-
-  //     setBlogCategory(names);
-  //     console.log("blogCategory:", blogCategory);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const search = (e) => {
     setSearchText(e.target.value);
@@ -48,10 +39,11 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
   const mapBlogs = blogs.slice(0, 21).map((blog, idx) => {
     const blogPath = blog.topic.replace(/ /g, "-").toLowerCase();
     return (
-      <div
-        className="blog wow animate__animated animate__fadeInRight"
+      <Link
+        className="blog text-decoration-none text-dark wow animate__animated animate__fadeInRight"
         key={idx}
-        onClick={() => router.push(`/blog/${blogPath}`)}
+        href={`/blog/${1}`}
+        // onClick={() => router.push(`/blog/${blogPath}`)}
       >
         <div className="blogImgContainer overflow-hidden">
           <img src={blog.blogImg} alt="" className="w-100" />
@@ -72,7 +64,7 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
         </div>
         <h4 className="blogTopic fw-semibold">{blog.topic}</h4>
         <p className="blogContent">{blog.text}</p>
-      </div>
+      </Link>
     );
   });
 
@@ -102,15 +94,17 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
         </form>
 
         <ul className="blogSearchPoint d-flex align-items-center justify-content-between gap-3 flex-nowrap py-5">
-          {blogPoints.map((points, idx) => (
+          {blogCategory.map((category, idx) => (
             <li
               className={
-                showBlogOn === points.toLowerCase() ? "activeBlogSelection" : ""
+                showBlogOn === category.toLowerCase()
+                  ? "activeBlogSelection"
+                  : ""
               }
               key={idx}
-              onClick={() => setShowBlogOn(points.toLowerCase())}
+              onClick={() => setShowBlogOn(category.toLowerCase())}
             >
-              {points}
+              {category}
             </li>
           ))}
         </ul>
