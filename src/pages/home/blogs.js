@@ -3,8 +3,8 @@ import Blogs from "@/components/home/blogs";
 
 const FetchBlogs = async ({ show }) => {
   try {
-    const response = await axiosApi.get("allBlogsForWeb");
-    const data = response.data;
+    // const response = await axiosApi.get("allBlogsForWeb");
+    // const data = response.data;
 
     return <Blogs blogs={[]} show={show} />;
   } catch (error) {

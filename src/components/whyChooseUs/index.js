@@ -63,7 +63,7 @@ const WhyChoose = ({ project, line = true, pathName }) => {
           </p>
         </div>
         <div className="chooseGrid-item item4 position-relative">
-          <h1 className="  f134">
+          <h1 className="f134">
             <CountUp
               start={0}
               end={9}
@@ -72,17 +72,17 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               suffix="+"
             />
           </h1>
-          <p className=" ">Years Experiece</p>
+          <p>Years Experiece</p>
           <img src={"/Group.svg"} alt="" className="position-absolute " />
         </div>
         <div className="chooseGrid-item item5 ">
-          <p className="">
+          <p>
             Splendid UI/UX <br />
             Design
           </p>
         </div>
         <div className="chooseGrid-item item6 ">
-          <h1 className="  f67">
+          <h1 className="f67">
             <CountUp
               start={0}
               end={50}
@@ -91,7 +91,7 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               suffix="+"
             />
           </h1>
-          <p className=" ">
+          <p>
             Expert Team <br />
             Members
           </p>

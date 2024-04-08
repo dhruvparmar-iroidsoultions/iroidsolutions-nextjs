@@ -7,8 +7,13 @@ import WhyChoose from "../whyChooseUs";
 import Quote from "../quote";
 import dynamic from "next/dynamic";
 import HtmlContent from "../htmlContent";
+import { useRouter } from "next/navigation";
+import QueAns from "../QnsAns";
+import Button from "../button";
 
-const BlogBody = ({ post }) => {
+const BlogBody = ({ post, latestBlogs }) => {
+  const router = useRouter();
+
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const goToPreviousSlide = () => {
     setCurrentSlideIndex((prevIndex) =>
@@ -34,7 +39,7 @@ const BlogBody = ({ post }) => {
         </p>
         <p>{post.postOn}</p>
       </div>
-      <p
+      <div
         className="blogTitle d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-1 wow animate__animated animate__fadeIn"
         data-wow-delay="0.5s"
       >
@@ -81,17 +86,22 @@ const BlogBody = ({ post }) => {
             <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5" />
           </svg>
         </div>
-      </p>
-      <div className="blogImg w-100 mt-3 mb-5 d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
-        <img src={post.thumbnail} alt="" className="w-100" />
       </div>
-      <div className="blogContentContainer my-5 mx-auto wow animate__animated animate__fadeIn">
+      <div className="blogImg w-100 mt-3 mb-5 d-flex align-items-center justify-content-center rounded-4 overflow-hidden">
+        <img src={post?.cover_image} alt="" className="w-100" />
+      </div>
+      <div className="blogContentContainer my-5 mx-auto wow animate__animated animate__fadeIn overflow-auto">
         <HtmlContent htmlContent={post.description} />
-        {/* {post.subTopic.map((topic, idx) => {
+        <br />
+        <h3>Blog Related FAQs</h3>
+
+        <QueAns QA={post.blog_questions} id={"blogFAQs"} />
+
+        {/* {post.blog_questions.map((faq, idx) => {
           return (
             <div className="blogTopic" key={idx}>
               <div className="card-body">
-                <h5 className="card-title">{topic.title}</h5>
+                <h5 className="card-title">{faq.question}</h5>
                 {topic.description.map((desc, idx) => (
                   <p className="card-text" key={idx}>
                     {desc}
@@ -105,16 +115,22 @@ const BlogBody = ({ post }) => {
       <h1 className="text-center twoColor my-5 wow animate__animated animate__fadeIn">
         Latest <span>Blogs</span>
       </h1>
-      {/* {post.latestBlogs.map((blog, idx) => (
+      {latestBlogs.slice(0, 5).map((blog, idx) => (
         <Fragment key={idx}>
-          <div className="latestBlog w-100 my-2 my-md-5 wow animate__animated animate__fadeIn">
-            <h1>{blog.topic}</h1>
-            <p>{blog.text}</p>
-            <img src={"/demoBlog.webp"} alt="" className="" />
+          <div
+            className="latestBlog w-100 my-2 my-md-5 wow animate__animated animate__fadeIn"
+            onClick={() => router.push(blog.slug)}
+          >
+            <h1>{blog.title}</h1>
+            <HtmlContent className={"bDes"} htmlContent={blog.description} />
+            <img src={blog.thumbnail} alt="" className="ms-2" />
           </div>
-          {idx !== post.latestBlogs.length - 1 && <hr />}
+          {idx !== latestBlogs.length - 1 && <hr />}
         </Fragment>
-      ))} */}
+      ))}
+      <div className="w-100 d-flex align-items-center justify-content-center">
+        <Button linkPath={"/blog"} />
+      </div>
       <div className="clientComment py-5 wow animate__animated animate__fadeIn">
         <h1 className="twoColor text-center my-5">
           What Our <span>Clients Says</span>

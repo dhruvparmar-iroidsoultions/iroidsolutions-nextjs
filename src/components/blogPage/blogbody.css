@@ -44,8 +44,14 @@
   font-size: 31pt;
 }
 
-.latestBlog p {
+.bDes {
   font-size: 17pt;
+  max-height: 200px;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .latestBlog img {

@@ -4,13 +4,15 @@ import { post } from "@/constant/sample";
 
 const FetchBlog = async () => {
   try {
-    // const response = await axiosApi.get("allBlogs");
-    // const blogs = response.data;
-    const res = await axiosApi.get("/blog-category?page=1");
-    const names = res.data.data.map((item) => item.name);
-    return <Blogs blogData={post.latestBlogs} blogCategory={names} />;
+    const response = await axiosApi.get("blogs?page=1&latest=1");
+    const blogs = response.data.data;
+
+    const category = await axiosApi.get("/blog-category?page=1");
+    const names = category.data.data.map((item) => item.name);
+
+    return <Blogs blogData={blogs} blogCategory={names} />;
   } catch (error) {
-    console.error("Error fetching case studies:", error);
+    console.error("Error fetching blogs:", error);
     return <Blogs blogData={[]} />;
   }
 };

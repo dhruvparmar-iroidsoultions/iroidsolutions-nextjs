@@ -2,8 +2,8 @@ import React from "react";
 import "./qa.css";
 
 const QueAns = ({ QA, id }) => {
-  const mapQA = QA.slice(0, 7).map((qa) => (
-    <div className="accordion-item" key={qa._id}>
+  const mapQA = QA.slice(0, 7).map((qa, idx) => (
+    <div className="accordion-item" key={qa._id || idx}>
       <h2 className="accordion-header">
         <button
           className="accordion-button collapsed"
@@ -21,8 +21,8 @@ const QueAns = ({ QA, id }) => {
         className="accordion-collapse collapse"
         data-bs-parent={`#${id}`}
       >
-        <div className="accordion-body">
-          <span>Ans.</span> {qa.answer}
+        <div className="accordion-body d-flex alifn-items-center gap-2">
+          Ans. <span dangerouslySetInnerHTML={{ __html: qa.answer }} />
         </div>
       </div>
     </div>
