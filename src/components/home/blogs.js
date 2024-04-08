@@ -3,6 +3,11 @@ import Card from "../card";
 import Link from "next/link";
 
 const Blogs = ({ blogs, show = true }) => {
+  const removeTags = (html) => {
+    const cleanText = html.replace(/<[^>]*>/g, "");
+    return cleanText;
+  };
+
   const mapBlog =
     blogs &&
     blogs.slice(0, 3).map((blog) => (
@@ -10,7 +15,7 @@ const Blogs = ({ blogs, show = true }) => {
         key={blog.id}
         cardOfClass={"blog"}
         cardText={blog.title}
-        cardTitle={blog.description}
+        cardTitle={removeTags(blog.description)}
         img={blog.thumbnail}
         tag={
           <Link href={`/blog/${blog.slug}`} className="text-end mb-0">
