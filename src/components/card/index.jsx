@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 const Card = ({ cardOfClass, img, cardText, cardTitle, tag }) => {
-  const imgPath = img.replace(/uploads\\/g, "/");
+  // const imgPath = img.replace(/uploads\\/g, "/");
   return (
     <div className={`${cardOfClass} card w-100 h-100"`}>
-      <Image
-        src={imgPath}
+      <img
+        src={img}
         className="card-img-top"
         alt=""
-        width={150}
-        height={150}
+        width={200}
+        height={200}
         // layout="responsive"
       />
       <div className="card-body text-start">

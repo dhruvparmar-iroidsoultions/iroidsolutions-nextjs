@@ -97,11 +97,14 @@
   text-overflow: ellipsis;
 }
 
-.blog .card-body p {
+.blog .card-body a {
   color: #005490;
   font-size: 14px;
   font-weight: 600;
   line-height: 19px;
+  width: 100%;
+  text-decoration: none;
+  display: block;
 }
 
 .blog .card-body p:hover {

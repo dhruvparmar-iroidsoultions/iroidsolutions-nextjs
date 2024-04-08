@@ -13,7 +13,13 @@ import Button from "../button";
 
 const BlogBody = ({ post, latestBlogs }) => {
   const router = useRouter();
-
+  // date, author and category data not avilable (not coming from api)
+  const date = new Date(post.created_at * 1000);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  });
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const goToPreviousSlide = () => {
     setCurrentSlideIndex((prevIndex) =>
@@ -35,7 +41,7 @@ const BlogBody = ({ post, latestBlogs }) => {
         data-wow-delay="0.5s"
       >
         <p>
-          {post.postDate} - Written by <span>{post.postBy}</span>
+          {formattedDate} - Written by <span>{post.postBy}</span>
         </p>
         <p>{post.postOn}</p>
       </div>

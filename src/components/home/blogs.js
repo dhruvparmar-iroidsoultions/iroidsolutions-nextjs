@@ -1,23 +1,24 @@
 import Button from "../button";
 import Card from "../card";
+import Link from "next/link";
 
 const Blogs = ({ blogs, show = true }) => {
   const mapBlog =
     blogs &&
     blogs.slice(0, 3).map((blog) => (
       <Card
-        key={blog._id}
+        key={blog.id}
         cardOfClass={"blog"}
-        cardText={blog.description}
-        cardTitle={blog.title}
-        img={blog.img}
+        cardText={blog.title}
+        cardTitle={blog.description}
+        img={blog.thumbnail}
         tag={
-          <p className="text-end mb-0">
+          <Link href={`/blog/${blog.slug}`} className="text-end mb-0">
             Read More
             <span>
               <img className="ms-2 " src={"/read more.png"} alt="" />
             </span>
-          </p>
+          </Link>
         }
       />
     ));
