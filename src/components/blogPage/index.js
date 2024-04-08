@@ -32,16 +32,8 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
   ];
 
   const search = (e) => {
-    e.preventDefault();
     setShowBlogOn("all");
     setSearchText(e.target.value);
-
-    // const searchRelatedBlogs = blogs.filter(
-    //   (blog) =>
-    //     blog.topicFor.map((t) => t.includes(searchText)) ||
-    //     blog.topic.includes(searchText)
-    // );
-    // setBlogs(searchRelatedBlogs);
   };
 
   const filterBlogs = () => {
@@ -55,36 +47,55 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
     );
   };
 
+  const removeTags = (html) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+    const textContent = tempElement.textContent || tempElement.innerText || "";
+    const wrappedContent = `${textContent}`;
+    return wrappedContent;
+  };
+
   const mapBlogs = filteredBlogs.map((blog, idx) => {
-    // const blogPath = blog.topic.replace(/ /g, "-").toLowerCase();
+    const wrappedText = removeTags(blog.description);
+    const date = new Date(blog.created_at * 1000);
+    const formattedDate = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+    });
+
     return (
       <Link
-        className="blog text-decoration-none text-dark wow animate__animated animate__fadeInRight"
+        className="blog text-decoration-none text-dark wow animate__animated animate__fadeInRight w-100 overflow-hidden"
         key={idx}
         href={`/blog/${blog.slug}`}
-        // onClick={() => router.push(`/blog/${blogPath}`)}
       >
         <div className="blogImgContainer overflow-hidden w-100">
           <img src={blog.thumbnail} alt="" className="w-100" height={250} />
         </div>
         <div className="creationDateAndFor d-flex align-items-center justify-content-between gap-2 my-3">
-          <p className="m-0">{blog.date}</p>
-          {/* <ul className="d-flex flex-wrap align-items-center gap-1 m-0">
-            {blog.topicFor.map((topic, idx) => (
+          <p className="m-0">{formattedDate}</p>
+          <ul className="d-flex flex-wrap align-items-center gap-1 m-0">
+            {blog.category.map((topic, idx) => (
               <li
                 key={idx}
                 className="pe-4"
                 style={{ listStyle: idx === 0 && "none" }}
               >
-                {topic}
+                {topic.name}
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
         <h4 className="blogTopic fw-semibold text-wrap w-100 overflow-hidden">
           {blog.title}
         </h4>
-        <p className="blogContent">{blog.text}</p>
+        <p
+          className="blogContent"
+          // dangerouslySetInnerHTML={{ __html: blog.description }}
+        >
+          {wrappedText}
+        </p>
       </Link>
     );
   });
@@ -96,7 +107,11 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
   return (
     <>
       <div className="container position-relative blogCategory">
-        <form id="blogSearchForm" className="position-absolute">
+        <form
+          id="blogSearchForm"
+          className="position-absolute"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <label htmlFor="searchInput" id="searchIcon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +125,7 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
             </svg>
           </label>
           <input
-            type="search"
+            type="text"
             name="search"
             id="searchInput"
             value={searchText}
