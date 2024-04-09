@@ -25,9 +25,15 @@ const Numbers = () => {
                 start={0}
                 end={9}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="+"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p className="mb-0 mb-lg-1">Years in Business</p>
           </div>
@@ -38,9 +44,15 @@ const Numbers = () => {
                 start={0}
                 end={50}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="+"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p>Team Members</p>
           </div>
@@ -51,9 +63,15 @@ const Numbers = () => {
                 start={0}
                 end={200}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="+"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p>Happy Clients</p>
           </div>
@@ -64,9 +82,15 @@ const Numbers = () => {
                 start={0}
                 end={400}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="+"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p>Projects Completed</p>
           </div>
@@ -77,9 +101,15 @@ const Numbers = () => {
                 start={0}
                 end={91}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="%"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p>Clients Recommended Us</p>
           </div>
@@ -90,9 +120,15 @@ const Numbers = () => {
                 start={0}
                 end={87}
                 duration={4}
-                enableScrollSpy={true}
                 suffix="%"
-              />
+                enableScrollSpy={true}
+              >
+                {({ countUpRef }) => (
+                  <div>
+                    <span ref={countUpRef} />
+                  </div>
+                )}
+              </CountUp>
             </h1>
             <p>Repeat Clients Ratio</p>
           </div>

@@ -38,9 +38,15 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               start={0}
               end={50}
               duration={4}
-              enableScrollSpy={true}
               suffix="+"
-            />
+              enableScrollSpy={true}
+            >
+              {({ countUpRef }) => (
+                <div>
+                  <span ref={countUpRef} />
+                </div>
+              )}
+            </CountUp>
           </h1>
           <p>
             Countries World Wide <br />
@@ -53,9 +59,15 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               start={0}
               end={400}
               duration={4}
-              enableScrollSpy={true}
               suffix="+"
-            />
+              enableScrollSpy={true}
+            >
+              {({ countUpRef }) => (
+                <div>
+                  <span ref={countUpRef} />
+                </div>
+              )}
+            </CountUp>
           </h1>
           <p className="mb-5">
             Projects Live On <br />
@@ -68,9 +80,15 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               start={0}
               end={9}
               duration={4}
-              enableScrollSpy={true}
               suffix="+"
-            />
+              enableScrollSpy={true}
+            >
+              {({ countUpRef }) => (
+                <div>
+                  <span ref={countUpRef} />
+                </div>
+              )}
+            </CountUp>
           </h1>
           <p>Years Experiece</p>
           <img src={"/Group.svg"} alt="" className="position-absolute " />
@@ -87,9 +105,15 @@ const WhyChoose = ({ project, line = true, pathName }) => {
               start={0}
               end={50}
               duration={4}
-              enableScrollSpy={true}
               suffix="+"
-            />
+              enableScrollSpy={true}
+            >
+              {({ countUpRef }) => (
+                <div>
+                  <span ref={countUpRef} />
+                </div>
+              )}
+            </CountUp>
           </h1>
           <p>
             Expert Team <br />
