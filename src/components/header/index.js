@@ -6,6 +6,7 @@ import React, { useCallback } from "react";
 import "./index.css";
 import Button from "../button";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -26,7 +27,7 @@ const Header = () => {
   );
   return (
     <>
-      <nav className="navbar navbar-expand-lg position-fixed bg-white w-100">
+      <nav className="navbar py-0 navbar-expand-lg position-fixed bg-white w-100">
         <div className="container">
           <Link href="/">
             <img
@@ -76,6 +77,16 @@ const Header = () => {
               className="navbar-nav mx-auto me-auto mb-2 mb-lg-0 gap-3 align-items-center"
               onClick={handleLiClick}
             >
+              <li className="nav-item">
+                <Link
+                  className={`nav-link py-4 ${
+                    pathname === "/" ? "activeLink" : ""
+                  }`}
+                  href="/"
+                >
+                  Home
+                </Link>
+              </li>
               <li className="nav-item header_dropdown">
                 <div className="dropdown-toggle options" role="button">
                   Services
@@ -139,7 +150,17 @@ const Header = () => {
 
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
+                  className={`nav-link py-4 ${
+                    pathname.includes("industries") ? "activeLink" : ""
+                  }`}
+                  href="/industries"
+                >
+                  Industries
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link py-4 ${
                     pathname.includes("portfolio") ? "activeLink" : ""
                   }`}
                   href="/portfolio"
@@ -147,20 +168,21 @@ const Header = () => {
                   Portfolio
                 </Link>
               </li>
-              <li className="nav-item header_dropdown">
-                <div
-                  className={`dropdown-toggle options
-                   ${
-                     // pathname.includes("solutions") ? "activeLink" :
-                     ""
-                   }
-                  `}
-                  role="button"
+              <li className="nav-item">
+                <Link
+                  className={`nav-link py-4 ${
+                    pathname.includes("testimonials") ? "activeLink" : ""
+                  }`}
+                  href="/testimonials"
                 >
+                  Testimonials
+                </Link>
+              </li>
+              {/* <li className="nav-item header_dropdown">
+                <div className={`dropdown-toggle options`} role="button">
                   Solutions
                   <ul className="dropdown-menu deepUl text-capitalize bg-light-subtle py-0">
                     <li className="m-0">
-                      {/* <div className="dropdown-item " type="button"> */}
                       <ul className="dropdown-item px-3 bg-light-subtle">
                         <li>
                           <Link href="/solutions/hotel-booking-app">
@@ -193,25 +215,24 @@ const Header = () => {
                           </Link>
                         </li>
                       </ul>
-                      {/* </div> */}
                     </li>
                   </ul>
                 </div>
-              </li>
+              </li> */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
-                  className={`nav-link ${
+                  className={`nav-link py-4 ${
                     pathname.includes("casestudy") ? "activeLink" : ""
                   }`}
                   href="/casestudy"
                 >
                   Case Study
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
+                  className={`nav-link py-4 ${
                     pathname.includes("blog") ? "activeLink" : ""
                   }`}
                   href="/blog"
@@ -219,7 +240,7 @@ const Header = () => {
                   Blog
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className={`nav-link ${
                     pathname.includes("about") ? "activeLink" : ""
@@ -228,16 +249,35 @@ const Header = () => {
                 >
                   About Us
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <div className="d-flex gap-3 consult d-flex align-items-center justify-content-between">
-              <Button
-                cn={"btn shadowBtn"}
+              <Link
+                href={"contact-us"}
+                className="btn shadowBtn d-flex align-items-center justify-content-around gap-2 px-3"
+              >
+                <Image src={"/white_calling.png"} width={20} height={20} />
+                <span>Free Consultation</span>
+              </Link>
+              {/* <Button
+                cn={
+                  "btn shadowBtn d-flex align-items-center justify-content-around"
+                }
                 text={"Free Consultation"}
                 arrow={false}
-              />
-
-              <svg
+              >
+                hihui
+              </Button> */}
+              <span
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+                id="canvasToggler"
+              >
+                <Image src={"/header-menu.png"} width={30} height={30} />
+              </span>
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"
                 height="35"
@@ -268,7 +308,7 @@ const Header = () => {
                   strokeWidth="1.5"
                   strokeLinecap="round"
                 />
-              </svg>
+              </svg> */}
             </div>
           </div>
         </div>

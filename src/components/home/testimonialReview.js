@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 import Button from "../button";
@@ -9,7 +10,7 @@ const TestimonialReview = ({ clientTestimonial }) => {
     clientTestimonial &&
     clientTestimonial.map((review) => {
       const stars = [];
-      const starLength = review.stars || 4;
+      const starLength = review.stars || 5;
       for (let i = 0; i < starLength; i++) {
         stars.push(
           <li key={i}>
@@ -28,23 +29,26 @@ const TestimonialReview = ({ clientTestimonial }) => {
       }
 
       return (
-        <SwiperSlide className="card testimonialCardContainer" key={review._id}>
+        <SwiperSlide className="card testimonialCardContainer" key={review.id}>
           <div className="card-body d-flex flex-column  text-start  py-4 px-5">
             <ul className="list-unstyled d-flex">{stars}</ul>
-            <p className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight">
-              {review.description}
-            </p>
+            <p
+              className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight"
+              dangerouslySetInnerHTML={{ __html: review.description }}
+            />
             <div className="testimonialProfileContainer d-flex align-items-center gap-4">
               <div className="d-flex justify-content-center">
                 <img
-                  src={review.profilePic}
+                  src={review.profilepic}
                   alt="profile"
-                  className="rounded-circle"
+                  className="testimonial-img rounded-circle"
+                  width={60}
+                  height={60}
                 />
               </div>
               <div className="testimonialProfile">
                 <h5 className="font-weight-bold mb-0 text-capitalize">
-                  {review.clientName}
+                  {review.clientname}
                 </h5>
                 <h6 className="font-weight-bold my-1 text-uppercase">
                   {review.position}
@@ -86,4 +90,7 @@ const TestimonialReview = ({ clientTestimonial }) => {
   );
 };
 
-export default TestimonialReview;
+// export default TestimonialReview;
+export default dynamic(() => Promise.resolve(TestimonialReview), {
+  ssr: false,
+});

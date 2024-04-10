@@ -7,7 +7,7 @@ const OurSkills = () => {
           "Driving Digital Transformation with Expertise and Excellence"
         </h1>
         <div className="skills-grid-container mt-5 py-5">
-          <div className="lineCircle position-absolute"></div>
+          <div className="lineCircle d-flex align-items-center justify-content-between position-absolute"></div>
           <div className="skill-grid-item item1">
             <p>
               <span>01</span> <br /> Android <br />

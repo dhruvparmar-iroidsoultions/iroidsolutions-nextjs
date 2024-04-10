@@ -13,7 +13,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
     videoTestimonialArray &&
     videoTestimonialArray.map((video) => {
       return (
-        <SwiperSlide key={video._id}>
+        <SwiperSlide key={video.id}>
           <div className="col videoContainer position-relative">
             <div
               className="card text-white position-relative"
@@ -28,7 +28,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
             >
               <div className="card-img-overlay d-flex  align-items-end justify-content-between">
                 <div className="videoDetail text-start z-3">
-                  <h5 className="card-title mb-0">{video.clientName}</h5>
+                  <h5 className="card-title mb-0">{video.clientname}</h5>
                   <p className="card-text">{video.position}</p>
                 </div>
                 <div className="z-3">

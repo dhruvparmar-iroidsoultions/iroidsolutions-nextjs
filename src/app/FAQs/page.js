@@ -1,8 +1,20 @@
+import axiosApi from "@/api/axiosConfig";
 import Button from "@/components/button";
 import Quote from "@/components/quote";
 import TopBg from "@/components/topBg";
+import FAQsCom from "@/components/home/faqs";
 import FetchBlogs from "@/pages/home/blogs";
-import FetchFAQs from "@/pages/home/faqs";
+
+const FetchFAQs = async ({ show, btn }) => {
+  try {
+    const response = await axiosApi.get("faqs");
+    const data = response.data.data;
+    return <FAQsCom faqs={data} show={show} btn={btn} />;
+  } catch (error) {
+    console.error(error);
+    return <FAQsCom faqs={[]} show={show} btn={btn} />;
+  }
+};
 
 const FAQs = () => {
   return (

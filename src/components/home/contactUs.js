@@ -1,5 +1,6 @@
 "use client";
 
+import axiosApi from "@/api/axiosConfig";
 import FormValidInput from "@/components/validInput";
 import axios from "axios";
 import { useState } from "react";
@@ -11,16 +12,14 @@ const ContactUs = () => {
   const [contactDetail, setContactDetail] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
     message: "",
-    attechment: null,
   });
   const [errClass, setErrClass] = useState({
     name: false,
     email: false,
-    phoneNumber: false,
+    phone: false,
     message: false,
-    attechment: false,
   });
 
   const onChange = (e) => {
@@ -35,40 +34,13 @@ const ContactUs = () => {
     });
   };
 
-  const onFileChange = (e) => {
-    const { name, files } = e.target;
-
-    setContactDetail({
-      ...contactDetail,
-      [name]: files[0],
-    });
-
-    const updatedError = { ...errClass };
-    if (!files[0]) {
-      updatedError[name] = true;
-    } else {
-      delete updatedError[name];
-    }
-    setErrClass(updatedError);
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const error = {};
-    const fieldsToValidate = [
-      "email",
-      "phone",
-      "phoneNumber",
-      "message",
-      "attechment",
-    ];
+    const fieldsToValidate = ["name", "email", "phone", "message"];
 
     fieldsToValidate.forEach((field) => {
-      if (field === "attechment") {
-        if (!contactDetail[field]) {
-          error[field] = true;
-        }
-      } else if (
+      if (
         typeof contactDetail[field] === "string" &&
         contactDetail[field].trim() === ""
       ) {
@@ -79,29 +51,17 @@ const ContactUs = () => {
     const hasErrors = Object.keys(error).length > 0;
     if (!hasErrors) {
       try {
+        setIsMessageSent(false);
         setIsMessageSending(true);
-        let headers = {};
 
-        if (contactDetail.attechment instanceof File) {
-          headers = { "Content-Type": "multipart/form-data" };
-        } else {
-          headers = { "Content-Type": "application/json" };
-        }
-        const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/addContactUs`,
-          contactDetail,
-          {
-            headers: headers,
-          }
-        );
+        const response = await axiosApi.post("contact-us", contactDetail);
         console.log(response);
         if (response.status === 200) {
           setContactDetail({
             name: "",
             email: "",
-            phoneNumber: "",
+            phone: "",
             message: "",
-            attechment: null,
           });
           setIsMessageSent(true);
           setTimeout(() => {
@@ -202,12 +162,12 @@ const ContactUs = () => {
             <FormValidInput
               type="number"
               placeholder="Phone number"
-              name="phoneNumber"
-              value={contactDetail.phoneNumber}
+              name="phone"
+              value={contactDetail.phone}
               onChange={onChange}
               img={"/formCalling.svg"}
               alt="phonePic"
-              errClass={errClass.phoneNumber}
+              errClass={errClass.phone}
               isRequired={true}
               invalidMessage={"Phone Number is required"}
             />
@@ -233,7 +193,7 @@ const ContactUs = () => {
                 </div>
               </div>
             </div>
-            <FormValidInput
+            {/* <FormValidInput
               type="file"
               placeholder="Drag & Drop to Upload"
               name="attechment"
@@ -241,14 +201,15 @@ const ContactUs = () => {
               isRequired={true}
               errClass={errClass.attechment}
               invalidMessage={"File is required"}
-            />
+            /> */}
           </div>
           <div className="input-group">
             <button
               type="submit"
-              className="form-control"
+              className={`form-control mt-lg-5 ${
+                isMessageSending ? "sendingMessage" : "sendMessage"
+              }`}
               disabled={isMessageSending}
-              style={{ color: isMessageSending ? "#005490" : "white" }}
             >
               {isMessageSending &&
                 (isMessageSent ? "Message Sent" : "sending...")}

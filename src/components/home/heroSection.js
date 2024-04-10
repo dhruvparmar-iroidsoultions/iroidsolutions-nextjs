@@ -2,7 +2,7 @@ import Button from "../button";
 
 const HeroSection = () => {
   return (
-    <div className="homeSecContainer pt-5">
+    <div className="homeSecContainer pt-5 d-flex flex-column align-items-center justify-content-center">
       <div className="container row align-items-center justify-content-center pt-5 mx-auto gap-5 gap-lg-0 overflow-hidden">
         <div className="wow animate__animated animate__fadeInLeft col-12 col-lg-6 p-0 mx-auto">
           <div className="d-flex flex-column justify-content-around align-items-baseline">

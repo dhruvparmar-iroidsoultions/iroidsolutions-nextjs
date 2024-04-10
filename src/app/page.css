@@ -61,10 +61,10 @@
 
 .homeSecContainer {
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .awardContainer {
@@ -239,6 +239,11 @@
   border-radius: 40px;
 }
 
+.caseLeft,
+.caseRight {
+  flex: 1;
+}
+
 .f40 {
   font-size: 40px;
   font-weight: 600;
@@ -295,6 +300,10 @@
 .testimonialsSwiper .swiper {
   /* padding: 50px; */
   padding-block: 50px;
+}
+
+#testimonialSwiper .swiper-wrapper {
+  align-items: center;
 }
 
 .testimonialsSwiper .swiper-slide {
@@ -540,9 +549,9 @@
 .lineCircle {
   position: absolute;
   top: 50%;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   height: 2px;
   width: 87%;
   left: 9%;
@@ -588,6 +597,7 @@
 .slider-bg .icon {
   cursor: pointer;
   max-width: 50px;
+  user-select: none;
 }
 
 .swiper-button-next,
@@ -691,11 +701,19 @@
 .homeContactUs form button {
   border-radius: 80px !important;
   color: white;
-  background-color: #005490 !important;
   height: 60px;
   font-family: "Work Sans";
   font-size: 20px;
   font-weight: 600;
+}
+
+.homeContactUs form button.sendMessage {
+  background-color: #005490 !important;
+}
+
+.homeContactUs form button.sendingMessage {
+  color: #005490 !important;
+  background-color: white !important;
 }
 
 /* @media only screen and (max-width: 1399px) {
@@ -811,9 +829,9 @@
   .homeGridItem p {
     font-size: 18px !important;
   }
-  .caseRight img {
+  /* .caseRight img {
     height: 22rem;
-  }
+  } */
 
   .homeGridContainer {
     grid-template-columns: repeat(2, 1fr);
@@ -1009,7 +1027,7 @@
     grid-template-columns: 3fr;
   }
   .lineCircle {
-    display: none;
+    display: none !important;
   }
   .skills .circle {
     height: 70px;

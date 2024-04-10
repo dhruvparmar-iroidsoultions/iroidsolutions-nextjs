@@ -7,12 +7,12 @@ import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
 const OfcEnviroment = ({ slides }) => {
-  const ytSlider = slides.map((slide, idx) => {
+  const ytSlider = slides.map((slide) => {
     return (
       <SwiperSlide
         className="slider-bg"
-        style={{ backgroundImage: `url(${slide.img})` }}
-        key={idx}
+        style={{ backgroundImage: `url(${slide.thumbnail})` }}
+        key={slide.id}
       >
         <img src={"/Play.png"} className="icon" alt="icon" />
       </SwiperSlide>

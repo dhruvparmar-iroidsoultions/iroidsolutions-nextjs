@@ -30,10 +30,10 @@
   height: 50px;
   background-color: #005490;
   border-radius: 50%;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: none; */
 }
 
 .iwsButtons button img {

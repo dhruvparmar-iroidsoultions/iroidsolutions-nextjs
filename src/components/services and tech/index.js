@@ -113,10 +113,16 @@ const ServicesAndTech = ({ serviceOrTech, pathName }) => {
             </span>
             {/* </TransitionGroupComponent> */}
             <div className="iwsButtons mb-3 d-flex align-items-center justify-content-between justify-content-lg-start gap-3">
-              <button className="prevBtn" onClick={goToPreviousSlide}>
+              <button
+                className="prevBtn d-flex align-items-center justify-content-center border border-0"
+                onClick={goToPreviousSlide}
+              >
                 <img src={"/read more.png"} alt="read more" />
               </button>
-              <button className="nextBtn" onClick={goToNextSlide}>
+              <button
+                className="nextBtn d-flex align-items-center justify-content-center border border-0"
+                onClick={goToNextSlide}
+              >
                 <img src={"/read more.png"} alt="read more" />
               </button>
             </div>
