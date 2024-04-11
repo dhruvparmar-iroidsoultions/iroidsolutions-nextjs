@@ -27,7 +27,7 @@ const Header = () => {
   );
   return (
     <>
-      <nav className="navbar py-0 navbar-expand-lg position-fixed bg-white w-100">
+      <nav className="navbar py-1 py-lg-0 navbar-expand-lg position-fixed bg-white w-100">
         <div className="container">
           <Link href="/">
             <img
@@ -37,6 +37,17 @@ const Header = () => {
             />
           </Link>
           <button
+            className="navbar-toggler"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+            id="navbarSideCanavs"
+            role="button"
+          >
+            <Image src={"/header-menu.png"} alt="menu" width={25} height={25} />
+          </button>
+          {/* <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
@@ -71,7 +82,7 @@ const Header = () => {
                 strokeLinecap="round"
               />
             </svg>
-          </button>
+          </button> */}
           <div className="collapse navbar-collapse center" id="navbarToggler">
             <ul
               className="navbar-nav mx-auto me-auto mb-2 mb-lg-0 gap-3 align-items-center"
@@ -79,7 +90,7 @@ const Header = () => {
             >
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname === "/" ? "activeLink" : ""
                   }`}
                   href="/"
@@ -87,8 +98,11 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item header_dropdown">
-                <div className="dropdown-toggle options" role="button">
+              <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
+                <div
+                  className="dropdown-toggle options fw-medium"
+                  role="button"
+                >
                   Services
                   <ul className="dropdown-menu deepUl text-capitalize">
                     <li>
@@ -150,7 +164,7 @@ const Header = () => {
 
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname.includes("industries") ? "activeLink" : ""
                   }`}
                   href="/industries"
@@ -160,7 +174,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname.includes("portfolio") ? "activeLink" : ""
                   }`}
                   href="/portfolio"
@@ -170,7 +184,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname.includes("testimonials") ? "activeLink" : ""
                   }`}
                   href="/testimonials"
@@ -222,7 +236,7 @@ const Header = () => {
 
               {/* <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname.includes("casestudy") ? "activeLink" : ""
                   }`}
                   href="/casestudy"
@@ -232,7 +246,7 @@ const Header = () => {
               </li> */}
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                     pathname.includes("blog") ? "activeLink" : ""
                   }`}
                   href="/blog"
@@ -256,7 +270,12 @@ const Header = () => {
                 href={"contact-us"}
                 className="btn shadowBtn d-flex align-items-center justify-content-around gap-2 px-3"
               >
-                <Image src={"/white_calling.png"} width={20} height={20} />
+                <Image
+                  src={"/white_calling.png"}
+                  alt=""
+                  width={20}
+                  height={20}
+                />
                 <span>Free Consultation</span>
               </Link>
               {/* <Button
@@ -275,7 +294,12 @@ const Header = () => {
                 aria-label="Toggle navigation"
                 id="canvasToggler"
               >
-                <Image src={"/header-menu.png"} width={30} height={30} />
+                <Image
+                  src={"/header-menu.png"}
+                  alt="menu"
+                  width={25}
+                  height={25}
+                />
               </span>
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"

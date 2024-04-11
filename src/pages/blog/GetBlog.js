@@ -2,7 +2,8 @@ import axiosApi from "@/api/axiosConfig";
 import Blogs from "@/components/blogPage";
 import { post } from "@/constant/sample";
 
-const FetchBlog = async () => {
+const FetchBlog = async (props) => {
+  console.log("props:", props);
   try {
     const response = await axiosApi.get("blogs?page=1&latest=1");
     const blogs = response.data.data;
@@ -18,3 +19,15 @@ const FetchBlog = async () => {
 };
 
 export default FetchBlog;
+
+// testing =? do not delete
+
+export const tyring = async () => {
+  const response = await axiosApi.get("blogs?page=1&latest=1");
+  const blogs = response.data.data;
+  return {
+    props: {
+      blogs,
+    },
+  };
+};

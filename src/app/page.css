@@ -226,12 +226,25 @@
   background-image: url("/csBG.svg");
 }
 
+.caseStudy .swiper-wrapper {
+  align-items: center;
+}
+
 .caseStudy h3:nth-child(1) {
   opacity: 0.8 !important;
 }
 
 .caseStudy .swiper-slide {
   background: transparent;
+  padding-inline: 7rem;
+}
+
+.caseStudy .swiper-button-prev::after {
+  content: url("/casestudy-swipe-prev-arrow.png") !important;
+}
+
+.caseStudy .swiper-button-next::after {
+  content: url("/casestudy-swipe-next-arrow.png") !important;
 }
 
 .caseStudy .swiper-slide .container {
@@ -324,12 +337,12 @@
   pointer-events: none;
 }
 
-.swiper-button-next::after,
+/* .swiper-button-next::after, */
 .swiper-button-next::after {
   content: url("/testimonialArrowRight.svg") !important;
 }
 
-.swiper-button-prev::after,
+/* .swiper-button-prev::after, */
 .swiper-button-prev::after {
   content: url("/testimonialArrowLeft.svg") !important;
 }
@@ -813,6 +826,9 @@
   .firstBlue {
     font-size: 22px;
   }
+  .caseStudy .swiper-slide {
+    padding-inline: 4rem;
+  }
   .caseStudy h3 {
     font-size: 19px;
   }
@@ -927,6 +943,30 @@
   #vdoTestimonialSwiper .swiper-slide-next {
     right: 0;
   }
+  .caseStudy .swiper-slide {
+    padding-inline: 0rem;
+  }
+
+  .caseStudy .swiper-button-next::after {
+    background: url("/read\ more.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid #005490;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .caseStudy .swiper-button-prev::after {
+    /* content: url("/testimonialArrowLeft.svg") !important; */
+    border-radius: 50%;
+    border: 2px solid #005490;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .card.testimonialCardContainer {
     padding-inline: 30px;
   }

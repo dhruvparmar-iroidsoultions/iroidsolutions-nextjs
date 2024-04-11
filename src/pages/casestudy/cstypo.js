@@ -41,7 +41,7 @@ const CsTypo = ({ csFontFamily, colorPallete }) => {
           </p>
         </div>
         <div className="csTypoRight d-flex gap-3 gap-sm-5 align-items-center justify-content-between ">
-          {colorPallete.map((colorPallete, idx) => (
+          {colorPallete?.map((colorPallete, idx) => (
             <div className="colorPalleteContainer" key={idx}>
               <div
                 className="colorPallete mb-3 w-100"

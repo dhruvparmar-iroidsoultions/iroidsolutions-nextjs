@@ -1,6 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import Button from "../button";
 import { Tilt } from "react-tilt";
 
@@ -45,7 +46,16 @@ const CaseStudy = ({ casestudy }) => {
       >
         Creating Success Stories for Startups to Global Brands.
       </p>
-      <Swiper>{mapCasestudy}</Swiper>
+      <div className="container">
+        <Swiper
+          loop={true}
+          grabCursor={true}
+          navigation={true}
+          modules={[Navigation]}
+        >
+          {mapCasestudy}
+        </Swiper>
+      </div>
     </div>
   );
 };

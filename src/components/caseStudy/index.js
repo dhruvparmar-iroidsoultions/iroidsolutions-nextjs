@@ -3,7 +3,7 @@
 import { caseStudyHomePage } from "@/constant/sample";
 import { useRouter } from "next/navigation";
 
-const CaseStudy = ({}) => {
+const CaseStudy = () => {
   const router = useRouter();
   const caseStudyData = caseStudyHomePage;
   return (
@@ -13,7 +13,7 @@ const CaseStudy = ({}) => {
           className="otherCaseStudy p-3 my-5 d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-center gap-4 position-relative  wow animate__animated animate__fadeInDown"
           style={{ background: `url(${cs.bgImg})` }}
           key={idx}
-          onClick={() => router.push(`casestudy/${cs.productName}`)}
+          onClick={() => router.push(`casestudy/${cs.id}`)}
         >
           <img src={cs.portfolioImg} alt={cs.productName} className="ocsLeft" />
           <div className="ocsRight">

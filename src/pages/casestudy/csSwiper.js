@@ -31,7 +31,7 @@ const CsSwiper = ({ otherCasestudies }) => {
         },
       }}
     >
-      {otherCasestudies.map((caseStudy, idx) => (
+      {otherCasestudies?.map((caseStudy, idx) => (
         <SwiperSlide key={idx}>
           <div
             className="otherCaseStudy p-3 d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-center gap-4 position-relative wow animate__animated animate__fadeIn"
