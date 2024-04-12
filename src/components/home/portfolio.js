@@ -71,9 +71,8 @@ const PortfolioHome = () => {
             decodeC.includes("3") && category.push("Website");
             decodeC.includes("4") && category.push("UI/UX");
             return (
-              <div className="col">
+              <div className="col" key={project.id}>
                 <Card
-                  key={project.id}
                   cardOfClass={"project"}
                   img={project.thumbnail}
                   cardText={category.join(", ")}

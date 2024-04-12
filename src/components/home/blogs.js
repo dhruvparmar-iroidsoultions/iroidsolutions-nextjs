@@ -11,9 +11,8 @@ const Blogs = ({ blogs, show = true }) => {
   const mapBlog =
     blogs &&
     blogs.slice(0, 3).map((blog) => (
-      <div className="col">
+      <div className="col" key={blog.id}>
         <Card
-          key={blog.id}
           cardOfClass={"blog"}
           cardText={blog.title}
           cardTitle={removeTags(blog.description)}
