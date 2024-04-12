@@ -85,12 +85,12 @@ const ContactUs = () => {
         }
       />
       <div className="container conDetail text-center py-3 py-lg-5 p-0 mb-5">
-        <p
-          className="my-5 wow animate__animated animate__fadeInUp"
+        <h1
+          className="twoColor my-5 wow animate__animated animate__fadeInUp"
           data-wow-duration="2s"
         >
-          <span>Let's bring</span> your dream into reality together.
-        </p>
+          Let's bring <span>your dream into reality together.</span>
+        </h1>
         <div className="text-center d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between row-gap-5 gap-md-5 gap-lg-0">
           <div
             className="figureContainer wow animate__animated animate__fadeInUp"
@@ -150,12 +150,12 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="contactUs container d-flex flex-column align-items-center justify-content-center text-center p-0 ">
-        <p
-          className="wow animate__animated animate__fadeInUp"
+        <h1
+          className="twoColor wow animate__animated animate__fadeInUp"
           data-wow-duration="1s"
         >
-          <span>Contact </span>Us
-        </p>
+          Contact <span>Us</span>
+        </h1>
         <p
           className="mt-sm-4 mb-5 px-2 wow animate__animated animate__fadeInUp"
           data-wow-duration="1s"
