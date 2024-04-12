@@ -115,6 +115,16 @@
 .accordion-button:focus {
   box-shadow: none !important;
 }
+
+.swiper-pagination-bullet {
+  height: 12px !important;
+  width: 12px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #005490 !important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

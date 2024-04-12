@@ -1,16 +1,27 @@
 "use client";
 
+import axiosApi from "@/api/axiosConfig";
 import "./page.css";
 import TopBg from "@/components/topBg";
+import FormValidInput from "@/components/validInput";
 import Link from "next/link";
 import { useState } from "react";
 
 const ContactUs = () => {
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isMessageSending, setIsMessageSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
   const [contactDetail, setContactDetail] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+  });
+  const [errClass, setErrClass] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    message: false,
   });
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -18,16 +29,51 @@ const ContactUs = () => {
       ...contactDetail,
       [name]: value,
     });
-  };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log(contactDetail);
-    setContactDetail({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
+    setErrClass({
+      ...errClass,
+      [name]: value.trim() === "",
     });
+  };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const error = {};
+    const fieldsToValidate = ["name", "email", "phone", "message"];
+
+    fieldsToValidate.forEach((field) => {
+      if (contactDetail[field].trim() === "") {
+        error[field] = true;
+      }
+    });
+    setErrClass(error);
+    const hasErrors = Object.keys(error).length > 0;
+    if (!hasErrors) {
+      try {
+        setIsMessageSent(false);
+        setIsMessageSending(true);
+
+        const response = await axiosApi.post("contact-us", contactDetail);
+        if (response.status === 200) {
+          setContactDetail({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+          setIsMessageSent(true);
+          setTimeout(() => {
+            setIsMessageSending(false);
+          }, 3000);
+        }
+      } catch (error) {
+        console.log(error);
+        setIsMessageSent(false);
+        setErrorMessage(true);
+        setIsMessageSending(false);
+        setTimeout(() => {
+          setErrorMessage(false);
+        }, 3000);
+      }
+    }
   };
 
   return (
@@ -118,68 +164,84 @@ const ContactUs = () => {
           email. We'd love to talk to you!
         </p>
         <div
-          className="map container p-0 d-flex flex-wrap align-items-center justify-content-center wow animate__animated animate__fadeInUp"
+          className="map container p-0 d-flex flex-column flex-md-row align-items-center justify-content-center wow animate__animated animate__fadeInUp"
           data-wow-duration="1s"
         >
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} noValidate>
             <div className="input-group d-flex flex-column text-start ">
               <p>Get a quote now!</p>
               <p>Connect with us for your requirements or queries.</p>
             </div>
             <div className="my-5">
+              <FormValidInput
+                placeholder={"Your Name*"}
+                name={"name"}
+                value={contactDetail.name}
+                onChange={onChange}
+                img={"/Profile.svg"}
+                alt="mailPic"
+                errClass={errClass.name}
+                isRequired={true}
+                invalidMessage={"Name is required"}
+              />
+              <FormValidInput
+                type={"email"}
+                placeholder={"Email*"}
+                name={"email"}
+                value={contactDetail.email}
+                onChange={onChange}
+                img={"/formMessage.svg"}
+                alt="mailPic"
+                errClass={errClass.email}
+                isRequired={true}
+                invalidMessage={"Email is required"}
+              />
+              <FormValidInput
+                type="number"
+                placeholder="Phone number"
+                name="phone"
+                value={contactDetail.phone}
+                onChange={onChange}
+                img={"/formCalling.svg"}
+                alt="phonePic"
+                errClass={errClass.phone}
+                isRequired={true}
+                invalidMessage={"Phone Number is required"}
+              />
               <div className="input-group position-relative mb-4">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Your Name*"
-                  aria-label="Your Name*"
-                  aria-describedby="addon-wrapping"
-                  name="name"
-                  value={contactDetail.name}
-                  onChange={onChange}
-                />
-                <img src={"/Profile.svg"} alt="userPic" />
-              </div>
-              <div className="input-group position-relative mb-4">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Email*"
-                  aria-label="Email*"
-                  aria-describedby="addon-wrapping"
-                  name="email"
-                  value={contactDetail.email}
-                  onChange={onChange}
-                />
-                <img src={"/formMessage.svg"} alt="mailPic" />
-              </div>
-              <div className="input-group position-relative mb-4">
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Phone number (optional)"
-                  aria-label="Phone number (optional)"
-                  aria-describedby="addon-wrapping"
-                  name="phone"
-                  value={contactDetail.phone}
-                  onChange={onChange}
-                />
-                <img src={"/formCalling.svg"} alt="phonePic" />
-              </div>
-              <div className="input-group position-relative">
-                <textarea
-                  className="form-control"
-                  rows="4"
-                  placeholder="How can we help you?"
-                  name="message"
-                  value={contactDetail.message}
-                  onChange={onChange}
-                ></textarea>
+                <div className="col">
+                  <textarea
+                    className={`form-control ${
+                      errClass.message ? "is-invalid" : ""
+                    }`}
+                    rows="4"
+                    placeholder="How can we help you?"
+                    name="message"
+                    value={contactDetail.message}
+                    onChange={onChange}
+                  ></textarea>
+                  <div
+                    className={`invalid-feedback ${
+                      errClass.message ? "d-block" : ""
+                    }`}
+                  >
+                    Message is Required
+                  </div>
+                </div>
               </div>
             </div>
             <div className="input-group">
-              <button type="submit" className="form-control">
-                Send Message
+              <button
+                type="submit"
+                className={`form-control ${
+                  isMessageSending ? "sendingMessage" : "sendMessage"
+                }`}
+                disabled={isMessageSending}
+              >
+                {isMessageSending &&
+                  (isMessageSent ? "Message Sent" : "sending...")}
+                {!isMessageSending && !errorMessage && "Send Message"}
+                {errorMessage && "Something Wrong, Message Not Sent"}
               </button>
             </div>
           </form>

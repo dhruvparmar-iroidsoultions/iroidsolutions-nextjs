@@ -18,13 +18,14 @@ export default async function Home() {
   try {
     const response = await axiosApi.get("index");
     const data = response.data.data;
+
     return (
       <main className={styles.main}>
         <HeroSection />
         <VideoTestimonial videoTestimonialArray={data.video_testimonials} />
         <CaseStudy casestudy={data.case_study} />
         <TestimonialReview clientTestimonial={data.testimonials} />
-        <PortfolioHome portfolio={data.portfolio || []} />
+        <PortfolioHome portfolio={[]} />
         <Numbers />
         <OurSkills />
         <OfcEnviroment slides={data.our_office_environment} />

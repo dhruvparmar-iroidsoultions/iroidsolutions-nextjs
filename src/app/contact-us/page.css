@@ -102,11 +102,11 @@
   margin-bottom: 10rem;
 }
 
-.map form {
-  /* width: 50%; */
+/* .map form {
+  width: 50%;
   padding: 3rem 6rem;
   max-width: 500px;
-}
+} */
 
 .map form p:nth-child(1) {
   font-family: "Public Sans";
@@ -151,17 +151,23 @@
   font-weight: 600;
 }
 
-.map form,
-.map iframe {
-  flex: 1;
+@media only screen and (min-width: 1000px) {
+  .map form {
+    padding: 3rem 6rem;
+  }
 }
 
-@media only screen and ((min-width: 768px) And (max-width: 1000px)) {
+@media only screen and (max-width: 1000px) {
   .map form {
     padding: 0 2rem;
   }
 }
-
+@media only screen and (min-width: 767px) {
+  .map form,
+  .map iframe {
+    flex: 1;
+  }
+}
 @media only screen and (max-width: 767px) {
   .contactUs p {
     font-size: 40px;
@@ -176,6 +182,9 @@
 
   .figureContainer p {
     font-size: 14px;
+  }
+  .map form {
+    padding: 2rem;
   }
 }
 

@@ -1,12 +1,12 @@
 const OurSkills = () => {
   return (
     <div className="skills text-center w-100">
-      <div className="container py-5 text-white">
+      <div className="container pt-5 py-md-5 text-white">
         <h3>Our Skills</h3>
         <h1 className="f38">
           "Driving Digital Transformation with Expertise and Excellence"
         </h1>
-        <div className="skills-grid-container mt-5 py-5">
+        <div className="skills-grid-container mt-md-5 py-5">
           <div className="lineCircle d-flex align-items-center justify-content-between position-absolute"></div>
           <div className="skill-grid-item item1">
             <p>

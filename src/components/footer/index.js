@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="footer_hr mt-5" />
+        <hr className="footer_hr mt-md-5" />
         <span className="my-3 container text-center d-flex justify-content-center py-1">
           All rights reserved to iRoidSolutions.com &copy; 2023
         </span>

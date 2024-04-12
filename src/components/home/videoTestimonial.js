@@ -5,10 +5,17 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/effect-flip";
 import ReactPlayer from "react-player";
 import Image from "next/image";
+import { useState } from "react";
 
 const VideoTestimonial = ({ videoTestimonialArray }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const [videoTestimonial, setVideoTestimonial] = useState([]);
-  // const [testimonialVdo, setTestimonialVdo] = useState("");
+  const [testimonialVdo, setTestimonialVdo] = useState("");
+  const testimonialVdoModal = (youtubeLink) => {
+    document.getElementById("modalBtn").click();
+    setIsModalOpen(true);
+    setTestimonialVdo(youtubeLink);
+  };
   const mapUserVideo =
     videoTestimonialArray &&
     videoTestimonialArray.map((video) => {
@@ -17,7 +24,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
           <div className="col videoContainer position-relative">
             <div
               className="card text-white position-relative"
-              // onClick={() => testimonialVdoModal(video.youtubeVideoLink)}
+              onClick={() => testimonialVdoModal(video.videolink)}
               style={{
                 height: "100%",
                 backgroundImage: `url(${video.thumbnail})`,
@@ -54,7 +61,7 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
     });
 
   return (
-    <div className="videoTestimonialContainer py-5 my-5 position-relative overflow-hidden w-100">
+    <div className="videoTestimonialContainer py-3 py-md-5 mb-5 my-md-5 position-relative overflow-hidden w-100">
       <img src={"/bgTopLeft.svg"} alt="" className="wwr-bg" />
       <img src={"/bgBottomLeft.svg"} alt="" className="wwr-bg" />
       <img src={"/bgTopRight.svg"} alt="" className="wwr-bg" />
@@ -115,15 +122,15 @@ const VideoTestimonial = ({ videoTestimonialArray }) => {
               id="closeModal"
               data-bs-dismiss="modal"
               aria-label="Close"
-              //   onClick={() => setIsModalOpen(false)}
+              onClick={() => setIsModalOpen(false)}
             ></button>
-            {/* {isModalOpen && (
+            {isModalOpen && (
               <ReactPlayer
                 className="react-player"
                 url={testimonialVdo}
                 controls
               />
-            )} */}
+            )}
           </div>
         </div>
       </div>

@@ -40,10 +40,7 @@ const ContactUs = () => {
     const fieldsToValidate = ["name", "email", "phone", "message"];
 
     fieldsToValidate.forEach((field) => {
-      if (
-        typeof contactDetail[field] === "string" &&
-        contactDetail[field].trim() === ""
-      ) {
+      if (contactDetail[field].trim() === "") {
         error[field] = true;
       }
     });
@@ -55,7 +52,6 @@ const ContactUs = () => {
         setIsMessageSending(true);
 
         const response = await axiosApi.post("contact-us", contactDetail);
-        console.log(response);
         if (response.status === 200) {
           setContactDetail({
             name: "",
@@ -82,18 +78,18 @@ const ContactUs = () => {
 
   return (
     <div
-      className="homeContactUs w-100 d-flex flex-column align-items-center my-5 position-relative wow animate__animated animate__fadeIn"
+      className="homeContactUs w-100 d-flex flex-column align-items-center my-md-5 position-relative wow animate__animated animate__fadeIn"
       data-wow-duration="2s"
     >
       <img src={"/bgTopLeft.svg"} alt="" className="wwr-bg" />
       <img src={"/bgBottomLeft.svg"} alt="" className="wwr-bg" />
       <img src={"/bgTopRight.svg"} alt="" className="wwr-bg" />
       <img src={"/bgBottomRight.svg"} alt="" className="wwr-bg" />
-      <p className="mt-5 firstBlue">Contact Us</p>
+      <p className="mt-5 mb-0 mb-sm-2 mb-md-3 firstBlue">Contact Us</p>
       <p className="f38 text-center wow animate__animated animate__fadeInLeft">
         Get in Touch With Us
       </p>
-      <p className="f20 mb-5 text-center wow animate__animated animate__fadeInRight">
+      <p className="f20 mb-md-5 text-center wow animate__animated animate__fadeInRight">
         Connect with us for your requirements or queries.
       </p>
       <div className="container d-flex flex-column flex-lg-row py-5 mb-5">
@@ -101,7 +97,7 @@ const ContactUs = () => {
           <div className="d-flex align-start gap-4 gap-sm-5">
             <img src={"/location.png"} alt="" className="" />
             <div className="row conContainer">
-              <h3 className=" p-0 f20 wow animate__animated animate__fadeInRight">
+              <h3 className="p-0 f20 wow animate__animated animate__fadeInRight">
                 Visit Us:
               </h3>
               <p className=" p-0 lText mb-0">
@@ -158,7 +154,6 @@ const ContactUs = () => {
               isRequired={true}
               invalidMessage={"Email is required"}
             />
-
             <FormValidInput
               type="number"
               placeholder="Phone number"

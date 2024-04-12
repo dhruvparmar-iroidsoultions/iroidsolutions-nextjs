@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Button = ({ linkPath, text, cn, arrow = true }) => {
   return (
-    <button className={cn || "seeAllBtn my-5 position-relative"}>
+    <button className={cn || "seeAllBtn my-2 my-md-5 position-relative"}>
       <Link href={`${linkPath}`}>
         {text || "See All"}
         {arrow && (

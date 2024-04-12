@@ -52,6 +52,7 @@ const CaseStudy = ({ casestudy }) => {
           grabCursor={true}
           navigation={true}
           modules={[Navigation]}
+          spaceBetween={20}
         >
           {mapCasestudy}
         </Swiper>
