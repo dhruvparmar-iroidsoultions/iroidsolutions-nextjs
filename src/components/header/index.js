@@ -90,7 +90,7 @@ const Header = () => {
             >
               <li className="nav-item">
                 <Link
-                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 d-lg-none d-xl-block ${
                     pathname === "/" ? "activeLink" : ""
                   }`}
                   href="/"
