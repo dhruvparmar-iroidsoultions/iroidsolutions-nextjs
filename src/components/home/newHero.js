@@ -7,7 +7,7 @@ const HeroSection = () => {
     <main className="hero-main pt-5 mx-2 mx-sm-auto">
       <div className="container my-3 my-md-5 p-md-5 overflow-hidden">
         <div className="p-4 p-md-5">
-          <div className="py-1 py-sm-3 py-md-5">
+          <div className="py-1">
             <h3 className="mb-3 fh3">10+ Years of Excellence</h3>
             <p className="mb-4 f48">
               We provide you with complete{" "}
@@ -21,7 +21,7 @@ const HeroSection = () => {
               We live and breathe apps - <br />
               that's why our clients love working with us
             </h5>
-            <Button text={"See Testimonials"} />
+            <Button text={"See Testimonials"} linkPath={"testimonials"} />
           </div>
         </div>
       </div>

@@ -9,7 +9,10 @@ const Button = ({ linkPath, text, cn, arrow = true, children }) => {
         "more-btn my-2 my-md-5 position-relative fw-semibold rounded-3"
       }
     >
-      <Link className="text-decoration-none" href={`${linkPath}`}>
+      <Link
+        className="text-decoration-none d-block d-flex align-items-center justify-content-center w-100 h-100"
+        href={`${linkPath}`}
+      >
         {children ? children : text || "See More"}
         {/* {arrow && (
           <svg
