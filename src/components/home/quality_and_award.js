@@ -39,7 +39,7 @@ const Quality_and_award = () => {
     },
   ];
   return (
-    <div className="py-5">
+    <div className="pb-5">
       <div className="rotate-text-container w-100 py-3 text-light">
         <Marquee className="d-flex align-items-center gap-2 overflow-hidden">
           <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">

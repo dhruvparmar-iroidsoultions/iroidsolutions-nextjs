@@ -26,10 +26,11 @@
 }
 
 .iwsButtons button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #005490;
   border-radius: 50%;
+  border: 2px solid transparent;
   /* display: flex;
   align-items: center;
   justify-content: center;
@@ -41,13 +42,13 @@
     hue-rotate(158deg) brightness(108%) contrast(101%);
 }
 
-.iwsButtons .prevBtn {
+.iwsButtons .prevBtn img {
   rotate: 180deg;
 }
 
 .iwsButtons button:hover {
   background-color: white;
-  border: 2px solid #005490;
+  border: 2px solid #005490 !important;
 }
 
 .iwsButtons button:hover img {
@@ -117,12 +118,13 @@
 }
 
 .swiper-pagination-bullet {
-  height: 12px !important;
-  width: 12px !important;
+  height: 5px !important;
+  width: 17px !important;
+  border-radius: 2px !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #005490 !important;
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%) !important;
 }
 
 ::-webkit-scrollbar {

@@ -2,12 +2,16 @@ import React from "react";
 import "./index.css";
 import Link from "next/link";
 
-const Button = ({ linkPath, text, cn, arrow = true }) => {
+const Button = ({ linkPath, text, cn, arrow = true, children }) => {
   return (
-    <button className={cn || "seeAllBtn my-2 my-md-5 position-relative"}>
-      <Link href={`${linkPath}`}>
-        {text || "See All"}
-        {arrow && (
+    <button
+      className={
+        "more-btn my-2 my-md-5 position-relative fw-semibold rounded-3"
+      }
+    >
+      <Link className="text-decoration-none" href={`${linkPath}`}>
+        {children ? children : text || "See More"}
+        {/* {arrow && (
           <svg
             width="24"
             height="24"
@@ -25,7 +29,7 @@ const Button = ({ linkPath, text, cn, arrow = true }) => {
               strokeLinejoin="round"
             />
           </svg>
-        )}
+        )} */}
       </Link>
     </button>
   );

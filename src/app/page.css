@@ -79,6 +79,7 @@
 .hero-main .container:nth-child(1) {
   background-image: url(/hero-bg.svg);
   background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
   border-radius: 40px;
 }
@@ -109,7 +110,8 @@
 .hover-me-img {
   filter: grayscale();
   max-width: 300px;
-  width: 100%;
+  height: auto;
+  /* width: 100%; */
   /* height: 100%; */
   cursor: pointer;
   transition: filter 0.3s;
@@ -162,6 +164,10 @@
   max-width: 12rem;
 }
 
+.client-testimonial {
+  width: 90%;
+}
+
 .videoContainer {
   height: 175px;
 }
@@ -170,14 +176,31 @@
   font-size: 14px;
   color: #d4d4d8;
 }
-
-#vdoTestimonialSwiper .testimonial-gradiant-bg {
-  display: none;
+.video-testimonial-container {
+  width: 90%;
+  margin: auto;
 }
 
-#vdoTestimonialSwiper .swiper-slide-active .testimonial-gradiant-bg {
-  display: block;
+.video-testimonial-swiper .swiper-button-prev {
+  left: -3rem;
 }
+
+.video-testimonial-swiper .swiper-button-next {
+  right: -3rem;
+}
+
+/* .video-testimonial-slide div:first-child {
+  max-width: 90%;
+  margin: auto;
+} */
+/* .video-testimonial-wrapper {
+  max-width: 90% !important;
+  margin: auto;
+} */
+
+/* .video-testimonial-prev-slide {
+  margin-right: 50px;
+} */
 
 #closeModal {
   right: -6rem;
@@ -247,7 +270,7 @@
 
 .caseStudy {
   color: white;
-  background-image: url("/csBG.svg");
+  background-image: url("/case-study-bg.svg");
 }
 
 .caseStudy .swiper-wrapper {
@@ -293,13 +316,13 @@
   font-size: 24px;
   max-width: 526px;
 }
-
+/* 
 .caseLeft button:hover,
 .testimonialsSwiper button:hover,
 .homePortfolio button:hover {
   color: white !important;
   background-color: #005490;
-}
+} */
 
 .testimonialCardContainer {
   max-width: 600px;
@@ -878,6 +901,9 @@
   /* .caseRight img {
     height: 22rem;
   } */
+  /* .client-testimonial {
+    width: 100%;
+  } */
 
   .homeGridContainer {
     grid-template-columns: repeat(2, 1fr);
@@ -886,7 +912,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  #vdoTestimonialSwiper .swiper-slide {
+
+  /* #vdoTestimonialSwiper .swiper-slide {
     scale: 1;
     right: -40px;
   }
@@ -895,7 +922,8 @@
   }
   #vdoTestimonialSwiper .swiper-slide-next {
     right: 15px;
-  }
+  } */
+
   .conContainer {
     padding: 0;
   }
@@ -967,7 +995,12 @@
   .videoTestimonialContainer .wwr-bg:nth-child(3) {
     display: none;
   }
-  #vdoTestimonialSwiper .swiper-slide {
+
+  .video-testimonial-slide {
+    max-width: 90%;
+  }
+
+  /* #vdoTestimonialSwiper .swiper-slide {
     scale: 1;
     right: 0px;
   }
@@ -976,7 +1009,7 @@
   }
   #vdoTestimonialSwiper .swiper-slide-next {
     right: 0;
-  }
+  } */
   .caseStudy .swiper-slide {
     padding-inline: 0rem;
   }

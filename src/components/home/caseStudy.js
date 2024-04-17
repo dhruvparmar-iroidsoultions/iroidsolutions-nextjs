@@ -41,7 +41,7 @@ const CaseStudy = ({ casestudy }) => {
         Case Study
       </h3>
       <p
-        className="f38 mb-4 text-center wow animate__animated animate__fadeInLeft"
+        className="f38 mb-4 text-center text-white wow animate__animated animate__fadeInLeft"
         // data-wow-duration="2s"
       >
         Creating Success Stories for Startups to Global Brands.

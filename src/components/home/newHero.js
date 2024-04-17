@@ -21,29 +21,26 @@ const HeroSection = () => {
               We live and breathe apps - <br />
               that's why our clients love working with us
             </h5>
-            <Button
-              text={"See Testimonials"}
-              cn="btn shadowBtn d-flex align-items-center justify-content-around fs-5 py-2 px-5 position-relative"
-            />
+            <Button text={"See Testimonials"} />
           </div>
         </div>
       </div>
       <div className="container">
         <div className="ratings row row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-2 g-sm-3 g-md-4 g-lg-5 justify-content-sm-between justify-content-md-center">
           <div className="col p-0 d-flex align-items-center justify-content-center">
-            <Image src={"/rating 1.svg"} width={180} height={100} />
+            <Image src={"/rating 1.svg"} alt="" width={180} height={100} />
           </div>
           <div className="col p-0 d-flex align-items-center justify-content-center">
-            <Image src={"/rating 2.svg"} width={180} height={100} />
+            <Image src={"/rating 2.svg"} alt="" width={180} height={100} />
           </div>
           <div className="col p-0 d-flex align-items-center justify-content-center">
-            <Image src={"/rating 3.svg"} width={180} height={100} />
+            <Image src={"/rating 3.svg"} alt="" width={180} height={100} />
           </div>
           <div className="col p-0 d-flex align-items-center justify-content-center">
-            <Image src={"/rating 4.svg"} width={180} height={100} />
+            <Image src={"/rating 4.svg"} alt="" width={180} height={100} />
           </div>
           <div className="col p-0 d-flex align-items-center justify-content-center">
-            <Image src={"/rating 5.svg"} width={180} height={100} />
+            <Image src={"/rating 5.svg"} alt="" width={180} height={100} />
           </div>
         </div>
       </div>
