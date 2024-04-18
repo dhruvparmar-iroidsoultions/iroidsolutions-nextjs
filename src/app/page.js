@@ -14,6 +14,9 @@ import Blogs from "@/components/home/blogs";
 import ContactUs from "@/components/home/contactUs";
 import HeroSection from "@/components/home/newHero";
 import Quality_and_award from "@/components/home/quality_and_award";
+import Map from "@/components/home/world_map";
+import ScrollerLine from "@/components/home/project-scroller";
+import Process from "@/components/home/process";
 
 export default async function Home() {
   try {
@@ -29,9 +32,12 @@ export default async function Home() {
         <CaseStudy casestudy={data.case_study} />
         <TestimonialReview clientTestimonial={data.testimonials} />
         <PortfolioHome portfolio={[]} />
+        <Map />
+        <ScrollerLine />
         <Numbers />
-        <OurSkills />
+        {/* <OurSkills /> */}
         <OfcEnviroment slides={data.our_office_environment} />
+        <Process />
         <FAQs faqs={data.faqs} />
         <Blogs blogs={data.blogs} />
         <ContactUs />
@@ -45,7 +51,7 @@ export default async function Home() {
         <HeroSection />
         <Quality_and_award />
         <Numbers />
-        <OurSkills />
+        {/* <OurSkills /> */}
         <ContactUs />
       </main>
     );

@@ -4,8 +4,14 @@ import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 import Button from "../button";
+import Image from "next/image";
 
 const TestimonialReview = ({ clientTestimonial = [] }) => {
+  const removeTags = (html) => {
+    const cleanText = html.replace(/<[^>]*>/g, "");
+    return cleanText;
+  };
+
   const mapTestimonialsReview = clientTestimonial.map((review) => {
     const stars = [];
     const starLength = review.stars || 5;
@@ -29,11 +35,13 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
     return (
       <SwiperSlide className="card testimonialCardContainer" key={review.id}>
         <div className="card-body d-flex flex-column text-start py-2 py-md-4 px-5">
-          <ul className="list-unstyled d-flex">{stars}</ul>
-          <p
-            className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight"
-            dangerouslySetInnerHTML={{ __html: review.description }}
-          />
+          <div className="d-flex align-items-center justify-content-between gap-3">
+            <ul className="list-unstyled d-flex">{stars}</ul>
+            <Image src={"/quote-up-right.svg"} alt="" width={55} height={55} />
+          </div>
+          <p className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight">
+            “{removeTags(review.description)}”
+          </p>
           <div className="testimonialProfileContainer d-flex align-items-center gap-4">
             <div className="d-flex justify-content-center">
               <img
@@ -59,11 +67,11 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
   });
   return (
     <div className="testimonialsSwiper container py-2 py-md-5 text-center d-flex flex-column align-items-center justify-content-center wow animate__animated animate__fadeIn">
-      <p className="my-2 mt-md-5 firstBlue">Testimonials</p>
-      <p className="f38 wow animate__animated animate__fadeInLeft">
+      <p className="my-2 mt-md-5 fs-4 fw-semibold">Testimonials</p>
+      <p className="text-005490 fs-1 fw-bolder wow animate__animated animate__fadeInLeft">
         What Clients Say
       </p>
-      <p className="f20 container wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+      <p className="f20 fs-5 fw-medium container wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
         This slide covers the client testimonials and what our customers have to
         say about our company and its services to understand the company’s
         market reputation.

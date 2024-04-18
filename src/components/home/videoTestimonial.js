@@ -111,13 +111,13 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
   return (
     <div className="container py-3 py-md-5 mb-5 my-md-5 position-relative overflow-hidden w-100">
       <div className="videoTestimonial d-flex flex-column align-items-center">
-        <h3 className="firstBlue wow animate__animated animate__fadeInDown">
+        <h3 className="fs-4 fw-semibold wow animate__animated animate__fadeInDown">
           Video Testimonials
         </h3>
-        <p className="m-0 f38 wow animate__animated animate__fadeInLeft">
+        <p className="m-0 fs-1 fw-bolder text-005490 wow animate__animated animate__fadeInLeft">
           Over 1000+ People Trust Us
         </p>
-        <p className="mb-5 f20 wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+        <p className="mb-5 f20 fs-5 fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
           Built for Service Professionals, by Service Professionals
         </p>
         <div className="client-testimonial mx-auto">
