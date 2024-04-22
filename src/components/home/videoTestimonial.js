@@ -162,13 +162,13 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
             className="prevBtn position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
             onClick={prevSlide}
           >
-            <img src={"/read more.png"} alt="read more" />
+            <img src={"/swiper-left-arrow.png"} alt="read more" />
           </button>
           <button
             className="position-absolute top-50 end-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
             onClick={nextSlide}
           >
-            <img src={"/read more.png"} alt="read more" />
+            <img src={"/swiper-right-arrow.png"} alt="read more" />
           </button>
           <div className="video-testimonial-container">
             <Swiper

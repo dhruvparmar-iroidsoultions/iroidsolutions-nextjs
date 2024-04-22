@@ -17,6 +17,10 @@ import Quality_and_award from "@/components/home/quality_and_award";
 import Map from "@/components/home/world_map";
 import ScrollerLine from "@/components/home/project-scroller";
 import Process from "@/components/home/process";
+import Services from "@/components/home/services";
+import TechStacks from "@/components/home/tech-stacks";
+import ListedPlatforms from "@/components/home/scrolling-plateforms";
+import IndustriesWeServe from "@/components/home/industries-we-serve";
 
 export default async function Home() {
   try {
@@ -28,6 +32,7 @@ export default async function Home() {
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
+        <ListedPlatforms />
         <VideoTestimonial videoTestimonialArray={data.video_testimonials} />
         <CaseStudy casestudy={data.case_study} />
         <TestimonialReview clientTestimonial={data.testimonials} />
@@ -38,6 +43,11 @@ export default async function Home() {
         {/* <OurSkills /> */}
         <OfcEnviroment slides={data.our_office_environment} />
         <Process />
+        <Services />
+        <TechStacks />
+        <IndustriesWeServe />
+        <h4 className="fw-semibold my-5 w-100 text-center">Listed Platforms</h4>
+        <ListedPlatforms />
         <FAQs faqs={data.faqs} />
         <Blogs blogs={data.blogs} />
         <ContactUs />
@@ -50,8 +60,14 @@ export default async function Home() {
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
+        <ListedPlatforms />
+        <Map />
+        <ScrollerLine />
         <Numbers />
+        <Process />
+        <Services />
         {/* <OurSkills /> */}
+        <ListedPlatforms />
         <ContactUs />
       </main>
     );

@@ -1,52 +1,112 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../button";
 import Card from "../card";
-import Link from "next/link";
+import { Navigation, Pagination } from "swiper/modules";
 
-const Blogs = ({ blogs, show = true }) => {
+const Blogs = ({ blogs = [], show = true }) => {
   const removeTags = (html) => {
     const cleanText = html.replace(/<[^>]*>/g, "");
     return cleanText;
   };
 
-  const mapBlog =
-    blogs &&
-    blogs.slice(0, 3).map((blog) => (
-      <div className="col" key={blog.id}>
-        <Card
-          cardOfClass={"blog"}
-          cardText={blog.title}
-          cardTitle={removeTags(blog.description)}
-          img={blog.thumbnail}
-          tag={
-            <Link href={`/blog/${blog.slug}`} className="text-end mb-0">
-              Read More
-              <span>
-                <img className="ms-2 " src={"/read more.png"} alt="" />
-              </span>
-            </Link>
-          }
-        />
-      </div>
-    ));
+  const prevSlide = () => {
+    document
+      .getElementById("home-blogs-swiper")
+      ?.getElementsByClassName("swiper-button-prev")[0]
+      .click();
+  };
+
+  const nextSlide = () => {
+    document
+      .getElementById("home-blogs-swiper")
+      ?.getElementsByClassName("swiper-button-next")[0]
+      ?.click();
+  };
+
+  const mapBlog = blogs.slice(0, 3).map((blog) => (
+    <SwiperSlide className="bg-transparent p-3 p-md-0" key={blog.id}>
+      <Card
+        cardOfClass={"blog"}
+        cardText={blog.title}
+        cardTitle={removeTags(blog.description)}
+        img={blog.thumbnail}
+        textStyle={"fs-5 fw-semibold"}
+        titlestyle={"fs-6"}
+        readMore={true}
+        readMoreLink={`/blog/${blog.slug}`}
+      />
+    </SwiperSlide>
+  ));
   return (
-    <div className="container text-center d-flex flex-column align-items-center">
-      {show && <p className="mt-3 mt-md-5 firstBlue">Blogs</p>}
-      {show && (
-        <p className="f38 wow animate__animated animate__fadeInLeft">
-          Strategies & ideas to help your business succeed!
-        </p>
-      )}
-      {show && (
-        <p className="f20 mb-3 mb-md-5 wow animate__animated animate__fadeInRight">
-          "Each blog post is a stepping stone on our journey of growth,
-          providing us with inspiration, guidance, and the latest trends in the
-          ever-evolving tech landscape."
-        </p>
-      )}
-      <div className="blogs row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 g-lg-4 w-100 row wow animate__animated animate__fadeInUp">
-        {mapBlog}
+    <div className="w-100 p-0 home-blogs-main-container">
+      <div className="home-blogs-container">
+        <div className="container text-center d-flex flex-column align-items-center">
+          {show && <p className="mt-3 mt-md-5 fs-4 fw-semibold">Blogs</p>}
+          {show && (
+            <p className="text-005490 fs-1 fw-bolder wow animate__animated animate__fadeInLeft">
+              Strategies & Ideas To Help Your Business Succeed!
+            </p>
+          )}
+          {show && (
+            <p className="f20 fs-5 fw-medium mb-3 mb-md-0 wow animate__animated animate__fadeInRight">
+              "Each blog post is a stepping stone on our journey of growth,
+              providing us with inspiration, guidance, and the latest trends in
+              the ever-evolving tech landscape."
+            </p>
+          )}
+          <div className="iwsButtons w-100 p-0 position-relative">
+            <button
+              className="prevBtn position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
+              onClick={prevSlide}
+            >
+              <img src={"/swiper-left-arrow.png"} alt="read more" />
+            </button>
+            <button
+              className="position-absolute top-50 end-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
+              onClick={nextSlide}
+            >
+              <img src={"/swiper-right-arrow.png"} alt="read more" />
+            </button>
+            <div className="home-blogs-container">
+              <Swiper
+                loop={true}
+                navigation={true}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Navigation, Pagination]}
+                className="home-blogs-swiper blogs p-5 wow animate__animated animate__fadeIn"
+                data-wow-duration="2s"
+                slideActiveClass="home-blogs-active-slide"
+                slidesPerView={1}
+                spaceBetween={50}
+                breakpoints={{
+                  1000: {
+                    slidesPerView: 3,
+                  },
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 60,
+                  },
+                }}
+                id="home-blogs-swiper"
+              >
+                {mapBlog}
+                <button
+                  className="d-none"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#testimonialVdoModal"
+                  id="modalBtn"
+                ></button>
+              </Swiper>
+            </div>
+          </div>
+          <Button linkPath="/blog" />
+        </div>
       </div>
-      <Button linkPath="/blog" />
     </div>
   );
 };

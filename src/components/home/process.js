@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Process = () => {
   const allProcess = [
@@ -12,7 +16,6 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 8,
     },
     {
       id: 2,
@@ -20,7 +23,6 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 35,
     },
     {
       id: 3,
@@ -28,7 +30,6 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 50,
     },
     {
       id: 4,
@@ -36,7 +37,6 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 70,
     },
     {
       id: 5,
@@ -44,7 +44,6 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 85,
     },
     {
       id: 6,
@@ -52,92 +51,106 @@ const Process = () => {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
       img: "/process-3.svg",
-      percentage: 100,
     },
   ];
+  // const [percentage, setPercentage] = useState(8);
+  const progressLine = useRef(null);
+  const progressContent = useRef(null);
   const [activeProcess, setActiveProcess] = useState(0);
-  const [percentage, setPercentage] = useState(8);
   const [process, setProcess] = useState(allProcess[0]);
 
-  const updateProcess = (idx, percentage) => {
-    setActiveProcess(idx);
-    setPercentage(percentage);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressLine.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  const updateProcess = (idx) => {
+    // setActiveProcess(idx);
+
+    document.getElementsByClassName("swiper-pagination-bullet")[idx].click();
+  };
+
+  const prevProcess = () => {
+    document
+      .getElementById("process-swiper")
+      ?.getElementsByClassName("swiper-button-prev")[0]
+      .click();
+  };
+
+  const nextProcess = () => {
+    document
+      .getElementById("process-swiper")
+      ?.getElementsByClassName("swiper-button-next")[0]
+      ?.click();
   };
 
   return (
-    <div className="container w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
+    <div className="container py-5 w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
       <h3 className="fs-4 fw-semibold">Our Process</h3>
       <p className="text-005490 fs-1 fw-bolder">
         From Start To Finish, We Prioritize Quality And Precision
       </p>
-      <div
-        className="row row-cols-lg-6 w-100 rounded-4 mx-auto process-nav"
-        style={{ "--process": percentage + "%" }}
-      >
+      <ul className="w-100 list-unstyled rounded-4 mx-auto d-flex align-items-center justify-content-around bg-white rounded border process-ul wow animate__animated animate__fadeIn">
         {allProcess.map((process, idx) => (
-          <div
-            className={`col ${
-              process.id !== 6
-                ? "d-flex align-items-center justify-content-evenly gap-2"
-                : "text-center m-auto"
-            }`}
-            //   className={`
-            //   ${
-            //     5 === 2
-            //       ? "activePortfolioLi text-005490 fw-bolder border-3 border-bottom"
-            //       : "fw-medium"
-            //   }
-            //    px-4 py-3 fs-6 d-flex align-items-center justify-content-center`}
-            //   onClick={() => changeCategory(c, idx)}
-            key={process.id}
+          <li
+            className={`${
+              activeProcess === idx
+                ? "activeProcess text-005490 fw-bolder"
+                : "text-005490"
+            }  px-4 py-3 fs-6 position-relative`}
+            onClick={() => updateProcess(idx)}
+            key={idx}
           >
-            <p
-              className={`${
-                activeProcess + 1 >= process.id
-                  ? "bg-transparent text-white py-3"
-                  : "bg-white"
-              } m-0`}
-              onClick={() => updateProcess(idx, process.percentage)}
-            >
-              {process.title}
-            </p>
-
-            <span
-              className={`${process.id === 6 ? "d-none" : ""} ${
-                activeProcess + 1 >= process.id ? "bg-transparent" : "bg-white"
-              } py-3`}
-            >
-              <Image src="/process-arrow.png" alt="" width={60} height={10} />
-            </span>
-          </div>
+            {process.title}
+          </li>
         ))}
-      </div>
-      <div className="w-100 d-flex h-100">
-        <div className="p-5 text-start process-detail">
+      </ul>
+      <div className="w-100 h-100 d-flex flex-wrap flex-lg-nowrap align-items-center">
+        <div className="p-5 text-start process-detail w-100">
           <p className="fs-1 fw-bolder text-005490">{process.title}</p>
           <p className="fs-5 fw-medium text-justify opacity-75">
             “{process.description}”
           </p>
           <div className="iwsButtons w-100 d-flex align-items-center justify-content-center gap-5">
             <button
-              className=""
-              // onClick={prevSlide}
+              className="prevBtn d-flex align-items-center justify-content-center"
+              onClick={prevProcess}
             >
-              <img src={"/read more.png"} alt="read more" />
+              <img src={"/swiper-left-arrow.png"} alt="read more" />
             </button>
             <p className="fs-5 fw-semibold">
-              03 / <span className="opacity-50">06</span>
+              {process.id.toString().padStart(2, "0")} /{" "}
+              <span className="opacity-50">06</span>
             </p>
             <button
-              className=""
-              // onClick={nextSlide}
+              className="align-items-center justify-content-center"
+              onClick={nextProcess}
             >
-              {" "}
-              <img src={"/read more.png"} alt="read more" />
+              <img src={"/swiper-right-arrow.png"} alt="read more" />
             </button>
           </div>
         </div>
-        <Swiper className="process-swiper">
+        <Swiper
+          className="process-swiper w-100"
+          // loop={true}
+          autoplay={{
+            delay: 10000,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Navigation, Pagination]}
+          onSlideChange={(swiper) => {
+            const newIndex = swiper.activeIndex % allProcess.length;
+            setProcess(allProcess[newIndex]);
+            setActiveProcess(newIndex);
+          }}
+          spaceBetween={10}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
+          grabCursor={true}
+          id="process-swiper"
+        >
           {allProcess.map((process, idx) => (
             <SwiperSlide key={process.id}>
               <Image
@@ -149,6 +162,12 @@ const Process = () => {
               />
             </SwiperSlide>
           ))}
+          <div className="autoplay-progress" slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressLine}>
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
+          </div>
         </Swiper>
       </div>
     </div>

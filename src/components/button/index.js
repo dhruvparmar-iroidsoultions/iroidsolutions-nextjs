@@ -2,12 +2,12 @@ import React from "react";
 import "./index.css";
 import Link from "next/link";
 
-const Button = ({ linkPath, text, cn, arrow = true, children }) => {
+const Button = ({ linkPath, text, m, cn, arrow = true, children }) => {
   return (
     <button
-      className={
-        "more-btn my-2 my-md-5 position-relative fw-semibold rounded-3"
-      }
+      className={`more-btn ${
+        m ? m : "my-2 my-md-5"
+      } position-relative fw-semibold rounded-3`}
     >
       <Link
         className="text-decoration-none d-block d-flex align-items-center justify-content-center w-100 h-100"

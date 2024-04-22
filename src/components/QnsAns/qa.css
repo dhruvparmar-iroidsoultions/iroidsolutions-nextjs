@@ -7,22 +7,27 @@
   text-align: left;
   opacity: 0.8;
 }
+
 .QueAns .accordion-header {
   margin-block: 10px;
 }
 
-.QueAns .accordion-body span {
-  color: #005490;
-}
-
 .QueAns .accordion-body {
+  color: #005490;
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
   letter-spacing: 0em;
   text-align: left;
+}
+
+.QueAns .accordion-body span {
   color: black;
 }
+
+/* .QueAns .accordion-body span p {
+  margin: 0;
+} */
 
 .QueAns .accordion-button:not(.collapsed) {
   background-color: transparent;

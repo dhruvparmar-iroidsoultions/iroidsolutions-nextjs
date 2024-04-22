@@ -12,7 +12,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/yeti-visit.svg"}
               alt="yeti-visit"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -21,7 +21,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/intelli sports.svg"}
               alt="intelli sports"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -30,7 +30,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/Blue-Elephants.svg"}
               alt="Blue-Elephants"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -39,7 +39,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/subway.svg"}
               alt="subway"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -48,7 +48,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/klapty.svg"}
               alt="klapty"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -57,7 +57,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/dribble-bridge.svg"}
               alt="dribble-bridge"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -66,7 +66,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/poptaps.svg"}
               alt="poptaps"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -75,7 +75,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/juthoor.svg"}
               alt="juthoor"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -88,7 +88,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/yoyo-kids.svg"}
               alt="yoyo-kids"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -97,7 +97,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/iuncta2.svg"}
               alt="iuncta2"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -106,7 +106,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/Medics2You.svg"}
               alt="Medics2You"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -124,7 +124,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/rovio.svg"}
               alt="rovio"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -133,7 +133,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/ab-coach.svg"}
               alt="ab-coach"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -142,7 +142,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/Tendask.svg"}
               alt="Tendask"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
@@ -151,7 +151,7 @@ const ScrollerLine = () => {
               className="w-100"
               src={"/fitness factory.svg"}
               alt="fitness factory"
-              width={1200}
+              width={700}
               height={70}
             />
           </div>
