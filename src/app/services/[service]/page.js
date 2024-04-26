@@ -4,9 +4,9 @@ import "./page.css";
 const Service = ({ params }) => {
   const { service } = params;
   return (
-    <div>
+    <>
       <ServiceAndTech serviceOrTech={service} pathName={"services"} />
-    </div>
+    </>
   );
 };
 

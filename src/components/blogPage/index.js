@@ -2,49 +2,19 @@
 
 import { useEffect, useState } from "react";
 import "./blogHomePage.css";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import axiosApi from "@/api/axiosConfig";
 
-const Blogs = ({ blogData, blogCategory = [] }) => {
+const Blogs = () => {
   const [searchText, setSearchText] = useState("");
-  const [blogs, setBlogs] = useState(blogData);
-  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
+  const [blogCategory, setBlogCategory] = useState([]);
   const [showBlogOn, setShowBlogOn] = useState("all");
-  const router = useRouter();
-  // blogs.map((b) =>
-  //   b.category.map((c) =>
-  //     console.log(c.name.toLowerCase().includes(showBlogOn))
-  //   )
-  // )
-  const blogPoints = [
-    "All",
-    "Product",
-    "Design",
-    "MongoDB",
-    "Express",
-    "React",
-    "Node",
-    "Technology",
-    "Businees",
-    "Ai",
-    "Java",
-  ];
 
   const search = (e) => {
     setShowBlogOn("all");
     setSearchText(e.target.value);
-  };
-
-  const filterBlogs = () => {
-    setFilteredBlogs(
-      blogData.filter(
-        (b) =>
-          (showBlogOn === "all" ||
-            b.category.map((c) => c.name.toLowerCase()).includes(showBlogOn)) &&
-          (searchText.trim() === "" || b.title.includes(searchText.trim()))
-      )
-    );
+    getSearchedBlogs(e.target.value);
   };
 
   const removeTags = (html) => {
@@ -55,7 +25,49 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
     return wrappedContent;
   };
 
-  const mapBlogs = filteredBlogs.map((blog, idx) => {
+  const getBlogs = async (id) => {
+    try {
+      const response = await axiosApi.get(
+        id === 0
+          ? `blogs?page=1&latest=1`
+          : `blogs?page=1&categoryId=${id}&latest=1`
+      );
+      const blogs = response.data.data;
+      setBlogs(blogs);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+  };
+  const getSearchedBlogs = async (searchText) => {
+    try {
+      const response = await axiosApi.get(
+        searchText.length === 0
+          ? `blogs?page=1&latest=1`
+          : `blogs?page=1&search=${searchText}&latest=1'`
+      );
+      console.log(response);
+      const blogs = response.data.data;
+      setBlogs(blogs);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+  };
+  const getCategory = async () => {
+    try {
+      const response = await axiosApi.get("/blog-category?page=1");
+      const category = response.data.data;
+      setBlogCategory(category);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+  };
+
+  const newBlogs = (category) => {
+    setShowBlogOn(category.name);
+    getBlogs(category.id);
+  };
+
+  const mapBlogs = blogs.map((blog, idx) => {
     const wrappedText = removeTags(blog.description);
     const date = new Date(blog.created_at * 1000);
     const formattedDate = date.toLocaleDateString("en-US", {
@@ -101,8 +113,10 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
   });
 
   useEffect(() => {
-    filterBlogs();
-  }, [showBlogOn, searchText]);
+    getCategory();
+    getBlogs(0);
+    // filterBlogs();
+  }, []);
 
   return (
     <>
@@ -114,14 +128,28 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
         >
           <label htmlFor="searchInput" id="searchIcon">
             <svg
+              width="27"
+              height="27"
+              viewBox="0 0 27 27"
+              fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              className="bi bi-search"
-              viewBox="0 0 16 16"
             >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              <circle
+                cx="12.7084"
+                cy="12.7084"
+                r="11.2357"
+                stroke="#005490"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M20.5229 21.1055L24.928 25.4991"
+                stroke="#005490"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </label>
           <input
@@ -133,18 +161,32 @@ const Blogs = ({ blogData, blogCategory = [] }) => {
           />
         </form>
 
-        <ul className="blogSearchPoint d-flex align-items-center justify-content-between gap-3 flex-nowrap py-5">
+        <ul className="blogSearchPoint d-flex align-items-center justify-content-between gap-3 flex-nowrap py-5 pe-none">
+          <li
+            className={
+              showBlogOn.toLowerCase() === "all"
+                ? "activeBlogSelection pe-auto"
+                : "pe-auto"
+            }
+            onClick={() => {
+              newBlogs({ name: "all", id: 0 });
+            }}
+          >
+            All
+          </li>
           {blogCategory.map((category, idx) => (
             <li
               className={
-                showBlogOn === category.toLowerCase()
-                  ? "activeBlogSelection"
-                  : ""
+                showBlogOn.toLowerCase() === category.name.toLowerCase()
+                  ? "activeBlogSelection pe-auto"
+                  : "pe-auto"
               }
               key={idx}
-              onClick={() => setShowBlogOn(category.toLowerCase())}
+              onClick={() => {
+                newBlogs(category);
+              }}
             >
-              {category}
+              {category.name}
             </li>
           ))}
         </ul>

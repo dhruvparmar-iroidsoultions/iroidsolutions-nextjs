@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../button";
 import Card from "../card";
 import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Blogs = ({ blogs = [], show = true }) => {
   const removeTags = (html) => {
@@ -25,7 +28,7 @@ const Blogs = ({ blogs = [], show = true }) => {
       ?.click();
   };
 
-  const mapBlog = blogs.slice(0, 3).map((blog) => (
+  const mapBlog = blogs.map((blog) => (
     <SwiperSlide className="bg-transparent p-3 p-md-0" key={blog.id}>
       <Card
         cardOfClass={"blog"}
@@ -94,13 +97,6 @@ const Blogs = ({ blogs = [], show = true }) => {
                 id="home-blogs-swiper"
               >
                 {mapBlog}
-                <button
-                  className="d-none"
-                  type="button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#testimonialVdoModal"
-                  id="modalBtn"
-                ></button>
               </Swiper>
             </div>
           </div>

@@ -2,11 +2,11 @@
 
 import axiosApi from "@/api/axiosConfig";
 import FormValidInput from "@/components/validInput";
-import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import "./index.css";
 
 const ContactUs = () => {
   const [isMessageSent, setIsMessageSent] = useState(false);
@@ -40,7 +40,7 @@ const ContactUs = () => {
     setContactDetail({ ...contactDetail, phone: e });
     setErrClass({
       ...errClass,
-      phone: e.trim() === "" || e.length < 8,
+      phone: e.trim() === "" || e.length < 3,
     });
   };
 
@@ -88,7 +88,7 @@ const ContactUs = () => {
 
   return (
     <div
-      className="homeContactUs w-100 d-flex flex-column align-items-center my-md-5 position-relative wow animate__animated animate__fadeIn"
+      className="homeContactUs text-start w-100 d-flex flex-column align-items-center p-1 my-md-5 position-relative wow animate__animated animate__fadeIn"
       data-wow-duration="2s"
     >
       <p className="mt-5 mb-0 mb-sm-2 mb-md-3 fs-4 fw-semibold">Contact Us</p>
@@ -99,11 +99,11 @@ const ContactUs = () => {
         If you are looking for a solid partner for your projects, send us an
         email. We'd love to talk to you!
       </p>
-      <div className="container homeContact d-flex flex-column flex-lg-row py-5 mb-5 rounded-5">
-        <div className="px-5 mx-auto d-flex flex-column justify-content-evenly gap-4 gap-xl-0 flexElem">
+      <div className="container homeContact d-flex flex-column flex-lg-row py-5 mb-5 mb-lg-0 rounded-5">
+        <div className="px-1 px-sm-3 px-md-5 mx-auto d-flex flex-column justify-content-evenly gap-4 gap-xl-0 flexElem">
           <h1 className="fw-bolder m-0">
-            Let’s Discuss on Something{" "}
-            <span className="text-005490">Cool </span>
+            Let’s Discuss on Something
+            <span className="text-005490"> Cool </span>
             Together {""}
             <span>
               <Image
@@ -117,7 +117,7 @@ const ContactUs = () => {
           <div className="position-relative w-100">
             <hr className="mt-0 position-absolute w-100 top-0 opacity-25" />
           </div>
-          <div className="d-flex align-start gap-4 gap-sm-5">
+          <div className="d-flex align-start  gap-2 gap-sm-4">
             <Image
               className="w-100 h-100"
               src={"/n-call.png"}
@@ -126,11 +126,13 @@ const ContactUs = () => {
               height={100}
             />
             <div className="conContainer">
-              <p className=" p-0 lText mb-2">+ 91 90238 68898 (HR)</p>
-              <p className=" p-0 lText mb-2">+ 91 77788 69939 (Business)</p>
+              <p className=" p-0 fs-6 fw-medium mb-2">+ 91 90238 68898 (HR)</p>
+              <p className=" p-0 fs-6 fw-medium mb-2">
+                + 91 77788 69939 (Business)
+              </p>
             </div>
           </div>
-          <div className="d-flex align-start gap-4 gap-sm-5">
+          <div className="d-flex align-start  gap-2 gap-sm-4">
             <Image
               className="w-100 h-100"
               src={"/n-email.png"}
@@ -139,13 +141,15 @@ const ContactUs = () => {
               height={100}
             />
             <div className="conContainer">
-              <p className=" p-0 lText mb-2">hr@iroidsolutions.in (HR)</p>
-              <p className=" p-0 lText mb-2">
+              <p className=" p-0 fs-6 fw-medium mb-2">
+                hr@iroidsolutions.in (HR)
+              </p>
+              <p className=" p-0 fs-6 fw-medium mb-2">
                 business@iroidsolutions.in (Business)
               </p>
             </div>
           </div>
-          <div className="d-flex align-start gap-4 gap-sm-5">
+          <div className="d-flex align-start  gap-2 gap-sm-4">
             <Image
               className="w-100 h-100"
               src={"/n-location.png"}
@@ -154,7 +158,7 @@ const ContactUs = () => {
               height={100}
             />
             <div className="conContainer">
-              <p className=" p-0 lText mb-2">
+              <p className=" p-0 fs-6 fw-medium mb-2">
                 318 A/318 B, Fortune High Street, Opp. Western Arena , Nr.
                 Madhuvan Circle, LP Savani Rd, Adajan, Surat, Gujarat 395009
               </p>
@@ -163,13 +167,13 @@ const ContactUs = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className="flexElem px-5 bg-white rounded-5"
+          className="flexElem mt-3 mt-lg-0 px-2 px-sm-3 px-md-5 bg-white rounded-5"
           noValidate
         >
-          <p className="fs-4 fw-medium text-center text-black my-5">
+          <p className="fs-4 fw-medium text-center text-black my-3 my-md-5">
             Reach out to us!
           </p>
-          <div className="mb-5">
+          <div className="">
             <FormValidInput
               placeholder={"Name"}
               name={"name"}
@@ -193,18 +197,32 @@ const ContactUs = () => {
               isRequired={true}
               invalidMessage={"Email is required"}
             />
-            <PhoneInput
-              country={"in"}
-              placeholder="Phone Number"
-              value={contactDetail.phone}
-              onChange={phoneChange}
-              isValid={true}
-              searchClass="w-100"
-              inputClass={`w-100 py-4 fs-medium`}
-              containerClass={` mb-4 ${errClass.phone ? "phoneErr" : ""}`}
-              enableSearch
-              specialLabel=""
-            />
+            <div className="input-group position-relative mb-4">
+              <div className="w-100">
+                <PhoneInput
+                  country={"in"}
+                  placeholder="Phone Number"
+                  value={contactDetail.phone}
+                  onChange={phoneChange}
+                  isValid={true}
+                  containerClass={`position-relative ${
+                    errClass.phone ? "phoneErr" : ""
+                  }`}
+                  inputClass={`w-100 py-4 fs-medium`}
+                  searchClass="d-flex align-items-center"
+                  enableSearch
+                  specialLabel=""
+                />
+                <div
+                  className={`invalid-feedback ${
+                    errClass.phone ? "d-block" : ""
+                  }`}
+                >
+                  Phone is Required
+                </div>
+              </div>
+            </div>
+
             {/* <FormValidInput
               type="number"
               placeholder="Phone number"
@@ -219,7 +237,7 @@ const ContactUs = () => {
             /> */}
 
             <div className="input-group position-relative mb-4">
-              <div className="col">
+              <div className="w-100">
                 <textarea
                   className={`form-control ${
                     errClass.message ? "is-invalid" : ""
@@ -252,7 +270,7 @@ const ContactUs = () => {
           <div className="input-group">
             <button
               type="submit"
-              className={`form-control mt-lg-5 ${
+              className={`form-control rounded-3 fs-5 fw-semibold mb-4 ${
                 isMessageSending ? "sendingMessage" : "sendMessage"
               }`}
               disabled={isMessageSending}

@@ -1,0 +1,35 @@
+.amazing-fact {
+  background: #e7ecf1;
+}
+
+.vmc-card-container {
+  background: linear-gradient(100.65deg, #f1f9ff 0.84%, #efefef 98.04%);
+}
+
+.vmc-card {
+  text-align: justify;
+}
+
+.vmc-img {
+  /* max-width: 125px;
+  width: 100%;
+  max-height: 135px;
+  height: 100%; */
+  border-radius: 12px 6px 40px 6px;
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+  box-shadow: 0px 4px 50px 0px #00549033;
+  /* width: 100%;
+  height: 100%; */
+}
+
+.vmc-img[alt="mission-image"] {
+  background: white;
+}
+
+.vmc-text {
+  opacity: 80%;
+}
+
+.vmc-m-card-container {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}

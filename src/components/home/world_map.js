@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Map = () => {
   return (
-    <div className="worldMap container w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
+    <div className="worldMap container w-100 my-5 py-lg-5 d-flex flex-column align-items-center justify-content-center text-center position-relative">
       <h3 className="fs-4 fw-semibold">Our Clients</h3>
       <p className="text-005490 fs-1 fw-bolder">
         Explore Our Global Clients On The Map

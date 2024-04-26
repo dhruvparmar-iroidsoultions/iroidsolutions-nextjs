@@ -26,19 +26,19 @@ const PortfolioHome = () => {
       ?.click();
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosApi.get(
-          `/portfolio?page=1&perPage=7&category_id=${selectedCategory}`
-        );
-        const portfolios = response.data.data;
-        setPortfolio(portfolios);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const fetchData = async () => {
+    try {
+      const response = await axiosApi.get(
+        `/portfolio?page=1&perPage=7&category_id=${selectedCategory}`
+      );
+      const portfolios = response.data.data;
+      setPortfolio(portfolios);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, [selectedCategory]);
   const portfolioCategories = [

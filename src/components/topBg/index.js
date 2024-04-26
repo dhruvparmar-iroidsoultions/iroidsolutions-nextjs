@@ -1,22 +1,24 @@
+import Image from "next/image";
 import "./index.css";
 
-const TopBg = ({ state, text, backgroundImg }) => {
+const TopBg = ({ state, text }) => {
   return (
-    <div className="topBg position-relative py-5">
-      <img
-        className="position-relative "
-        src={backgroundImg || "/contactUsTop.svg"}
-        alt="background"
-      />
-      <div className="contentText position-absolute top-50 start-50 translate-middle z-1 text-light px-2">
-        <p className="text-center text-capitalize">{state}</p>
-        <p className="text-center ">{text}</p>
+    <div className="topBg position-relative py-3 py-md-5">
+      <div className="contentText m-auto text-light text-center px-2 py-3 py-md-5">
+        <h1 className="fs-1 text-capitalize mb-2 mb-md-4 mt-5">
+          {state}{" "}
+          <span className="position-relative">
+            <Image
+              className="position-absolute top-0 translate-middle top-bg-star"
+              src={"/top-bg-star.png"}
+              alt=""
+              width={50}
+              height={50}
+            />
+          </span>
+        </h1>
+        <p className="fs-6 top-bg-text fw-semibold m-auto px-2">{text}</p>
       </div>
-      <img
-        className="colorbg position-absolute top-50 start-50 translate-middle w-100"
-        src={"/pageTopBg.svg"}
-        alt="background"
-      />
     </div>
   );
 };

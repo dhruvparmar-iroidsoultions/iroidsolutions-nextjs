@@ -11,7 +11,7 @@ import OurSkills from "@/components/home/ourSkills";
 import YTslides from "./ytSlides";
 import FetchFAQs from "./faqs";
 import FetchBlogs from "./blogs";
-import ContactUs from "../../components/home/contactUs";
+import ContactUs from "../../components/contactUs";
 
 const Home = () => {
   return <></>;

@@ -81,9 +81,57 @@
   opacity: 0.6;
 }
 
+/* ------------------------- new footer--------------------------- */
+
+.new-footer {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+.footer-top-radius {
+  /* border-radius: 50px; */
+  border-radius: 8.5rem;
+  height: 175px;
+  top: -4px;
+}
+
+.explore-iroid {
+  background: linear-gradient(
+    100.65deg,
+    rgba(241, 249, 255, 0.1) 51.87%,
+    rgba(217, 239, 255, 0.1) 98.04%
+  );
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  transform: translateX(10px);
+}
+
+.explore-iroid li::marker {
+  content: url(/footer-bullet.png);
+}
+
+.get-in-touch {
+  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+}
+
+.go-to-top {
+  cursor: pointer;
+}
+
+.footer-hr-line {
+  height: 1px;
+}
+
+/* ------------------------- new footer--------------------------- */
+
 @media only screen and (max-width: 1030px) {
   .company_info h6 {
     max-width: fit-content;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .explore-iroid,
+  .get-in-touch {
+    height: 100%;
   }
 }
 
@@ -98,10 +146,20 @@
   .footerBottom .infoDetail p {
     font-size: 14px;
   }
+
+  /* new footer */
+  .explore-iroid {
+    width: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
 }
 
-/* @media only screen and (max-width: 340px) {
-    .footerBottom div {
+@media only screen and (max-width: 340px) {
+  .new-footer {
+    word-break: break-word;
+  }
+  /* .footerBottom div {
       gap: 0 !important;
-    }
-  } */
+    } */
+}

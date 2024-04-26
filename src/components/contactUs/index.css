@@ -1,0 +1,86 @@
+.homeContact {
+  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+  border: none;
+}
+
+.homeContactUs .container img {
+  max-width: 44px;
+  max-height: 44px;
+}
+
+.homeContactUs .container .f20 {
+  color: #005490;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.flexElem {
+  flex: 1;
+}
+
+/* .conContainer {
+  padding-right: 6rem;
+} */
+
+.homeContactUs form p:nth-child(1) {
+  font-size: 24px;
+  font-weight: 500;
+  color: #005490;
+}
+
+.homeContactUs form p:nth-child(2) {
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.homeContactUs form div input {
+  padding: 1rem 1rem 1rem 3.5rem;
+  /* border-radius: 60px !important; */
+  border: 1px solid rgba(0, 84, 144, 0.2);
+  background: rgba(240, 250, 253, 0.2);
+}
+
+.homeContactUs form textarea,
+.homeContactUs form div input {
+  width: 100% !important;
+  background: #f7f7f7 !important;
+}
+
+.homeContactUs form textarea:focus,
+.homeContactUs form div input:focus {
+  background: white;
+}
+
+.phoneErr {
+  border: 1px solid red;
+}
+
+.homeContactUs form div img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(100%, -75%);
+  z-index: 1;
+  /* z-index: 5; */
+}
+
+.homeContactUs form textarea {
+  /* border-radius: 20px !important; */
+  /* background: rgba(240, 250, 253, 0.2); */
+  padding-top: 0.5rem;
+}
+
+.homeContactUs form button {
+  color: white;
+  height: 60px;
+}
+
+.homeContactUs form button.sendMessage {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+.homeContactUs form button.sendingMessage {
+  color: #005490 !important;
+  background-color: white !important;
+}

@@ -28,13 +28,14 @@
 #searchIcon {
   position: absolute;
   top: 50%;
-  left: 10px;
+  /* left: 10px; */
+  left: 15px;
   transform: translate(0, -50%);
 }
 
 #searchInput {
-  padding: 10px 15px 10px 40px;
-  border-radius: 25px;
+  padding: 10px 15px 10px 50px;
+  border-radius: 18px;
   overflow: hidden;
   /* max-width: 25rem; */
   width: 100%;

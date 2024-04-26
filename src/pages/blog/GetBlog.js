@@ -3,6 +3,7 @@ import Blogs from "@/components/blogPage";
 import { post } from "@/constant/sample";
 
 const FetchBlog = async (props) => {
+  console.log(props);
   try {
     const response = await axiosApi.get("blogs?page=1&latest=1");
     const blogs = response.data.data;

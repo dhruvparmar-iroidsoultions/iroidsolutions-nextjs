@@ -1,5 +1,5 @@
 import axiosApi from "@/api/axiosConfig";
-import VideoTestimonial from "@/components/home/videoTestimonial";
+import VideoTestimonial from "@/components/VideoTestimonialComponent";
 import React from "react";
 
 const GetVideoTestimonial = async () => {

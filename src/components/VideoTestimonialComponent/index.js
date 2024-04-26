@@ -10,19 +10,24 @@ import "swiper/css/navigation";
 import ReactPlayer from "react-player";
 import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
+import axiosApi from "@/api/axiosConfig";
 
-const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
-  const [testimonial, setTestimonial] = useState(0);
+const VideoTestimonialComponent = ({
+  videoTestimonialArray = [],
+  isHomePage = false,
+}) => {
+  // const [testimonials, setTestimonials] = useState(videoTestimonialArray);
+  // console.log(testimonials);
   const [swiperHover, setSwiperHover] = useState(0);
 
   const [clientTestimonial, setClientTestimonial] = useState(
-    videoTestimonialArray[testimonial]
+    videoTestimonialArray[0]
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testimonialVdo, setTestimonialVdo] = useState("");
 
   const removeTags = (html) => {
-    const cleanText = html.replace(/<[^>]*>/g, "");
+    const cleanText = html?.replace(/<[^>]*>/g, "");
     return cleanText;
   };
 
@@ -36,6 +41,10 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
       .getElementById("vdoTestimonialSwiper")
       ?.getElementsByClassName("swiper-button-prev")[0]
       .click();
+    document
+      .getElementById("vdoTestimonialSwiper")
+      ?.getElementsByClassName("swiper-button-prev")[0]
+      .click();
   };
 
   const nextSlide = () => {
@@ -43,7 +52,28 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
       .getElementById("vdoTestimonialSwiper")
       ?.getElementsByClassName("swiper-button-next")[0]
       ?.click();
+    document
+      .getElementById("vdoTestimonialSwiper")
+      ?.getElementsByClassName("swiper-button-next")[0]
+      ?.click();
   };
+
+  // const getTestimonials = async () => {
+  //   try {
+  //     const response = await axiosApi.get("video-testimonials?page=1&limit=5");
+  //     const data = response.data.data;
+  //     setTestimonials(data);
+  //     setClientTestimonial(data[0]);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (!isHomePage) {
+  //     getTestimonials();
+  //   }
+  // }, []);
 
   const swiper2 = videoTestimonialArray.map((video) => {
     return (
@@ -74,7 +104,7 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
             <div className="z-3">
               <Image
                 className={`playBtn ${
-                  swiperHover === video.id || clientTestimonial.id === video.id
+                  swiperHover === video.id || clientTestimonial?.id === video.id
                     ? "d-block"
                     : "d-none"
                 }`}
@@ -90,7 +120,7 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
               src={"/testimonialVdoBg.png"}
               alt=""
               className={`${
-                clientTestimonial.id === video.id ? "d-block" : "d-none"
+                clientTestimonial?.id === video.id ? "d-block" : "d-none"
               } position-absolute bottom-0 start-0 w-100 pe-none z-1 w-100 h-100`}
               width={100}
               height={100}
@@ -109,37 +139,45 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
 
   // delete css of className="wwr-bg" AND "videoTestimonialContainer" AND "testimonial-gradiant-bg"
   return (
-    <div className="container py-3 py-md-5 mb-5 my-md-5 position-relative overflow-hidden w-100">
+    <div
+      className={`container position-relative overflow-hidden w-100 ${
+        isHomePage ? "py-3 py-md-5 mb-5 my-md-5" : ""
+      }`}
+    >
       <div className="videoTestimonial d-flex flex-column align-items-center">
-        <h3 className="fs-4 fw-semibold wow animate__animated animate__fadeInDown">
-          Video Testimonials
-        </h3>
-        <p className="m-0 fs-1 fw-bolder text-005490 wow animate__animated animate__fadeInLeft">
-          Over 1000+ People Trust Us
-        </p>
-        <p className="mb-5 f20 fs-5 fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
-          Built for Service Professionals, by Service Professionals
-        </p>
-        <div className="client-testimonial mx-auto">
+        {isHomePage && (
+          <>
+            <h3 className="fs-4 fw-semibold wow animate__animated animate__fadeInDown">
+              Video Testimonials
+            </h3>
+            <p className="m-0 fs-1 fw-bolder text-005490 wow animate__animated animate__fadeInLeft">
+              Over 1000+ People Trust Us
+            </p>
+            <p className="mb-5 f20 fs-5 fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+              Built for Service Professionals, by Service Professionals
+            </p>
+          </>
+        )}
+        <div className="client-testimonial mx-auto text-start">
           <div
             className="d-flex flex-wrap flex-lg-nowrap align-items-center p-2 rounded-4"
             style={{ background: "#F2F2F2" }}
-            key={clientTestimonial.id}
+            key={clientTestimonial?.id}
           >
             <div className="ct-left p-3 p-md-5">
               <Image src={"/quote-up.svg"} alt="''" width={50} height={50} />
               <p className="mb-lg-5 lh-base fs-6">
-                “{removeTags(clientTestimonial.description)}.”
+                “{removeTags(clientTestimonial?.description)}.”
               </p>
               <h3 className="fw-bolder" style={{ color: "#005490" }}>
-                {clientTestimonial.clientname}
+                {clientTestimonial?.clientname}
               </h3>
-              <h4 className="fw-medium">{clientTestimonial.position}</h4>
+              <h4 className="fw-medium">{clientTestimonial?.position}</h4>
             </div>
             <div className="ct-right position-relative w-100 h-100">
               <Image
                 className="rounded-4 object-fit-cover w-100"
-                src={`${clientTestimonial.thumbnail}`}
+                src={`${clientTestimonial?.thumbnail}`}
                 alt=""
                 width={1600}
                 height={325}
@@ -151,7 +189,9 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
                 width={55}
                 height={55}
                 role="button"
-                onClick={() => testimonialVdoModal(clientTestimonial.videolink)}
+                onClick={() =>
+                  testimonialVdoModal(clientTestimonial?.videolink)
+                }
               />
             </div>
           </div>
@@ -245,6 +285,6 @@ const VideoTestimonial = ({ videoTestimonialArray = [] }) => {
   );
 };
 
-// export default VideoTestimonial;
+export default VideoTestimonialComponent;
 
-export default dynamic(() => Promise.resolve(VideoTestimonial), { ssr: false });
+// export default dynamic(() => Promise.resolve(VideoTestimonialComponent), { ssr: false });

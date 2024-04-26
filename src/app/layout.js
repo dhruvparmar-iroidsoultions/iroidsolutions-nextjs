@@ -2,8 +2,9 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import BootstrapClient from "@/components/bootstrapClient";
-import Header from "@/components/header";
+import Header from "@/components/navbar";
 import Footer from "@/components/footer";
+import NewFooter from "@/components/footer/NewFooter";
 
 // const openSans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
@@ -46,7 +47,8 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <BootstrapClient />
-        <Footer />
+        <NewFooter />
+        {/* <Footer /> */}
       </body>
     </html>
   );

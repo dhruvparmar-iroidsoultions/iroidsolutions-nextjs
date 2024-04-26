@@ -2,7 +2,7 @@ import "./page.css";
 import HomePage from "@/pages/home/";
 import axiosApi from "@/api/axiosConfig";
 // import HeroSection from "@/components/home/heroSection";
-import VideoTestimonial from "@/components/home/videoTestimonial";
+import VideoTestimonial from "@/components/VideoTestimonialComponent";
 import CaseStudy from "@/components/home/caseStudy";
 import TestimonialReview from "@/components/home/testimonialReview";
 import PortfolioHome from "@/components/home/portfolio";
@@ -11,7 +11,7 @@ import OurSkills from "@/components/home/ourSkills";
 import OfcEnviroment from "@/components/home/ofcEnviroment";
 import FAQs from "@/components/home/faqs";
 import Blogs from "@/components/home/blogs";
-import ContactUs from "@/components/home/contactUs";
+import ContactUs from "@/components/contactUs";
 import HeroSection from "@/components/home/newHero";
 import Quality_and_award from "@/components/home/quality_and_award";
 import Map from "@/components/home/world_map";
@@ -26,14 +26,16 @@ export default async function Home() {
   try {
     const response = await axiosApi.get("index");
     const data = response.data.data;
-
     return (
       <main>
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
         <ListedPlatforms />
-        <VideoTestimonial videoTestimonialArray={data.video_testimonials} />
+        <VideoTestimonial
+          videoTestimonialArray={data.video_testimonials}
+          isHomePage={true}
+        />
         <CaseStudy casestudy={data.case_study} />
         <TestimonialReview clientTestimonial={data.testimonials} />
         <PortfolioHome portfolio={[]} />

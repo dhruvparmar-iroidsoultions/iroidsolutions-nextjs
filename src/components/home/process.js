@@ -85,90 +85,96 @@ const Process = () => {
   };
 
   return (
-    <div className="container py-5 w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
-      <h3 className="fs-4 fw-semibold">Our Process</h3>
-      <p className="text-005490 fs-1 fw-bolder">
-        From Start To Finish, We Prioritize Quality And Precision
-      </p>
-      <ul className="w-100 list-unstyled rounded-4 mx-auto d-flex align-items-center justify-content-around bg-white rounded border process-ul wow animate__animated animate__fadeIn">
-        {allProcess.map((process, idx) => (
-          <li
-            className={`${
-              activeProcess === idx
-                ? "activeProcess text-005490 fw-bolder"
-                : "text-005490"
-            }  px-4 py-3 fs-6 position-relative`}
-            onClick={() => updateProcess(idx)}
-            key={idx}
-          >
-            {process.title}
-          </li>
-        ))}
-      </ul>
-      <div className="w-100 h-100 d-flex flex-wrap flex-lg-nowrap align-items-center">
-        <div className="p-5 text-start process-detail w-100">
-          <p className="fs-1 fw-bolder text-005490">{process.title}</p>
-          <p className="fs-5 fw-medium text-justify opacity-75">
-            “{process.description}”
-          </p>
-          <div className="iwsButtons w-100 d-flex align-items-center justify-content-center gap-5">
-            <button
-              className="prevBtn d-flex align-items-center justify-content-center"
-              onClick={prevProcess}
-            >
-              <img src={"/swiper-left-arrow.png"} alt="read more" />
-            </button>
-            <p className="fs-5 fw-semibold">
-              {process.id.toString().padStart(2, "0")} /{" "}
-              <span className="opacity-50">06</span>
-            </p>
-            <button
-              className="align-items-center justify-content-center"
-              onClick={nextProcess}
-            >
-              <img src={"/swiper-right-arrow.png"} alt="read more" />
-            </button>
-          </div>
-        </div>
-        <Swiper
-          className="process-swiper w-100"
-          // loop={true}
-          autoplay={{
-            delay: 10000,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Navigation, Pagination]}
-          onSlideChange={(swiper) => {
-            const newIndex = swiper.activeIndex % allProcess.length;
-            setProcess(allProcess[newIndex]);
-            setActiveProcess(newIndex);
-          }}
-          spaceBetween={10}
-          onAutoplayTimeLeft={onAutoplayTimeLeft}
-          grabCursor={true}
-          id="process-swiper"
-        >
+    <div className="ourprocess">
+      <div className="container py-5 w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
+        <h3 className="fs-4 fw-semibold mb-lg-3">Our Process</h3>
+        <p className="text-005490 fs-1 fw-bolder mb-lg-4">
+          From Start To Finish, We Prioritize Quality And Precision
+        </p>
+        <ul className="w-100 list-unstyled rounded-4 mx-auto row bg-white rounded overflow-hidden process-ul wow animate__animated animate__fadeIn">
           {allProcess.map((process, idx) => (
-            <SwiperSlide key={process.id}>
-              <Image
-                className="w-100 h-100"
-                src={process.img}
-                alt=""
-                width={100}
-                height={100}
-              />
-            </SwiperSlide>
+            <li
+              className={`col-12 col-md-2 p d-md-flex align-items-center justify-content-center ${
+                activeProcess === idx
+                  ? "activeProcess text-005490 d-block"
+                  : "text-005490 d-none d-md-block"
+              }  px-2 px-md-1 py-3 py-md-2 py-lg-3 fs-6 mb-0 fw-bolder position-relative`}
+            >
+              {/* <p
+                className={``}
+                onClick={() => updateProcess(idx)}
+                key={idx}
+              > */}
+              {process.title}
+              {/* </p> */}
+            </li>
           ))}
-          <div className="autoplay-progress" slot="container-end">
-            <svg viewBox="0 0 48 48" ref={progressLine}>
-              <circle cx="24" cy="24" r="20"></circle>
-            </svg>
-            <span ref={progressContent}></span>
+        </ul>
+        <div className="w-100 h-100 d-flex flex-wrap flex-lg-nowrap align-items-center rounded-5 bg-white p-4">
+          <div className="p-2 ps-md-4 pe-md-5 text-start process-detail w-100">
+            <p className="fs-1 fw-bolder text-005490">{process.title}</p>
+            <p className="fs-5 fw-medium text-justify opacity-75">
+              “{process.description}”
+            </p>
+            <div className="iwsButtons w-100 d-flex align-items-center justify-content-center gap-5">
+              <button
+                className="prevBtn d-flex align-items-center justify-content-center"
+                onClick={prevProcess}
+              >
+                <img src={"/swiper-left-arrow.png"} alt="read more" />
+              </button>
+              <p className="fs-5 fw-semibold">
+                {process.id.toString().padStart(2, "0")} /{" "}
+                <span className="opacity-50">06</span>
+              </p>
+              <button
+                className="align-items-center justify-content-center"
+                onClick={nextProcess}
+              >
+                <img src={"/swiper-right-arrow.png"} alt="read more" />
+              </button>
+            </div>
           </div>
-        </Swiper>
+          <Swiper
+            className="process-swiper w-100"
+            // loop={true}
+            autoplay={{
+              delay: 10000,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Navigation, Pagination]}
+            onSlideChange={(swiper) => {
+              const newIndex = swiper.activeIndex % allProcess.length;
+              setProcess(allProcess[newIndex]);
+              setActiveProcess(newIndex);
+            }}
+            spaceBetween={10}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            grabCursor={true}
+            id="process-swiper"
+          >
+            {allProcess.map((process, idx) => (
+              <SwiperSlide key={process.id} className="bg-transparent">
+                <Image
+                  className="w-100 h-100 rounded-4"
+                  src={process.img}
+                  alt=""
+                  width={100}
+                  height={100}
+                />
+              </SwiperSlide>
+            ))}
+            <div className="autoplay-progress" slot="container-end">
+              <svg viewBox="0 0 48 48" ref={progressLine}>
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span ref={progressContent}></span>
+            </div>
+          </Swiper>
+        </div>
       </div>
     </div>
   );

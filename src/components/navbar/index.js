@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const Header = () => {
+const Navbar = () => {
   const pathname = usePathname();
   const closeCanvas = useCallback(() => {
     document.getElementById("closeCanvas").click();
@@ -91,11 +91,21 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className={`nav-link py-4 mx-lg-0 mx-xl-2 d-lg-none d-xl-block ${
-                    pathname === "/" ? "activeLink" : ""
+                    pathname.includes("about-us") ? "activeLink" : ""
                   }`}
-                  href="/"
+                  href="/about-us"
                 >
-                  Home
+                  About Us
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
+                    pathname.includes("testimonials") ? "activeLink" : ""
+                  }`}
+                  href="/testimonials"
+                >
+                  Testimonials
                 </Link>
               </li>
               <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
@@ -175,21 +185,11 @@ const Header = () => {
               <li className="nav-item">
                 <Link
                   className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
-                    pathname.includes("portfolio") ? "activeLink" : ""
+                    pathname.includes("solutions") ? "activeLink" : ""
                   }`}
-                  href="/portfolio"
+                  href="/solutions"
                 >
-                  Portfolio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
-                    pathname.includes("testimonials") ? "activeLink" : ""
-                  }`}
-                  href="/testimonials"
-                >
-                  Testimonials
+                  Solutions
                 </Link>
               </li>
               {/* <li className="nav-item header_dropdown">
@@ -600,4 +600,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
