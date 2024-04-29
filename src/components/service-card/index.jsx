@@ -23,7 +23,11 @@ const ServiceCard = ({ info, id }) => {
         </div>
         <ul className="my-3">
           {info.list.map((l, idx) => (
-            <li id={idx} className="ps-3 mb-2 fw-semibold fs-6 opacity-75">
+            <li
+              id={idx}
+              className="ps-3 mb-2 fw-semibold fs-6 opacity-75"
+              key={idx}
+            >
               {l}
             </li>
           ))}

@@ -654,7 +654,8 @@
 }
 
 .ourprocess {
-  background: #e7ecf1;
+  /* color: white; */
+  background-image: url("/case-study-bg.svg");
 }
 
 .process-nav {

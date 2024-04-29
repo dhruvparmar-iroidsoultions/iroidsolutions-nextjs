@@ -87,8 +87,10 @@ const Process = () => {
   return (
     <div className="ourprocess">
       <div className="container py-5 w-100 my-4 d-flex flex-column align-items-center justify-content-center text-center position-relative">
-        <h3 className="fs-4 fw-semibold mb-lg-3">Our Process</h3>
-        <p className="text-005490 fs-1 fw-bolder mb-lg-4">
+        <h3 className="fs-4 fw-semibold mb-lg-3 text-white opacity-75">
+          Our Process
+        </h3>
+        <p className="text-005490 fs-1 fw-bolder mb-lg-4 text-white">
           From Start To Finish, We Prioritize Quality And Precision
         </p>
         <ul className="w-100 list-unstyled rounded-4 mx-auto row bg-white rounded overflow-hidden process-ul wow animate__animated animate__fadeIn">
@@ -117,8 +119,9 @@ const Process = () => {
               “{process.description}”
             </p>
             <div className="iwsButtons w-100 d-flex align-items-center justify-content-center gap-5">
+              {/* if get arrow problem just add prevBtn class to the button */}
               <button
-                className="prevBtn d-flex align-items-center justify-content-center"
+                className="d-flex align-items-center justify-content-center"
                 onClick={prevProcess}
               >
                 <img src={"/swiper-left-arrow.png"} alt="read more" />

@@ -15,12 +15,6 @@ const Quality_and_award = () => {
       year: 2022,
     },
     {
-      awardImage: "/award 2.svg",
-      awardOf: "Tech Behemonths",
-      awardTitle: "Top Mobile App Development",
-      year: 2023,
-    },
-    {
       awardImage: "/award 3.svg",
       awardOf: "Tech Behemonths",
       awardTitle: "Top Mobile App Development",
@@ -38,9 +32,15 @@ const Quality_and_award = () => {
       awardTitle: "Top ReactJS Development",
       year: 2023,
     },
+    {
+      awardImage: "/award 2.svg",
+      awardOf: "Tech Behemonths",
+      awardTitle: "Top Mobile App Development",
+      year: 2023,
+    },
   ];
   return (
-    <div className="pb-5">
+    <div className="">
       <div className="rotate-text-container w-100 py-3 text-light">
         <Marquee className="d-flex align-items-center gap-2 overflow-hidden">
           <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">

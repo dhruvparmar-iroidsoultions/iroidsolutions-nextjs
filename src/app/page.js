@@ -31,7 +31,8 @@ export default async function Home() {
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
-        <ListedPlatforms />
+        <ScrollerLine />
+        {/* <ListedPlatforms /> */}
         <VideoTestimonial
           videoTestimonialArray={data.video_testimonials}
           isHomePage={true}
@@ -40,8 +41,8 @@ export default async function Home() {
         <TestimonialReview clientTestimonial={data.testimonials} />
         <PortfolioHome portfolio={[]} />
         <Map />
-        <ScrollerLine />
-        <Numbers />
+        {/* <ScrollerLine /> */}
+        {/* <Numbers /> */}
         {/* <OurSkills /> */}
         <OfcEnviroment slides={data.our_office_environment} />
         <Process />

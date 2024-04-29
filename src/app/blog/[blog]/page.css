@@ -53,29 +53,6 @@
   width: 100%;
 }
 
-.clientComment .iwsInfo {
-  box-shadow: none;
-  border: none;
-}
-
-.clientProfile img {
-  max-width: 90px;
-  width: 100%;
-}
-
-.clientProfile p {
-  font-family: "Inter";
-  font-size: 24pt;
-  font-weight: 600;
-}
-
-.clientComment .iwsText {
-  font-family: "Inter";
-  font-size: 24pt;
-  font-weight: 400;
-  line-height: 55px;
-}
-
 @media only screen and (max-width: 1000px) {
   .blogContentContainer {
     width: 100%;

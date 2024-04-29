@@ -1,0 +1,17 @@
+.why-hire-us-container {
+  background: #e7ecf1;
+}
+
+.why-hire-us-point::before {
+  content: "\2022";
+  color: #005490;
+  display: inline-block;
+  width: 15px;
+  scale: 2;
+}
+
+.w-h-u-points {
+  max-width: 965px;
+  border: 1.5px solid #00549099;
+  box-shadow: 0px 4px 25px 0px #00549033;
+}

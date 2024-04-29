@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./blogHomePage.css";
 import Link from "next/link";
 import axiosApi from "@/api/axiosConfig";
+import Image from "next/image";
 
 const Blogs = () => {
   const [searchText, setSearchText] = useState("");
@@ -12,7 +13,7 @@ const Blogs = () => {
   const [showBlogOn, setShowBlogOn] = useState("all");
 
   const search = (e) => {
-    setShowBlogOn("all");
+    // setShowBlogOn("all");
     setSearchText(e.target.value);
     getSearchedBlogs(e.target.value);
   };
@@ -23,6 +24,16 @@ const Blogs = () => {
     const textContent = tempElement.textContent || tempElement.innerText || "";
     const wrappedContent = `${textContent}`;
     return wrappedContent;
+  };
+
+  const getCategory = async () => {
+    try {
+      const response = await axiosApi.get("/blog-category?page=1");
+      const category = response.data.data;
+      setBlogCategory(category);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
   };
 
   const getBlogs = async (id) => {
@@ -38,6 +49,7 @@ const Blogs = () => {
       console.error("Error fetching blogs:", error);
     }
   };
+
   const getSearchedBlogs = async (searchText) => {
     try {
       const response = await axiosApi.get(
@@ -52,15 +64,6 @@ const Blogs = () => {
       console.error("Error fetching blogs:", error);
     }
   };
-  const getCategory = async () => {
-    try {
-      const response = await axiosApi.get("/blog-category?page=1");
-      const category = response.data.data;
-      setBlogCategory(category);
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    }
-  };
 
   const newBlogs = (category) => {
     setShowBlogOn(category.name);
@@ -69,6 +72,8 @@ const Blogs = () => {
 
   const mapBlogs = blogs.map((blog, idx) => {
     const wrappedText = removeTags(blog.description);
+    const words = wrappedText.split(" ");
+    const first15Words = words.slice(0, 18).join(" ");
     const date = new Date(blog.created_at * 1000);
     const formattedDate = date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -78,35 +83,57 @@ const Blogs = () => {
 
     return (
       <Link
-        className="blog text-decoration-none text-dark wow animate__animated animate__fadeInRight w-100 overflow-hidden"
+        className="blog p-3 text-decoration-none text-dark wow animate__animated animate__fadeInRight w-100 overflow-hidden"
         key={idx}
         href={`/blog/${blog.slug}`}
       >
         <div className="blogImgContainer overflow-hidden w-100">
-          <img src={blog.thumbnail} alt="" className="w-100" height={250} />
+          <Image
+            src={blog.thumbnail}
+            alt=""
+            className=""
+            width={1200}
+            height={250}
+          />
         </div>
-        <div className="creationDateAndFor d-flex align-items-center justify-content-between gap-2 my-3">
-          <p className="m-0">{formattedDate}</p>
-          <ul className="d-flex flex-wrap align-items-center gap-1 m-0">
-            {blog.category.map((topic, idx) => (
-              <li
-                key={idx}
-                className="pe-4"
-                style={{ listStyle: idx === 0 && "none" }}
-              >
-                {topic.name}
-              </li>
-            ))}
-          </ul>
+        <div className="my-3 d-flex flex-wrap text-nowrap align-items-center justify-content-between fw-medium fs-5 gap-1">
+          <p className="mb-0 fs-6 d-flex align-items-center justify-content-center gap-1 blog-d">
+            <Image
+              className="blog-writer"
+              src={"/blog-profile.png"}
+              alt="writer"
+              width={1200}
+              height={1200}
+            />
+            <span>John Andrew</span> {blog.postBy}
+          </p>
+          <p className="mb-0 fs-6 d-flex align-items-center justify-content-center gap-1 blog-d">
+            <Image
+              className="blog-writer"
+              src={"/blog-date.png"}
+              alt="writer"
+              width={1200}
+              height={1200}
+            />
+            <span>{formattedDate}</span>
+          </p>
+          <p className="mb-0 fs-6 d-flex align-items-center justify-content-center gap-1 blog-d">
+            <Image
+              className="blog-writer"
+              src={"/blog-time.png"}
+              alt="writer"
+              width={1200}
+              height={1200}
+            />
+            <span>{blog.time}7 Min</span>{" "}
+          </p>
         </div>
         <h4 className="blogTopic fw-semibold text-wrap w-100 overflow-hidden">
           {blog.title}
         </h4>
-        <p
-          className="blogContent"
-          // dangerouslySetInnerHTML={{ __html: blog.description }}
-        >
-          {wrappedText}
+        <p className="fs-6 fw-medium">
+          {first15Words}...
+          <span className="text-005490 fw-semibold"> Read More</span>
         </p>
       </Link>
     );
@@ -120,7 +147,7 @@ const Blogs = () => {
 
   return (
     <>
-      <div className="container position-relative blogCategory">
+      <div className="container position-relative blogCategory pt-5">
         <form
           id="blogSearchForm"
           className="position-absolute"
@@ -155,11 +182,21 @@ const Blogs = () => {
           <input
             type="text"
             name="search"
+            placeholder="What're you searching for?"
             id="searchInput"
             value={searchText}
             onChange={search}
           />
         </form>
+
+        <p className="fs-1 fw-semibold text-center mb-2 my-md-4">
+          Exploring the iRoid Solutions Tech Blog
+        </p>
+        <p className="f20 fs-5 fw-medium  text-center mx-auto wow animate__animated animate__fadeInRight">
+          Introducing the future of tech with iRoid Solutions Tech Blog - Where
+          innovation meets simplicity in every byte, making tech exploration a
+          breeze!
+        </p>
 
         <ul className="blogSearchPoint d-flex align-items-center justify-content-between gap-3 flex-nowrap py-5 pe-none">
           <li
@@ -191,7 +228,7 @@ const Blogs = () => {
           ))}
         </ul>
       </div>
-      <div className="container blogContainer my-5 gap-3 w-100">{mapBlogs}</div>
+      <div className="container blogContainer gap-3 w-100 pb-5">{mapBlogs}</div>
     </>
   );
 };

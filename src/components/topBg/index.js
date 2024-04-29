@@ -17,7 +17,7 @@ const TopBg = ({ state, text }) => {
             />
           </span>
         </h1>
-        <p className="fs-6 top-bg-text fw-semibold m-auto px-2">{text}</p>
+        <p className="fs-5 top-bg-text fw-medium m-auto px-2">{text}</p>
       </div>
     </div>
   );

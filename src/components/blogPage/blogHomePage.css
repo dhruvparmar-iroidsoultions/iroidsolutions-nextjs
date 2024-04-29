@@ -1,23 +1,16 @@
 .activeBlogSelection {
   color: white;
-  background-color: #005490;
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
   border-radius: 20px;
 }
 
-.blogContent {
-  font-size: medium;
-  width: 100%;
-  opacity: 0.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.blogContent span img {
+  max-width: 20px;
 }
 
 #blogSearchForm {
-  /* top: 0; */
-  top: -3rem;
+  top: 0;
+  /* top: -3rem; */
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 40rem;
@@ -29,19 +22,25 @@
   position: absolute;
   top: 50%;
   /* left: 10px; */
-  left: 15px;
+  left: 25px;
   transform: translate(0, -50%);
 }
 
 #searchInput {
-  padding: 10px 15px 10px 50px;
+  padding: 10px 15px 10px 65px;
   border-radius: 18px;
   overflow: hidden;
   /* max-width: 25rem; */
   width: 100%;
-  border: 0;
-  box-shadow: 0 0 14px 0 #005490;
+  border: 1px solid #00000066;
+  box-shadow: 0px 4px 30px 0px #0000001a;
   font-size: 20px;
+  height: 80px;
+}
+
+#searchInput::placeholder {
+  opacity: 0.4;
+  font-weight: 500;
 }
 
 .blogSearchPoint {
@@ -66,10 +65,32 @@
 
 .blog {
   cursor: pointer;
+  background: #f0f9ff;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.blog:hover {
+  background: white;
+  box-shadow: 0px 4.81px 60.17px 0px #00549033;
+}
+
+.blog-d span {
+  opacity: 0.6;
+}
+
+.blog-writer {
+  width: 25px !important;
 }
 
 .blog img {
+  width: 100%;
+  height: auto;
   transition: all 0.5s ease;
+}
+
+.blogImgContainer {
+  border-radius: 20px;
 }
 
 .blogImgContainer:hover img {
@@ -80,7 +101,7 @@
   color: #005490;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 991px) {
   .blogContainer {
     grid-template-columns: repeat(2, 1fr);
   }
