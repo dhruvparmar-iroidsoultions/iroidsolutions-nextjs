@@ -11,6 +11,7 @@ import Link from "next/link";
 import ContactUs from "../contactUs";
 
 const BlogBody = ({ post, latestBlogs }) => {
+  console.log(post);
   const pathName = usePathname();
   const router = useRouter();
 
@@ -78,7 +79,7 @@ const BlogBody = ({ post, latestBlogs }) => {
                 width={25}
                 height={25}
               />
-              <span>{post.time}7 Min</span>{" "}
+              <span>{post.time}</span>
             </p>
           </div>
           <div className="shareIcons d-flex align-items-center justify-content-md-between gap-5 gap-md-4">
@@ -255,7 +256,7 @@ const BlogBody = ({ post, latestBlogs }) => {
                       width={1200}
                       height={1200}
                     />
-                    <span>{blog.time}7 Min</span>{" "}
+                    <span>{blog.time}</span>
                   </p>
                 </div>
                 <h4 className="blogTopic fw-semibold text-wrap w-100 overflow-hidden">

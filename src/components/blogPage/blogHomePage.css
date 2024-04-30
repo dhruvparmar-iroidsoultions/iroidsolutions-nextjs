@@ -101,6 +101,16 @@
   color: #005490;
 }
 
+.blog-pagination-btn {
+  min-width: 32px;
+  background: white;
+  border: 1px solid #f1f1f1;
+}
+
+.active-blog-page {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
 @media only screen and (max-width: 991px) {
   .blogContainer {
     grid-template-columns: repeat(2, 1fr);

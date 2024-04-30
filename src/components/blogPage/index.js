@@ -11,6 +11,9 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [blogCategory, setBlogCategory] = useState([]);
   const [showBlogOn, setShowBlogOn] = useState("all");
+  const [pages, setPages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
 
   const search = (e) => {
     // setShowBlogOn("all");
@@ -36,15 +39,23 @@ const Blogs = () => {
     }
   };
 
-  const getBlogs = async (id) => {
+  const getBlogs = async (id, pageNumber = 1) => {
+    console.log(pageNumber);
+    // let url
+    // if( id === 0){
+    //   url = `blogs?page=${pageNumber}&limit=9&latest=1`
+    // }else
     try {
       const response = await axiosApi.get(
         id === 0
-          ? `blogs?page=1&latest=1`
-          : `blogs?page=1&categoryId=${id}&latest=1`
+          ? `blogs?page=${pageNumber}&limit=9&latest=1`
+          : `blogs?page=${pageNumber}&limit=9&categoryId=${id}&latest=1`
       );
+      console.log(response);
       const blogs = response.data.data;
+      const lastPage = response.data.meta.last_page;
       setBlogs(blogs);
+      setLastPage(lastPage);
     } catch (error) {
       console.error("Error fetching blogs:", error);
     }
@@ -54,8 +65,8 @@ const Blogs = () => {
     try {
       const response = await axiosApi.get(
         searchText.length === 0
-          ? `blogs?page=1&latest=1`
-          : `blogs?page=1&search=${searchText}&latest=1'`
+          ? `blogs?page=1&limit=9&latest=1`
+          : `blogs?page=1&limit=9&search=${searchText}&latest=1'`
       );
       console.log(response);
       const blogs = response.data.data;
@@ -125,7 +136,7 @@ const Blogs = () => {
               width={1200}
               height={1200}
             />
-            <span>{blog.time}7 Min</span>{" "}
+            <span>{blog.time}</span>
           </p>
         </div>
         <h4 className="blogTopic fw-semibold text-wrap w-100 overflow-hidden">
@@ -139,11 +150,67 @@ const Blogs = () => {
     );
   });
 
+  const pagination = (c, m) => {
+    var current = c,
+      last = m,
+      delta = 2,
+      left = current - delta,
+      right = current + delta + 1,
+      range = [],
+      rangeWithDots = [],
+      l;
+
+    for (let i = 1; i <= last; i++) {
+      if (i == 1 || i == last || (i >= left && i < right)) {
+        range.push(i);
+      }
+    }
+
+    for (let i of range) {
+      if (l) {
+        if (i - l === 2) {
+          rangeWithDots.push(l + 1);
+        } else if (i - l !== 1) {
+          rangeWithDots.push("...");
+        }
+      }
+
+      rangeWithDots.push(i);
+      l = i;
+    }
+    // return rangeWithDots;
+    return setPages(rangeWithDots);
+  };
+
+  const handlePageChange = (category, pageNumber) => {
+    getBlogs(category, pageNumber);
+    setCurrentPage(pageNumber);
+    pagination(pageNumber, lastPage);
+  };
+
+  const handlePrevPageChange = (category, pageNumber) => {
+    getBlogs(category, pageNumber);
+    setCurrentPage(pageNumber - 1);
+    pagination(pageNumber - 1, lastPage);
+  };
+
+  const handleNextPageChange = (category, pageNumber) => {
+    getBlogs(category, pageNumber);
+    setCurrentPage(pageNumber + 1);
+    pagination(pageNumber + 1, lastPage);
+  };
+
   useEffect(() => {
     getCategory();
-    getBlogs(0);
-    // filterBlogs();
+    getBlogs(0, 1);
+    pagination(1, lastPage);
+    // for (let i = 1, l = 20; i <= l; i++)
+    //   console.log(`Selected page ${i}:`, pagination(i, l));
   }, []);
+  useEffect(() => {
+    pagination(1, lastPage);
+    console.log("updating...");
+  }, [lastPage]);
 
   return (
     <>
@@ -229,6 +296,33 @@ const Blogs = () => {
         </ul>
       </div>
       <div className="container blogContainer gap-3 w-100 pb-5">{mapBlogs}</div>
+      <div className="blog-pagination d-flex align-items-center justify-content-center py-2 gap-2">
+        <button
+          className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 border-0 blog-pagination-btn`}
+          disabled={currentPage === 1}
+          onClick={() => handlePrevPageChange(showBlogOn, currentPage)}
+        >
+          Prev
+        </button>
+        {pages.map((p, idx) => (
+          <button
+            className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 blog-pagination-btn ${
+              p === "..." ? "pe-none border-0" : ""
+            } ${currentPage === p ? "active-blog-page text-white" : ""}`}
+            key={idx}
+            onClick={() => handlePageChange(showBlogOn, p)}
+          >
+            {p}
+          </button>
+        ))}
+        <button
+          className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 border-0 blog-pagination-btn`}
+          disabled={currentPage === lastPage}
+          onClick={() => handleNextPageChange(showBlogOn, currentPage)}
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 };

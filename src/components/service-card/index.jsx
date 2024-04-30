@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "./index.css";
+import Link from "next/link";
 
 const ServiceCard = ({ info, id }) => {
   return (
@@ -23,12 +24,13 @@ const ServiceCard = ({ info, id }) => {
         </div>
         <ul className="my-3">
           {info.list.map((l, idx) => (
-            <li
-              id={idx}
-              className="ps-3 mb-2 fw-semibold fs-6 opacity-75"
-              key={idx}
-            >
-              {l}
+            <li id={idx} className="ps-3 mb-2" key={idx}>
+              <Link
+                href={l.link}
+                className="fw-semibold fs-6 opacity-75 text-decoration-none text-dark"
+              >
+                {l.title}
+              </Link>
             </li>
           ))}
         </ul>
