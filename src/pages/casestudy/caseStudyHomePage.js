@@ -1,5 +1,5 @@
 import axiosApi from "@/api/axiosConfig";
-import CaseStudy from "@/components/caseStudy";
+import CaseStudy from "@/components/caseStudy/index-not-used";
 
 const CaseStudyHomePage = async () => {
   try {

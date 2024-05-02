@@ -3,7 +3,7 @@ import HomePage from "@/pages/home/";
 import axiosApi from "@/api/axiosConfig";
 // import HeroSection from "@/components/home/heroSection";
 import VideoTestimonial from "@/components/VideoTestimonialComponent";
-import CaseStudy from "@/components/home/caseStudy";
+import CaseStudy from "@/components/caseStudy";
 import TestimonialReview from "@/components/home/testimonialReview";
 import PortfolioHome from "@/components/home/portfolio";
 import Numbers from "@/components/home/numbers";
@@ -37,7 +37,13 @@ export default async function Home() {
           videoTestimonialArray={data.video_testimonials}
           isHomePage={true}
         />
-        <CaseStudy casestudy={data.case_study} />
+        <CaseStudy
+          casestudy={data.case_study}
+          containerTitle={"Case Study"}
+          containerSubtitle={
+            "Creating Success Stories for Startups to Global Brands."
+          }
+        />
         <TestimonialReview clientTestimonial={data.testimonials} />
         <PortfolioHome portfolio={[]} />
         <Map />

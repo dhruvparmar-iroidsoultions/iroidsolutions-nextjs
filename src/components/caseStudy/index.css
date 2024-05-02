@@ -1,0 +1,71 @@
+.caseStudy {
+  color: white;
+  background-image: url("/case-study-bg.svg");
+}
+
+.caseStudy .swiper-wrapper {
+  align-items: center;
+}
+
+.caseStudy .swiper-slide {
+  min-height: 560px;
+  background: transparent;
+  padding-inline: 7rem;
+}
+
+.caseStudy .swiper-button-prev::after {
+  content: url("/casestudy-swipe-prev-arrow.png") !important;
+}
+
+.caseStudy .swiper-button-next::after {
+  content: url("/casestudy-swipe-next-arrow.png") !important;
+}
+
+.caseStudy .swiper-slide .container {
+  background: white;
+  border-radius: 40px;
+}
+
+.caseLeft,
+.caseRight {
+  flex: 1;
+}
+
+.casestudy-swiper .swiper-pagination-bullet {
+  background: white;
+}
+
+.casestudy-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .caseStudy .swiper-slide {
+    padding-inline: 4rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .caseStudy .swiper-slide {
+    padding-inline: 0rem;
+  }
+
+  .caseStudy .swiper-button-next::after {
+    content: url(/testimonialArrowRight.svg) !important;
+    position: absolute;
+    right: 5px;
+  }
+
+  .caseStudy .swiper-button-prev::after {
+    content: url(/testimonialArrowLeft.svg) !important;
+    position: absolute;
+    left: 5px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .caseStudy .swiper-slide .container {
+    border-radius: 20px;
+    /* max-width: 95%; */
+  }
+}

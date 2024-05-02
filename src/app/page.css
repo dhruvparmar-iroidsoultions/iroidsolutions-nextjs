@@ -77,8 +77,8 @@
 }
 
 .hero-main .container:nth-child(1) {
-  /* background-image: url(/hero-bg.svg); */
-  background-image: url("/Frame 36824.svg");
+  background-image: url(/hero-bg.svg);
+  /* background-image: url("/Frame 36824.svg"); */
   background-size: cover;
   /* background-position: bottom; */
   background-repeat: no-repeat;
@@ -277,54 +277,18 @@
   align-items: center;
 }
 
-.caseStudy {
-  color: white;
-  background-image: url("/case-study-bg.svg");
-}
-
-.caseStudy .swiper-wrapper {
-  align-items: center;
-}
-
-.caseStudy h3:nth-child(1) {
-  opacity: 0.8 !important;
-}
-
-.caseStudy .swiper-slide {
-  background: transparent;
-  padding-inline: 7rem;
-}
-
-.caseStudy .swiper-button-prev::after {
-  content: url("/casestudy-swipe-prev-arrow.png") !important;
-}
-
-.caseStudy .swiper-button-next::after {
-  content: url("/casestudy-swipe-next-arrow.png") !important;
-}
-
-.caseStudy .swiper-slide .container {
-  background: white;
-  border-radius: 40px;
-}
-
-.caseLeft,
-.caseRight {
-  flex: 1;
-}
-
 .f40 {
   font-size: 40px;
   font-weight: 600;
 }
 
-.caseStudy h3 {
+/* .caseStudy h3 {
   color: black;
   opacity: 0.8;
   font-weight: 400;
   font-size: 24px;
   max-width: 526px;
-}
+} */
 /* 
 .caseLeft button:hover,
 .testimonialsSwiper button:hover,
@@ -877,9 +841,9 @@
     font-size: 22px;
   }
 
-  .caseStudy h3 {
+  /* .caseStudy h3 {
     font-size: 22px;
-  }
+  } */
 
   .project .card-title {
     font-size: 22px;
@@ -941,12 +905,9 @@
     line-height: 20px;
   } */
 
-  .caseStudy .swiper-slide {
-    padding-inline: 4rem;
-  }
-  .caseStudy h3 {
+  /* .caseStudy h3 {
     font-size: 19px;
-  }
+  } */
   .project .card-title {
     font-size: 20px;
     line-height: normal;
@@ -1072,21 +1033,6 @@
   #vdoTestimonialSwiper .swiper-slide-next {
     right: 0;
   } */
-  .caseStudy .swiper-slide {
-    padding-inline: 0rem;
-  }
-
-  .caseStudy .swiper-button-next::after {
-    content: url(/testimonialArrowRight.svg) !important;
-    position: absolute;
-    right: 5px;
-  }
-
-  .caseStudy .swiper-button-prev::after {
-    content: url(/testimonialArrowLeft.svg) !important;
-    position: absolute;
-    left: 5px;
-  }
 
   .card.testimonialCardContainer {
     padding-inline: 30px;
@@ -1216,9 +1162,9 @@
   .firstBlue {
     font-size: 16px;
   }
-  .caseStudy h3 {
+  /* .caseStudy h3 {
     font-size: 16px;
-  }
+  } */
   .project .card-title {
     font-size: 15px;
   }
@@ -1250,10 +1196,7 @@
   /* .caseStudy .swiper-slide {
       background: white;
     } */
-  .caseStudy .swiper-slide .container {
-    border-radius: 20px;
-    /* max-width: 95%; */
-  }
+
   .testimonialsSwiper {
     padding: 0;
   }

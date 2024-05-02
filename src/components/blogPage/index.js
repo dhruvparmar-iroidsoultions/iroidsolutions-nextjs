@@ -10,7 +10,10 @@ const Blogs = () => {
   const [searchText, setSearchText] = useState("");
   const [blogs, setBlogs] = useState([]);
   const [blogCategory, setBlogCategory] = useState([]);
-  const [showBlogOn, setShowBlogOn] = useState("all");
+  const [showBlogOn, setShowBlogOn] = useState({
+    id: 0,
+    name: "all",
+  });
   const [pages, setPages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
@@ -77,7 +80,7 @@ const Blogs = () => {
   };
 
   const newBlogs = (category) => {
-    setShowBlogOn(category.name);
+    setShowBlogOn(category);
     getBlogs(category.id);
   };
 
@@ -268,7 +271,7 @@ const Blogs = () => {
         <ul className="blogSearchPoint d-flex align-items-center justify-content-between gap-3 flex-nowrap py-5 pe-none">
           <li
             className={
-              showBlogOn.toLowerCase() === "all"
+              showBlogOn.name.toLowerCase() === "all"
                 ? "activeBlogSelection pe-auto"
                 : "pe-auto"
             }
@@ -281,7 +284,7 @@ const Blogs = () => {
           {blogCategory.map((category, idx) => (
             <li
               className={
-                showBlogOn.toLowerCase() === category.name.toLowerCase()
+                showBlogOn.name.toLowerCase() === category.name.toLowerCase()
                   ? "activeBlogSelection pe-auto"
                   : "pe-auto"
               }
@@ -300,7 +303,7 @@ const Blogs = () => {
         <button
           className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 border-0 blog-pagination-btn`}
           disabled={currentPage === 1}
-          onClick={() => handlePrevPageChange(showBlogOn, currentPage)}
+          onClick={() => handlePrevPageChange(showBlogOn.id, currentPage)}
         >
           Prev
         </button>
@@ -310,7 +313,7 @@ const Blogs = () => {
               p === "..." ? "pe-none border-0" : ""
             } ${currentPage === p ? "active-blog-page text-white" : ""}`}
             key={idx}
-            onClick={() => handlePageChange(showBlogOn, p)}
+            onClick={() => handlePageChange(showBlogOn.id, p)}
           >
             {p}
           </button>
@@ -318,7 +321,7 @@ const Blogs = () => {
         <button
           className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 border-0 blog-pagination-btn`}
           disabled={currentPage === lastPage}
-          onClick={() => handleNextPageChange(showBlogOn, currentPage)}
+          onClick={() => handleNextPageChange(showBlogOn.id, currentPage)}
         >
           Next
         </button>

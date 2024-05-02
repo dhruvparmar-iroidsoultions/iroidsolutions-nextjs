@@ -1,10 +1,24 @@
+.industry-info {
+  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+  transition: all 0.3s;
+}
+
+.industry-info:hover {
+  background: white;
+  box-shadow: 0px 4px 50px 0px #00549033;
+}
+
 .industry-info:hover .industry-title {
   text-decoration: underline;
 }
 
 .industry-info img {
   filter: grayscale();
-  transition: all 0.2s;
+  transition: all 0.3s;
+}
+
+.industry-info:hover img {
+  filter: none;
 }
 
 .industry-info ul li::marker {

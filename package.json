@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "ip": "echo 'Local IP Address:' && ipconfig | findstr IPv4",
-    "dev": "next dev",
+    "dev": "next dev -p 5948",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

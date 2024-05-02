@@ -4,7 +4,6 @@ import React, { useCallback } from "react";
 // import menu from "../../assets/header-menu.svg";
 // import menu from "../../assets/header menu.png";
 import "./index.css";
-import Button from "../button";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -28,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar py-1 py-lg-0 navbar-expand-lg position-fixed bg-white w-100">
-        <div className="container">
+        <div className="container p-lg-0">
           <Link href="/">
             <img
               src="/logo.svg"

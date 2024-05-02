@@ -91,7 +91,8 @@
   /* border-radius: 50px; */
   border-radius: 8.5rem;
   height: 175px;
-  top: -4px;
+  /* top: -4px; */
+  top: -40px;
 }
 
 .explore-iroid {

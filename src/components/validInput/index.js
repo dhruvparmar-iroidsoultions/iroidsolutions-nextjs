@@ -15,6 +15,7 @@ const FormValidInput = ({
   extraErrorClass,
   img,
   alt,
+  imgClass,
 }) => {
   return (
     <div className="input-group position-relative mb-4">
@@ -32,7 +33,7 @@ const FormValidInput = ({
             onChange={onChange}
             required={isRequired}
           />
-          <img src={img} alt={alt || ""} />
+          <img className={imgClass} src={img} alt={alt || ""} />
         </div>
         <div
           className={`invalid-feedback ${

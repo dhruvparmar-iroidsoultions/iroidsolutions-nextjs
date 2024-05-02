@@ -5,12 +5,33 @@
   font-family: "Montserrat";
 }
 
+.fs-7 {
+  font-size: 12px;
+}
+
+/* .opacity-90 {
+  opacity: 90%;
+} */
+
 .bg-e7ecf1 {
   background-color: #e7ecf1;
 }
 
 .text-005490 {
   color: #005490;
+}
+
+.text-00000099 {
+  color: #00000099;
+}
+
+.img-w100-hauto {
+  width: 100%;
+  height: auto;
+}
+
+.second-text {
+  max-width: 1200px;
 }
 
 .twoColor {
@@ -158,6 +179,12 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #005490;
+}
+
+@media only screen and (min-width: 1600px) {
+  .container {
+    max-width: 1520px !important;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

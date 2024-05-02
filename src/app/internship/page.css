@@ -1,0 +1,22 @@
+.interships-in,
+.procedures-container {
+  max-width: 1260px !important;
+}
+
+.interships-in img {
+  /* width: 100%; */
+  height: auto;
+}
+
+.interships-in .benefit-card {
+  min-height: 236px !important;
+}
+
+.intership-procedure {
+  background: #e7ecf1;
+}
+
+.procedures-ul li::before {
+  content: "•";
+  padding-inline: 10px;
+}

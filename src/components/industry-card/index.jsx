@@ -1,9 +1,9 @@
 import Image from "next/image";
 import "./index.css";
 
-const IndustryCard = ({ info, id }) => {
+const IndustryCard = ({ info, id, hoverdtitle = true }) => {
   return (
-    <div className="row p-sm-3 text-start industry-info">
+    <div className="row border-0 rounded-5 p-3 p-lg-5  text-start industry-info">
       <div className={`${id % 2 !== 0 ? "col-12 col-lg-5" : "d-lg-none"}`}>
         <div className="w-100 h-100">
           <Image
@@ -16,7 +16,11 @@ const IndustryCard = ({ info, id }) => {
         </div>
       </div>
       <div className="col-12 col-md">
-        <p className="fs-2 fw-semibold text-005490 industry-title">
+        <p
+          className={`fs-2 fw-semibold text-005490 mt-3 mt-lg-0 ${
+            hoverdtitle ? "industry-title" : ""
+          }`}
+        >
           {info.industry}
         </p>
         <p className="fs-6 fw-medium m-0">{info.description}</p>

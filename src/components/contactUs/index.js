@@ -95,7 +95,10 @@ const ContactUs = () => {
       <p className="text-005490 fs-1 fw-bolder text-center wow animate__animated animate__fadeInLeft">
         Get in Touch With Us
       </p>
-      <p className="f20 fs-5 fw-medium mb-md-5 text-center wow animate__animated animate__fadeInRight">
+      <p
+        className="fs-5 fw-medium opacity-75 mb-md-5 text-center wow animate__animated animate__fadeInRight"
+        style={{ maxWidth: "720px" }}
+      >
         If you are looking for a solid partner for your projects, send us an
         email. We'd love to talk to you!
       </p>
