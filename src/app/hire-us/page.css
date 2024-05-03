@@ -1,0 +1,85 @@
+.price-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.plan-card {
+  box-shadow: 0px 4px 50px 0px #00549033;
+  /* display: grid; */
+}
+
+.plan-card img {
+  width: 100%;
+  height: auto;
+}
+
+.coin-img {
+  max-width: 50px;
+}
+
+.price-tag {
+  max-width: 215px;
+  top: -30px;
+  right: 0;
+}
+
+.plan-feature-list {
+  min-height: 170px;
+}
+
+.plan-bullet {
+  max-width: 18px;
+}
+
+.price-talk {
+  background: #e7ecf1;
+  border-radius: 8px;
+}
+
+.priceTalk {
+  max-width: 790px;
+  border-radius: 8px;
+}
+
+.talk-light {
+  max-width: 550px;
+}
+
+.hire-us-talk {
+  max-width: 1260;
+  box-shadow: 0px 4px 50px 0px #00549033;
+}
+
+.hire-us-talk img {
+  width: 100%;
+  height: auto;
+}
+
+.talk-emoji {
+  max-width: 100px;
+}
+
+.talk-bullet {
+  max-width: 26px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .plan-feature-list {
+    min-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .price-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .priceTalk {
+    max-width: 95%;
+  }
+
+  .plan-feature-list {
+    min-height: auto;
+  }
+}

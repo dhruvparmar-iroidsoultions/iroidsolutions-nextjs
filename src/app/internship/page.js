@@ -3,6 +3,8 @@ import WhyJoinUsJob from "@/components/why-join-us-job";
 import "@/components/why-join-us-job/index.css";
 import Image from "next/image";
 import "./page.css";
+import ApplyJobModal from "@/components/applyJobModal";
+import ContactUs from "@/components/contactUs";
 
 const Internship = () => {
   const internshipIn = [
@@ -165,9 +167,21 @@ const Internship = () => {
                 </ul>
               </div>
             </div>
+            <div className="w-100 d-flex align-items-center justify-content-center ">
+              <button
+                className="w-100 text-white fs-6 fw-semibold mx-auto apply-internship py-2 rounded-3"
+                data-bs-toggle="modal"
+                data-bs-target="#applyModal"
+                id="applyModalBtn"
+              >
+                Apply
+              </button>
+              <ApplyJobModal />
+            </div>
           </div>
         </div>
       </div>
+      <ContactUs />
     </>
   );
 };

@@ -90,6 +90,7 @@ const ContactUs = () => {
     <div
       className="homeContactUs text-start w-100 d-flex flex-column align-items-center p-1 my-md-5 position-relative wow animate__animated animate__fadeIn"
       data-wow-duration="2s"
+      id="contact-us"
     >
       <p className="mt-5 mb-0 mb-sm-2 mb-md-3 fs-4 fw-semibold">Contact Us</p>
       <p className="text-005490 fs-1 fw-bolder text-center wow animate__animated animate__fadeInLeft">

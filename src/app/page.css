@@ -91,18 +91,6 @@
 /* new hero section css */
 
 /* quality and award section */
-.rotate-text-container {
-  background-color: #005490;
-}
-
-.scroll-text {
-  display: flex;
-  white-space: nowrap;
-}
-
-.rotate-text-img {
-  animation: rotate-text 5s infinite linear;
-}
 
 .award-text {
   max-width: 1000px;
@@ -121,17 +109,6 @@
   filter: none;
 }
 
-@keyframes rotate-text {
-  0% {
-    rotate: 0deg;
-  }
-  /* 50% {
-    rotate: 180deg;
-  } */
-  100% {
-    rotate: 360deg;
-  }
-}
 /* quality and award section */
 
 .awardContainer {

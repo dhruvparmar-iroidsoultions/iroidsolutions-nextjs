@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NewFooter = () => {
   return (
-    <footer className="w-100 new-footer">
+    <footer className="w-100 new-footer" id="footer">
       <div className="footer-top-radius bg-white rounded-top position-relative d-none d-md-block"></div>
       <div className="container mt-3 mt-md-5">
         <div className="row">

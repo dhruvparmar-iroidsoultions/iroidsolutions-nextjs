@@ -1,0 +1,40 @@
+.clients {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  cursor: none;
+}
+
+.client {
+  box-shadow: 0px 4px 40px 0px #00549033;
+  border: 3px solid transparent;
+}
+
+.client:hover {
+  border: 3px solid #005490;
+}
+
+.client-logo {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1199px) {
+  .clients {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .clients {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .clients {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}

@@ -84,7 +84,9 @@
 /* ------------------------- new footer--------------------------- */
 
 .new-footer {
+  position: relative;
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+  z-index: 9;
 }
 
 .footer-top-radius {

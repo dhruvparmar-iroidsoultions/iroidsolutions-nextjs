@@ -20,3 +20,18 @@
   content: "•";
   padding-inline: 10px;
 }
+
+.apply-internship {
+  border: 1px solid transparent;
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%) right /
+    var(--p, 100%) no-repeat;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+  max-width: 480px;
+  transition: 0.4s, background-position 0s;
+}
+
+.apply-internship:hover {
+  --p: 0%;
+  color: #005490 !important;
+  background-position: left;
+}

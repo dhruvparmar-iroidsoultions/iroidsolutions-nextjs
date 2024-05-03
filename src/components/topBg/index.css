@@ -4,6 +4,8 @@
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
   box-shadow: 0px 4px 50px 0px #00549066;
   min-height: 520px;
+  background-color: transparent;
+  z-index: 9;
 }
 
 .top-bg-star {
@@ -19,10 +21,16 @@
   opacity: 0.8;
 }
 
+@media only screen and (max-width: 991px) {
+  .topBg {
+    min-height: 320px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .topBg {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
 
   .top-bg-star {
@@ -35,5 +43,8 @@
   .top-bg-star {
     right: 0px;
     opacity: 0.2;
+  }
+  .topBg {
+    min-height: 200px;
   }
 }

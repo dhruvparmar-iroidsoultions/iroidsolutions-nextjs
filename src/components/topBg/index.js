@@ -7,7 +7,7 @@ const TopBg = ({ state, text }) => {
       <div className="contentText m-auto text-light text-center px-2 py-3 py-md-5">
         <h1 className="fs-1 text-capitalize mb-2 mb-md-4 mt-5">
           {state}{" "}
-          <span className="position-relative">
+          <span className="position-relative overflow-hidden">
             <Image
               className="position-absolute top-0 translate-middle top-bg-star"
               src={"/top-bg-star.png"}

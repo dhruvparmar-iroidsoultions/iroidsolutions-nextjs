@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import ListedPlatforms from "./scrolling-plateforms";
+import QualityScroller from "../QualityScroller";
 const Quality_and_award = () => {
   const awards = [
     {
@@ -41,95 +42,7 @@ const Quality_and_award = () => {
   ];
   return (
     <div className="">
-      <div className="rotate-text-container w-100 py-3 text-light">
-        <Marquee className="d-flex align-items-center gap-2 overflow-hidden">
-          <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
-            <Image
-              className="position-absolute rotate-text-img"
-              src="/rotate-text.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <Image
-              className="p-3"
-              src="/rotate-text-arrow.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
-          </div>
-          <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
-            <Image
-              className="position-absolute rotate-text-img"
-              src="/rotate-text.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <Image
-              className="p-3"
-              src="/rotate-text-arrow.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
-          </div>
-          <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
-            <Image
-              className="position-absolute rotate-text-img"
-              src="/rotate-text.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <Image
-              className="p-3"
-              src="/rotate-text-arrow.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
-          </div>
-          <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
-            <Image
-              className="position-absolute rotate-text-img"
-              src="/rotate-text.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <Image
-              className="p-3"
-              src="/rotate-text-arrow.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
-          </div>
-          <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
-            <Image
-              className="position-absolute rotate-text-img"
-              src="/rotate-text.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <Image
-              className="p-3"
-              src="/rotate-text-arrow.svg"
-              alt=""
-              width={90}
-              height={90}
-            />
-            <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
-          </div>
-        </Marquee>
-      </div>
+      <QualityScroller />
       <div className="container py-4">
         <div className="award-text position-relative text-center mx-sm-auto px-5">
           <Image
