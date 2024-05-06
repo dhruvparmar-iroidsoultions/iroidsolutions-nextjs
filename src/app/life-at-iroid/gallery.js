@@ -15,7 +15,6 @@ const Gallery = () => {
       const { data } = await axiosApi.get(
         `/life-at-iroids?page=${pageNumber}&limit=6`
       );
-      console.log(data);
       const lastPage = data.meta.last_page;
       setGallery(data.data);
       setLastPage(lastPage);

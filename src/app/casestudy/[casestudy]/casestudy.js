@@ -4,12 +4,57 @@ import CsTypo from "@/pages/casestudy/cstypo";
 import EnquiryBanner from "@/components/enquiryBanner";
 import CsSwiper from "@/pages/casestudy/csSwiper";
 import Quote from "@/components/quote";
+import TopBg from "@/components/topBg";
+import Image from "next/image";
 
 const CaseStudyCom = ({ caseStudy }) => {
-  console.log("caseStudy from com: ", caseStudy);
+  const removeTags = (html) => {
+    const cleanText = html?.replace(/<[^>]*>/g, "");
+    return cleanText;
+  };
   return (
     <>
-      <div className="container caseStudyContainer d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between gap-5">
+      <TopBg state={caseStudy.title} text={caseStudy.subtitle} />
+      <div className="container py-5">
+        <Image
+          className="project-img"
+          src={caseStudy.cover_image}
+          alt=""
+          width={1600}
+          height={900}
+        />
+        <div className="about-client">
+          <p className="client fs-3 fw-semibold text-005490 lh-base mb-0">
+            About Client
+          </p>
+          <div
+            className="dangerouslySetInnerHTML-div"
+            dangerouslySetInnerHTML={{ __html: caseStudy.about_client }}
+          />
+          {/* <p>{removeTags(caseStudy.about_client)}</p> */}
+        </div>
+        <div className="about-project">
+          <p className="client fs-3 fw-semibold text-005490 lh-base mb-0">
+            About Project
+          </p>
+          <div
+            className="dangerouslySetInnerHTML-div"
+            dangerouslySetInnerHTML={{ __html: caseStudy.project_overview }}
+          />
+        </div>
+
+        {/* kai img mukvani ae pending chhe */}
+        <Image
+          className="project-img"
+          src={caseStudy.cover_image}
+          alt=""
+          width={1600}
+          height={900}
+        />
+
+        {/*  */}
+      </div>
+      <div className="caseStudyContainer d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between gap-5">
         <div className="csLeft wow animate__animated animate__fadeInLeft">
           <div className=" d-flex align-items-center justify-content-between gap-3 cspContainer ">
             <img src={caseStudy.cpLogo} alt="" />~
