@@ -39,12 +39,16 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
             <ul className="list-unstyled d-flex">{stars}</ul>
             <Image src={"/quote-up-right.svg"} alt="" width={55} height={55} />
           </div>
-          <p className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight">
+          <div
+            className="client-home-review"
+            dangerouslySetInnerHTML={{ __html: review.description }}
+          />
+          {/* <p className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight">
             “{removeTags(review.description)}”
-          </p>
+          </p> */}
           <div className="testimonialProfileContainer d-flex align-items-center gap-4">
             <div className="d-flex justify-content-center">
-              <img
+              <Image
                 src={review.profilepic}
                 alt="profile"
                 className="testimonial-img rounded-circle"
@@ -62,6 +66,64 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
             </div>
           </div>
         </div>
+        <div
+          className="modal fade"
+          id="client-home-review-modal"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabIndex="-1"
+          aria-labelledby="client-home-review-modalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered d-flex flex-column align-items-center justify-content-center">
+            <div className="modal-content d-flex flex-column align-items-center justify-content-center position-relative">
+              <button
+                type="button"
+                className="btn-close position-absolute"
+                id="closeModal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+
+              <div className="card-body d-flex flex-column text-start py-2 py-md-4 px-5">
+                <div className="d-flex align-items-center justify-content-between gap-3">
+                  <ul className="list-unstyled d-flex">{stars}</ul>
+                  <Image
+                    src={"/quote-up-right.svg"}
+                    alt=""
+                    width={55}
+                    height={55}
+                  />
+                </div>
+                <div
+                  className="client-home-review"
+                  dangerouslySetInnerHTML={{ __html: review.description }}
+                  data-bs-toggle="modal"
+                  data-bs-target="#client-home-review-modal"
+                />
+                <div className="testimonialProfileContainer d-flex align-items-center gap-4">
+                  <div className="d-flex justify-content-center">
+                    <img
+                      src={review.profilepic}
+                      alt="profile"
+                      className="testimonial-img rounded-circle"
+                      width={60}
+                      height={60}
+                    />
+                  </div>
+                  <div className="testimonialProfile">
+                    <h5 className="font-weight-bold mb-0 text-capitalize">
+                      {review.clientname}
+                    </h5>
+                    <h6 className="font-weight-bold my-1 text-uppercase">
+                      {review.position}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </SwiperSlide>
     );
   });
@@ -71,7 +133,7 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
       <p className="text-005490 fs-1 fw-bolder wow animate__animated animate__fadeInLeft">
         What Clients Say
       </p>
-      <p className="f20 fs-5 fw-medium container wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+      <p className="mw-1006 mx-auto fs-5 text-body-secondary fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
         This slide covers the client testimonials and what our customers have to
         say about our company and its services to understand the company’s
         market reputation.
@@ -81,7 +143,7 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
         loop={true}
         centeredSlides={true}
         grabCursor={true}
-        pagination={true}
+        pagination={{ clickable: true }}
         navigation={true}
         modules={[EffectFlip, Pagination, Navigation]}
         className="mySwiper wow animate__animated animate__fadeIn"
@@ -89,6 +151,7 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
         id="testimonialSwiper"
       >
         {mapTestimonialsReview}
+
         <div className="testimonialBlur position-absolute"></div>
       </Swiper>
       <Button linkPath={"/testimonials"} />

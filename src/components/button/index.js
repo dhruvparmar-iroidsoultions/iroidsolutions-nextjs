@@ -10,7 +10,7 @@ const Button = ({ linkPath, text, m, cn, arrow = true, children }) => {
       } position-relative fw-semibold rounded-3`}
     >
       <Link
-        className="text-decoration-none d-block d-flex align-items-center justify-content-center w-100 h-100"
+        className="fs-6 text-decoration-none d-block d-flex align-items-center justify-content-center w-100 h-100"
         href={`${linkPath}`}
       >
         {children ? children : text || "See More"}

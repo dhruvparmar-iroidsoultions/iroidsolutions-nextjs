@@ -1,18 +1,7 @@
-.casestudy,
-.w-u-sp {
+.casestudy {
   box-shadow: 0px 4px 44px 0px #00549033;
 }
 
 .mw-1270 {
   max-width: 1270px;
-}
-
-.active-casestudies-page {
-  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
-}
-
-.w-u-sp img {
-  max-width: 100px;
-  width: 100%;
-  height: auto;
 }

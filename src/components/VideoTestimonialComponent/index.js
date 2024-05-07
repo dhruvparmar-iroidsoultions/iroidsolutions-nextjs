@@ -98,8 +98,10 @@ const VideoTestimonialComponent = ({
           />
           <div className="card-img-overlay w-100 d-flex align-items-end justify-content-between p-3">
             <div className="videoDetail text-start z-3">
-              <h5 className="card-title mb-0">{video.clientname}</h5>
-              <p className="card-text">{video.position}</p>
+              <h5 className="fs-6 fw-bold card-title mb-0">
+                {video.clientname}
+              </h5>
+              <p className="opacity-75 card-text">{video.position}</p>
             </div>
             <div className="z-3">
               <Image
@@ -150,10 +152,10 @@ const VideoTestimonialComponent = ({
             <h3 className="fs-4 fw-semibold wow animate__animated animate__fadeInDown">
               Video Testimonials
             </h3>
-            <p className="m-0 fs-1 fw-bolder text-005490 wow animate__animated animate__fadeInLeft">
+            <p className="fs-1 fw-bolder text-005490 wow animate__animated animate__fadeInLeft">
               Over 1000+ People Trust Us
             </p>
-            <p className="mb-5 f20 fs-5 fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
+            <p className="mb-5 fs-5 text-body-secondary fw-medium wow animate__animated animate__fadeInRight wow animate__animated animate__fadeInRight">
               Built for Service Professionals, by Service Professionals
             </p>
           </>
@@ -166,13 +168,20 @@ const VideoTestimonialComponent = ({
           >
             <div className="ct-left p-3 p-md-5">
               <Image src={"/quote-up.svg"} alt="''" width={50} height={50} />
-              <p className="mb-lg-5 lh-base fs-6">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: clientTestimonial?.description,
+                }}
+              />
+              {/* <p className="mb-lg-5 lh-base fs-6">
                 “{removeTags(clientTestimonial?.description)}.”
-              </p>
-              <h3 className="fw-bolder" style={{ color: "#005490" }}>
+              </p> */}
+              <p className="fs-3 fw-bolder text-005490 mb-0">
                 {clientTestimonial?.clientname}
-              </h3>
-              <h4 className="fw-medium">{clientTestimonial?.position}</h4>
+              </p>
+              <p className="fs-5 opacity-75 fw-medium">
+                {clientTestimonial?.position}
+              </p>
             </div>
             <div className="ct-right position-relative w-100 h-100">
               <Image

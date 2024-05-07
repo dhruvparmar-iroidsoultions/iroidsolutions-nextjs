@@ -30,6 +30,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet"
+        />
+        <link
           href="https://fonts.googleapis.com/css?family=Work+Sans:ital,wght@0,300..800;1,300..800&display=swap"
           rel="stylesheet"
         />

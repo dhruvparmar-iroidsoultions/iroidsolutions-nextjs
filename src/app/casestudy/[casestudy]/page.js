@@ -15,7 +15,7 @@ const CaseStudy = async ({ params }) => {
     const casestudy = response.data.data;
     return <CaseStudyCom caseStudy={casestudy} />;
   } catch (error) {
-    // console.error("Error fetching case studies:", error);
+    console.error("Error fetching case studies:", error);
     return <CaseStudyCom caseStudy={[]} />;
   }
 };

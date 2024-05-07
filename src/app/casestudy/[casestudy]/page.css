@@ -1,4 +1,35 @@
-.project-first-img {
+.casestudy-img {
   width: 100%;
   height: auto;
+}
+
+.tech_stack {
+  background: #e7ecf1;
+}
+
+.project-img {
+  border: 1px solid #00549066;
+  box-shadow: 0px 4px 50px 0px #0054901a;
+}
+
+.project-playbtn {
+  max-width: 100px;
+  max-height: 100px;
+  cursor: pointer;
+}
+
+.tech-card {
+  box-shadow: 0px 4px 50px 0px #00549033;
+}
+
+.flexElem {
+  flex: 1;
+}
+
+.tech-card-img {
+  max-width: 50px;
+}
+
+.result {
+  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
 }

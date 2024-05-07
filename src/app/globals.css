@@ -5,8 +5,40 @@
   font-family: "Montserrat";
 }
 
+.mw-1006 {
+  max-width: 1006px;
+}
+
+.opacity-60 {
+  opacity: 60%;
+}
+
+.f20 {
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.8;
+  /* line-height: 27px; */
+  max-width: 900px;
+  margin: auto;
+}
+
+.f38 {
+  /* color: #005490; */
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.f48 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
 .fs-7 {
   font-size: 12px;
+}
+
+.fs-22 {
+  font-size: 22px;
 }
 
 .fs-50 {
@@ -191,7 +223,111 @@
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
+  .f38 {
+    /* color: #005490; */
+    font-size: 34px;
+  }
+
+  .f48 {
+    font-size: 43px;
+  }
+
+  .fs-7 {
+    font-size: 11.5px;
+  }
+
+  .fs-22 {
+    font-size: 21px;
+  }
+
+  .fs-50 {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .f20 {
+    font-size: 18px;
+  }
+
+  .f38 {
+    /* color: #005490; */
+    font-size: 30px;
+  }
+
+  .f48 {
+    font-size: 40px;
+  }
+
+  .fs-7 {
+    font-size: 10px;
+  }
+
+  .fs-22 {
+    font-size: 20px;
+  }
+
+  .fs-50 {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .f20 {
+    font-size: 17px;
+    max-width: 380px;
+  }
+
+  .f38 {
+    /* color: #005490; */
+    font-size: 25px;
+  }
+
+  .f48 {
+    font-size: 35px;
+  }
+
+  .fs-7 {
+    font-size: 9px;
+  }
+
+  .fs-22 {
+    font-size: 18.5px;
+  }
+
+  .fs-50 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .f20 {
+    font-size: 16px;
+  }
+  .f38 {
+    /* color: #005490; */
+    font-size: 22px;
+  }
+
+  .f48 {
+    font-size: 32px;
+  }
+
+  .fs-7 {
+    font-size: 8px;
+  }
+
+  .fs-22 {
+    font-size: 17px;
+  }
+
+  .fs-50 {
+    font-size: 34px;
+  }
+}
+
+/* @media only screen and (max-width: 1000px) {
   .twoColor {
     font-size: 42px;
     line-height: normal;
@@ -202,4 +338,4 @@
   .twoColor {
     font-size: xx-large;
   }
-}
+} */

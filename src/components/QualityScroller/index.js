@@ -21,7 +21,7 @@ const QualityScroller = () => {
             width={90}
             height={90}
           />
-          <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
+          <p className="mb-0 fs-60 mx-3">QUALITY MATTERS</p>
         </div>
         <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
           <Image
@@ -38,7 +38,7 @@ const QualityScroller = () => {
             width={90}
             height={90}
           />
-          <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
+          <p className="mb-0 fs-60 mx-3">QUALITY MATTERS</p>
         </div>
         <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
           <Image
@@ -55,7 +55,7 @@ const QualityScroller = () => {
             width={90}
             height={90}
           />
-          <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
+          <p className="mb-0 fs-60 mx-3">QUALITY MATTERS</p>
         </div>
         <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
           <Image
@@ -72,7 +72,7 @@ const QualityScroller = () => {
             width={90}
             height={90}
           />
-          <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
+          <p className="mb-0 fs-60 mx-3">QUALITY MATTERS</p>
         </div>
         <div className="rotate-text position-relative d-flex align-items-center gap-2 me-2">
           <Image
@@ -89,7 +89,7 @@ const QualityScroller = () => {
             width={90}
             height={90}
           />
-          <h1 className="fw-semibold mx-3">QUALITY MATTERS</h1>
+          <p className="mb-0 fs-60 mx-3">QUALITY MATTERS</p>
         </div>
       </Marquee>
     </div>

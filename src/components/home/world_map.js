@@ -12,13 +12,23 @@ const Map = () => {
         website projects across 25+ countries and continue to expand our global
         reach.
       </p>
-      <Image
-        className="w-100 h-100"
-        src={"/map.png"}
-        alt="world wide work map"
-        width={1000}
-        height={630}
-      />
+      <div className="map-container position-relative">
+        <Image
+          className="w-100 h-100"
+          src={"/doted-map.png"}
+          alt="world wide work map"
+          width={1000}
+          height={630}
+        />
+        <Image
+          className="position-absolute map-animation"
+          src={"/map-animation.svg"}
+          alt="world wide work map"
+          width={1000}
+          height={630}
+          style={{ width: "100%", height: "auto" }}
+        />
+      </div>
       {/* <img src={mapAnimation} alt="" className="position-absolute" /> */}
       {/* <AmsChart /> */}
     </div>

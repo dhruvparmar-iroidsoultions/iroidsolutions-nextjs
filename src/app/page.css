@@ -16,43 +16,42 @@
   line-height: 33px;
 }
 
-.f38 {
-  color: #005490;
-  font-size: 38px;
-  font-weight: 600;
-}
-
-.f48 {
-  font-size: 48px;
-  font-weight: 600;
-}
-.f48 span {
+.fs-50 span {
   position: relative;
   color: #005490;
   text-wrap: nowrap;
 }
-.f48 span img {
+
+.fs-50 span img {
   position: absolute;
   width: 100%;
-  bottom: -10px;
+  bottom: -20px;
   left: 0;
   /* left: 10px;
     scale: 1.1; */
+}
+
+.ratings {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.ratings img {
+  max-width: 225px;
+  width: 100%;
+  height: auto;
 }
 
 .award-text h1 {
   color: #005490;
 }
 
-.f20 {
-  /* font-weight: 400; */
-  /* opacity: 0.6; */
-  font-size: 20px;
-  font-weight: 500;
-  opacity: 0.8;
-  /* line-height: 27px; */
-  max-width: 1006px;
-}
+/* .award-slider img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+} */
 
 /* .award-text p {
     max-width: 1006px;
@@ -77,12 +76,14 @@
 }
 
 .hero-main .container:nth-child(1) {
-  background-image: url(/hero-bg.svg);
+  /* background-image: url(/hero-bg.svg); */
   /* background-image: url("/Frame 36824.svg"); */
+  background-image: url(/hero-bg.png);
   background-size: cover;
   /* background-position: bottom; */
   background-repeat: no-repeat;
   border-radius: 40px;
+  min-height: 682px;
 }
 
 .hero-main p {
@@ -287,9 +288,18 @@
 .card.swiper-slide-perv {
   z-index: inherit;
 }
+
 .card.swiper-slide-active {
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.15);
   scale: 1 !important;
+}
+
+.client-home-review p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .testimonialReview {
@@ -385,6 +395,7 @@
 
 .project:hover {
   background: white;
+  /* box-shadow: 0px 4px 50px 0px #00549033; */
 }
 
 .project img {
@@ -423,6 +434,12 @@
 
 .worldMap img {
   width: 100%;
+  height: auto;
+}
+
+.map-animation {
+  top: -10px;
+  left: 0;
 }
 
 .scroller-line-container {
@@ -983,7 +1000,32 @@
     padding-inline: 2rem;
   } */
 }
+
+@media only screen and (max-width: 991px) {
+  .ratings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ratings img {
+    max-width: 175px;
+  }
+  .map-animation {
+    top: -7px;
+    left: 0;
+  }
+}
+
+@media only screen and ((min-width: 567) and (max-width: 991px)) {
+  .award-slider img {
+    width: 100%;
+    height: auto;
+  }
+}
 @media only screen and (max-width: 767px) {
+  .hero-main .container:nth-child(1) {
+    min-height: auto;
+  }
+
   .testimonialsSwiper .swiper {
     padding-block: 0;
     padding-bottom: 30px;
@@ -1023,6 +1065,10 @@
   .testimonialProfile h6 {
     font-size: 14px;
     line-height: 18px;
+  }
+  .map-animation {
+    top: -5px;
+    left: 0;
   }
   .homeGridItem {
     padding: 20px 20px 0px 20px;
@@ -1139,6 +1185,10 @@
   .firstBlue {
     font-size: 16px;
   }
+  .ratings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* .caseStudy h3 {
     font-size: 16px;
   } */
@@ -1234,12 +1284,27 @@
   .caseRight img {
     width: -webkit-fill-available;
   }
+  .map-animation {
+    top: -4px;
+    left: 0;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   .videoContainer {
     height: 350px;
     width: 65%;
+  }
+  .ratings {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ratings img {
+    max-width: 150px;
+  }
+  .map-animation {
+    top: -3px;
+    left: 0;
   }
 }
 
