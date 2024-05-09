@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
 
 const IndustriesWeServe = () => {
-  const line1 = [
+  const line = [
     {
       img: "/education.png",
       title: "Education Industry",
@@ -33,11 +32,9 @@ const IndustriesWeServe = () => {
       title: "Real Estate Industry",
       desc: "Our membership management software provides full automation of membership renewals and payments",
     },
-  ];
-  const line2 = [
     {
       img: "/eCommerce.png",
-      title: "E-Commerce Industry",
+      title: "Retail & E-Commerce Industry",
       desc: "Our membership management software provides full automation of membership renewals and payments",
     },
     {
@@ -65,6 +62,16 @@ const IndustriesWeServe = () => {
       title: "AI and AR Industry",
       desc: "Our membership management software provides full automation of membership renewals and payments",
     },
+    {
+      img: "/business.png",
+      title: "Business Industry",
+      desc: "Our membership management software provides full automation of membership renewals and payments",
+    },
+    {
+      img: "/other.png",
+      title: "Other Industry",
+      desc: "Our membership management software provides full automation of membership renewals and payments",
+    },
   ];
   return (
     <div className="ind-w-s text-center py-2 py-md-5">
@@ -72,39 +79,29 @@ const IndustriesWeServe = () => {
       <p className="text-005490 fs-1 fw-bolder wow animate__animated animate__fadeInLeft">
         Impactful Solutions for Various Sectors
       </p>
-      <div className="scrollers py-5">
-        <Marquee>
-          <div className="w-100 d-flex justify-content-between py-4">
-            {line1.map((l, idx) => (
-              <div
-                className={`p-2 p-md-4 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white me-3 me-md-5`}
-                key={idx}
-              >
-                <div className="img-con">
-                  <Image src={l.img} alt="" width={70} height={70} />
-                </div>
-                <h5 className="fw-semibold">{l.title}</h5>
-                <h6 className="w-100 opacity-50">{l.desc}</h6>
+      <div className="scrollers mx-auto py-3 py-md-5">
+        <div className="w-100 ind-ws-card-container px-4 py-md-4">
+          {line.map((l, idx) => (
+            <div
+              className={`p-2 p-md-4 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+              key={idx}
+            >
+              <div className="img-con d-flex align-items-start justify-content-center">
+                <Image src={l.img} alt="" width={70} height={70} />
               </div>
-            ))}
+              <h5 className="fw-semibold">{l.title}</h5>
+              <h6 className="fw-medium w-100 opacity-50">{l.desc}</h6>
+            </div>
+          ))}
+          <div
+            className={`p-2 p-md-4 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+          >
+            <div className="d-flex align-items-start justify-content-center">
+              <Image src={"/more-indu.png"} alt="" width={60} height={60} />
+            </div>
+            <h5 className="fw-semibold">See more</h5>
           </div>
-        </Marquee>
-        <Marquee direction="right">
-          <div className="w-100 d-flex justify-content-between py-4">
-            {line2.map((l, idx) => (
-              <div
-                className={`p-2 p-md-4 py-5 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white me-3 me-md-5`}
-                key={idx}
-              >
-                <div className="img-con d-flex align-items-start justify-content-center">
-                  <Image src={l.img} alt="" width={70} height={70} />
-                </div>
-                <h5 className="fw-semibold">{l.title}</h5>
-                <h6 className="w-100 opacity-50">{l.desc}</h6>
-              </div>
-            ))}
-          </div>
-        </Marquee>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ import Image from "next/image";
 import "./index.css";
 
 const CaseStudy = ({ casestudy, containerTitle, containerSubtitle }) => {
-  console.log(casestudy);
   const removeTags = (html) => {
     const cleanText = html?.replace(/<[^>]*>/g, "");
     return cleanText;
@@ -28,10 +27,11 @@ const CaseStudy = ({ casestudy, containerTitle, containerSubtitle }) => {
             <p className="fs-3 fw-semibold text-black text-start">{cs.title}</p>
             {/* <h3 className="text-start text-capitalize mb-3">{cs.subtitle}</h3> */}
             <div className="caseStudy-tags d-flex align-items-center gap-3">
-              {cs.tag.split(",").map((item) => (
+              {cs.tag.split(",").map((item, idx) => (
                 <p
                   className="fs-6 fw-medium border-0 px-3 py-1 rounded-3 text-005490 caseStudy-tag"
                   style={{ background: "#E9F1F6" }}
+                  key={idx}
                 >
                   {item.trim()}
                 </p>

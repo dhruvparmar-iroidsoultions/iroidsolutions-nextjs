@@ -33,37 +33,45 @@ const EngagementModel = () => {
 
   const engagementModels = [
     {
-      img: "/engagement-model-1.png",
-      industry: "Fixed Price",
+      thumbnail: "/engagement-model-1.png",
+      name: "Fixed Price",
       description:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
-      list: [
-        "The fixed model has exact budget defined in advance",
-        "Billing is based on milestones completed",
-        "Change in scope needs client approval, ensuring budget never exceeds",
+        "<p className='fs-6 fw-medium'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>",
+      subcategorie: [
+        { name: "The fixed model has exact budget defined in advance" },
+        { name: "Billing is based on milestones completed" },
+        {
+          name: "Change in scope needs client approval, ensuring budget never exceeds",
+        },
       ],
     },
     {
-      img: "/engagement-model-2.png",
-      industry: "Dedicated Hiring Model",
+      thumbnail: "/engagement-model-2.png",
+      name: "Dedicated Hiring Model",
       description:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
-      list: [
-        "Best model for clients with in-house staff to manage the projects",
-        "Get dedicated developers assigned to your project",
-        "Billing on fixed or hourly basis",
-        "Virtual employees working exclusively for your team",
+        "<p class='fs-6 fw-medium lh-base'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>",
+      subcategorie: [
+        {
+          name: "Best model for clients with in-house staff to manage the projects",
+        },
+        { name: "Get dedicated developers assigned to your project" },
+        { name: "Billing on fixed or hourly basis" },
+        { name: "Virtual employees working exclusively for your team" },
       ],
     },
     {
-      img: "/engagement-model-3.png",
-      industry: "Time and Material",
+      thumbnail: "/engagement-model-3.png",
+      name: "Time and Material",
       description:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
-      list: [
-        "Best option when the project scope is constantly changing",
-        "Option for client to make hourly, daily, weekly or monthly payment",
-        "Flexible model, allowing client to experiment with new activity and requirements",
+        "<p class='fs-6 fw-medium lh-base'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>",
+      subcategorie: [
+        { name: "Best option when the project scope is constantly changing" },
+        {
+          name: "Option for client to make hourly, daily, weekly or monthly payment",
+        },
+        {
+          name: "Flexible model, allowing client to experiment with new activity and requirements",
+        },
       ],
     },
   ];

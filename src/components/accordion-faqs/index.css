@@ -1,6 +1,11 @@
 .active-faq {
   border: 1.5px solid #00549099 !important;
   box-shadow: 0px 4px 25px 0px #00549033;
+  background: white;
+}
+
+.faq-ans p {
+  margin: 0;
 }
 
 .opened-faq .collapsed {
@@ -15,4 +20,8 @@
 .accordion-button::after {
   --bs-accordion-btn-icon: url("/add-square.png");
   --bs-accordion-btn-active-icon: url("/minus-square.png") !important;
+}
+
+.accCla {
+  max-width: 1160px;
 }

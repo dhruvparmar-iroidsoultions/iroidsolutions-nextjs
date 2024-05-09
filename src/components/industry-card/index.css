@@ -30,3 +30,12 @@
   grid-template-rows: repeat(5);
   grid-template-columns: repeat(2, 1fr);
 }
+
+.tags {
+  background: white;
+  transition: all 0.3s;
+}
+
+.industry-info:hover .tags {
+  background: #e9f1f6;
+}

@@ -12,7 +12,7 @@ const Accordion = ({ faqs, id, mainClass }) => {
 
   return (
     <div
-      className={`accordion accordion-flush mx-auto ${mainClass}`}
+      className={`accordion accordion-flush mx-auto accCla ${mainClass}`}
       id={`${id}`}
     >
       {faqs.map((faq, idx) => (
@@ -24,12 +24,12 @@ const Accordion = ({ faqs, id, mainClass }) => {
           onClick={() => handleItemClick(idx)}
         >
           <h2
-            className={`accordion-header  ${
+            className={`accordion-header ${
               activeIndex === idx ? "" : "opened-faq"
             }`}
           >
             <button
-              className={`accordion-button collapsed fs-5 fw-semibold d-flex align-items-center gap-3`}
+              className={`accordion-button collapsed fs-5 fw-semibold d-flex align-items-center gap-3 px-lg-5 mb-1`}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target={`#${id}-flush-${faq.id}`}
@@ -45,10 +45,10 @@ const Accordion = ({ faqs, id, mainClass }) => {
             className="accordion-collapse collapse position-relative"
             data-bs-parent={`#${id}`}
           >
-            <div className="accordion-body d-flex gap-2 fs-6 pt-0">
+            <div className="accordion-body d-flex gap-2 fs-6 pt-0 px-lg-5">
               <span className="text-005490 fw-semibold">Ans. </span>{" "}
               <div
-                className="fw-medium text-00000099"
+                className="fw-medium text-00000099 faq-ans"
                 dangerouslySetInnerHTML={{ __html: faq.answer }}
               />
             </div>

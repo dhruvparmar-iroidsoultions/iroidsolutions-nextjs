@@ -46,6 +46,13 @@ const ListedPlatforms = () => {
         width={300}
         height={50}
       />
+      <Image
+        className="hover-me-img px-5 w-100"
+        src={"/hover-me-img-7.svg"}
+        alt=""
+        width={300}
+        height={50}
+      />
     </Marquee>
   );
 };

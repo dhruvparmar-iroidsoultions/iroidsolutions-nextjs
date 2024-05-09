@@ -101,6 +101,7 @@ const Process = () => {
                   ? "activeProcess text-005490 d-block"
                   : "text-005490 d-none d-md-block"
               }  px-2 px-md-1 py-3 py-md-2 py-lg-3 fs-6 mb-0 fw-bolder position-relative`}
+              key={idx}
             >
               {/* <p
                 className={``}

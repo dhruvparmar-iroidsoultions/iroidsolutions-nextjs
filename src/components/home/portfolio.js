@@ -112,7 +112,6 @@ const PortfolioHome = () => {
               }}
             >
               {portfolio.map((project) => {
-                console.log(project);
                 const category = [];
                 const decodeC = JSON.parse(project.category);
                 decodeC.includes("1") && category.push("iPhone");
@@ -120,7 +119,11 @@ const PortfolioHome = () => {
                 decodeC.includes("3") && category.push("Website");
                 decodeC.includes("4") && category.push("UI/UX");
                 return (
-                  <SwiperSlide className="py-5 " key={project.id}>
+                  <SwiperSlide
+                    className="py-5 "
+                    key={project.id}
+                    style={{ height: "auto" }}
+                  >
                     <Card
                       cardOfClass={"project"}
                       img={project.thumbnail}

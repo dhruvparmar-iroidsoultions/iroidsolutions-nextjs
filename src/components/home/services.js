@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../button";
+import Link from "next/link";
 
 const Service = ({
   id,
@@ -19,9 +20,9 @@ const Service = ({
   return (
     <div className="service">
       <button
-        className={`fw-medium d-flex align-items-center gap-2 w-100 px-3 py-4 rounded-4 ${
-          activeTab ? "activeService text-005490 bg-white " : ""
-        } service-btn`}
+        className={`fw-medium d-flex flex-xl-column align-items-center justify-content-xl-center gap-2 w-100 px-3 py-4 rounded-4 ${
+          activeTab ? "activeService" : ""
+        } bg-white service-btn`}
         type="button"
         data-bs-toggle="collapse"
         data-bs-target={`#service-${id}`}
@@ -31,8 +32,18 @@ const Service = ({
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <Image src={img} alt="" width={50} height={50} />
-        <p className="fs-4 m-0">{service}</p>
+        <div className="sevice-h">
+          <div className="service-img d-flex align-items-center justify-content-center rounded-2 px-1 px-xl-2 py-xl-1">
+            <Image className="p-1" src={img} alt="" width={60} height={60} />
+          </div>
+        </div>
+        <p
+          className={`fs-5 m-0 d-flex align-items-center justify-content-center ${
+            activeTab ? "fw-semibold" : "fw-medium opacity-75"
+          } `}
+        >
+          {service}
+        </p>
       </button>
       <div
         className="collapse service-details text-start p-3 rounded-4 my-3 d-lg-none"
@@ -44,8 +55,14 @@ const Service = ({
         </div>
         <ul className="my-3">
           {list.map((l, idx) => (
-            <li key={idx} className="ps-3 mb-2 fw-semibold fs-6 opacity-75">
-              {l}
+            <li key={idx} className="ps-3 mb-2 fs-6 opacity-75">
+              <Link
+                className="fw-semibold text-decoration-none text-body service-link"
+                href={l.link}
+              >
+                {" "}
+                {l.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -66,10 +83,19 @@ const Services = () => {
       subtitle:
         "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
       list: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross-platform App Development Using Flutter",
-        "Mobile App Support & Maintenance",
+        {
+          title: "Android App Development",
+          link: "/services/android-app-development",
+        },
+        { title: "iOS App Development", link: "/services/iOS-app-development" },
+        {
+          title: "Cross-platform App Development Using Flutter",
+          link: "/services/cross-platform-app-development-using-flutter",
+        },
+        {
+          title: "Mobile App Support & Maintenance",
+          link: "/services/mobile-app-support-and-maintenance",
+        },
       ],
       indicatorHeight: "0",
     },
@@ -82,10 +108,19 @@ const Services = () => {
       subtitle:
         "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
       list: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross-platform App Development Using Flutter",
-        "Mobile App Support & Maintenance",
+        {
+          title: "Android App Development",
+          link: "/services/android-app-development",
+        },
+        { title: "iOS App Development", link: "/services/iOS-app-development" },
+        {
+          title: "Cross-platform App Development Using Flutter",
+          link: "/services/cross-platform-app-development-using-flutter",
+        },
+        {
+          title: "Mobile App Support & Maintenance",
+          link: "/services/mobile-app-support-and-maintenance",
+        },
       ],
       indicatorHeight: "27",
     },
@@ -98,10 +133,19 @@ const Services = () => {
       subtitle:
         "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
       list: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross-platform App Development Using Flutter",
-        "Mobile App Support & Maintenance",
+        {
+          title: "Android App Development",
+          link: "/services/android-app-development",
+        },
+        { title: "iOS App Development", link: "/services/iOS-app-development" },
+        {
+          title: "Cross-platform App Development Using Flutter",
+          link: "/services/cross-platform-app-development-using-flutter",
+        },
+        {
+          title: "Mobile App Support & Maintenance",
+          link: "/services/mobile-app-support-and-maintenance",
+        },
       ],
       indicatorHeight: "53.5",
     },
@@ -114,10 +158,19 @@ const Services = () => {
       subtitle:
         "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
       list: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross-platform App Development Using Flutter",
-        "Mobile App Support & Maintenance",
+        {
+          title: "Android App Development",
+          link: "/services/android-app-development",
+        },
+        { title: "iOS App Development", link: "/services/iOS-app-development" },
+        {
+          title: "Cross-platform App Development Using Flutter",
+          link: "/services/cross-platform-app-development-using-flutter",
+        },
+        {
+          title: "Mobile App Support & Maintenance",
+          link: "/services/mobile-app-support-and-maintenance",
+        },
       ],
       indicatorHeight: "80",
     },
@@ -136,8 +189,8 @@ const Services = () => {
         business reputation online, expand market reach, and increase turnover
         through effective digital strategies.
       </p>
-      <div className="d-flex gap-3">
-        <div className="w-100 d-flex flex-column justify-content-between gap-3">
+      <div className="d-flex gap-3 gap-xl-5 p-xl-5 rounded-5 service-con">
+        <div className="w-100 d-flex flex-column justify-content-between gap-3 service-grid">
           {services.map((service) => (
             <Service
               key={service.id}
@@ -159,22 +212,30 @@ const Services = () => {
             />
           ))}
         </div>
-        <div className="service-nav-indicator-container position-relative d-none d-lg-block">
+        {/* <div className="service-nav-indicator-container position-relative d-none d-lg-block">
           <div className="service-nav-indicator-line position-absolute start-50 h-100"></div>
           <div
             className="position-absolute service-nav-indicator"
             style={{ "--indicatorPosition": indicatorPosition + "%" }}
           ></div>
-        </div>
+        </div> */}
         <div className="service-details text-start p-3 rounded-4 d-none d-lg-block">
-          <div className="p-3 bg-white rounded">
+          <div className="p-3 rounded">
             <h3 className="fs-3 fw-semibold">{serviceL.title}</h3>
-            <p className="fs-5 opacity-50 m-0">{serviceL.subtitle}</p>
+            <p className="fs-5 fw-medium opacity-60 m-0 bg-white px-2 rounded-3 px-xxl-0">
+              {serviceL.subtitle}
+            </p>
           </div>
+          <hr className="service-hr px-2" />
           <ul className="my-3">
             {serviceL.list.map((l, idx) => (
-              <li key={idx} className="ps-3 mb-2 fw-semibold fs-6 opacity-75">
-                {l}
+              <li key={idx} className="ps-3 mb-2 fs-6 opacity-75">
+                <Link
+                  className="fw-semibold text-decoration-none text-body service-link"
+                  href={l.link}
+                >
+                  {l.title}
+                </Link>
               </li>
             ))}
           </ul>

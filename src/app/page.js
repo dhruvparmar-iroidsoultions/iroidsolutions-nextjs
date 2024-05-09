@@ -1,5 +1,4 @@
 import "./page.css";
-import HomePage from "@/pages/home/";
 import axiosApi from "@/api/axiosConfig";
 // import HeroSection from "@/components/home/heroSection";
 import VideoTestimonial from "@/components/VideoTestimonialComponent";
@@ -7,7 +6,6 @@ import CaseStudy from "@/components/caseStudy";
 import TestimonialReview from "@/components/home/testimonialReview";
 import PortfolioHome from "@/components/home/portfolio";
 import Numbers from "@/components/home/numbers";
-import OurSkills from "@/components/home/ourSkills";
 import OfcEnviroment from "@/components/home/ofcEnviroment";
 import FAQs from "@/components/home/faqs";
 import Blogs from "@/components/home/blogs";

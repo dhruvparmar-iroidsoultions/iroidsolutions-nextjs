@@ -2,8 +2,8 @@ import Button from "../button";
 
 const HeroSection = () => {
   return (
-    <main className="hero-main pt-5 mx-2 mx-sm-auto">
-      <div className="container my-3 my-md-5 p-md-5 overflow-hidden d-flex align-items-center">
+    <main className="hero-main pt-3 mx-2 mx-sm-auto">
+      <div className="container mb-3 overflow-hidden d-flex align-items-center">
         <div className="p-4 p-md-5">
           <div className="py-1">
             <h3 className="mb-3 text-005490 fw-medium">

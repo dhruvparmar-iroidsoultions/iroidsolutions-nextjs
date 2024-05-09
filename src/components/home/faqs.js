@@ -1,4 +1,5 @@
 import QueAns from "../QnsAns";
+import Accordion from "../accordion-faqs";
 import Button from "../button";
 
 const FAQs = ({ faqs, show = true, btn = true }) => {
@@ -10,7 +11,7 @@ const FAQs = ({ faqs, show = true, btn = true }) => {
           Frequently Asked Quetions
         </p>
       )}
-      <QueAns QA={faqs} id={"FAQs"} />
+      <Accordion faqs={faqs} id={"FAQs"} mainClass={"home-faqs"} />
       {btn && <Button linkPath={"/FAQs"} />}
     </div>
   );

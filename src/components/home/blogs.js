@@ -29,14 +29,18 @@ const Blogs = ({ blogs = [], show = true }) => {
   };
 
   const mapBlog = blogs.map((blog) => (
-    <SwiperSlide className="bg-transparent p-3 p-md-0" key={blog.id}>
+    <SwiperSlide
+      className="bg-transparent p-3 p-md-0 d-flex align-items-center justify-content-center blog-slide"
+      key={blog.id}
+    >
       <Card
         cardOfClass={"blog"}
         cardText={blog.title}
         cardTitle={removeTags(blog.description)}
-        img={blog.thumbnail}
-        textStyle={"fs-5 fw-semibold"}
-        titlestyle={"fs-6"}
+        // img={blog.thumbnail}
+        img={"/blogImg1.png"}
+        textStyle={"fs-4 fw-semibold"}
+        titlestyle={"fs-5 fw-medium lh-base opacity-75"}
         readMore={true}
         readMoreLink={`/blog/${blog.slug}`}
       />
@@ -80,18 +84,19 @@ const Blogs = ({ blogs = [], show = true }) => {
                   clickable: true,
                 }}
                 modules={[Navigation, Pagination]}
-                className="home-blogs-swiper blogs p-5 wow animate__animated animate__fadeIn"
+                className="home-blogs-swiper blogs p-5 pb-0 wow animate__animated animate__fadeIn"
                 data-wow-duration="2s"
                 slideActiveClass="home-blogs-active-slide"
                 slidesPerView={1}
-                spaceBetween={50}
+                // spaceBetween={50}
                 breakpoints={{
                   1000: {
                     slidesPerView: 3,
+                    // spaceBetween: 0,
                   },
                   767: {
                     slidesPerView: 2,
-                    spaceBetween: 60,
+                    // spaceBetween: 60,
                   },
                 }}
                 id="home-blogs-swiper"

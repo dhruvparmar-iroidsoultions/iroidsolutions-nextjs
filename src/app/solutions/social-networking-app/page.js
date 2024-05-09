@@ -1,4 +1,4 @@
-import Solutions from "../page";
+import Solutions from "../this-is-old-page";
 
 const SocialNetworking = () => {
   const solution = {

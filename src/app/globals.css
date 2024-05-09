@@ -9,6 +9,14 @@
   max-width: 1006px;
 }
 
+.mw-1060 {
+  max-width: 1060px;
+}
+
+.mw-1100 {
+  max-width: 1100px;
+}
+
 .opacity-60 {
   opacity: 60%;
 }
@@ -122,7 +130,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  z-index: 999 !important;
+  z-index: 99 !important;
 }
 
 .review-shadowbox {
@@ -135,12 +143,13 @@
 }
 
 .blogs .card {
+  /* max-width: 400px; */
   min-height: 24rem;
   padding-block: 15px;
   padding-inline: 15px;
   border: none;
   /* box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.15); */
-  box-shadow: 0px 4px 50px 0px #00549033;
+  /* box-shadow: 0px 4px 50px 0px #00549033; */
   border-radius: 20px;
   overflow: hidden;
   flex: 1;
@@ -171,7 +180,7 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   /* display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -180,9 +189,9 @@
 }
 
 .blog .card-body a {
-  color: #005490;
+  /* color: #005490; */
   /* font-size: 14px; */
-  font-weight: 600;
+  color: #003f66;
   line-height: 19px;
   width: 100%;
   text-decoration: none;
@@ -271,6 +280,10 @@
   .fs-50 {
     font-size: 42px;
   }
+
+  .blogs .card {
+    min-height: 31rem;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -298,6 +311,9 @@
 
   .fs-50 {
     font-size: 38px;
+  }
+  .blogs .card {
+    min-height: 24rem;
   }
 }
 

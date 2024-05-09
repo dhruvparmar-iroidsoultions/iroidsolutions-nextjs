@@ -34,7 +34,6 @@ const OfficeVideoComponent = ({}) => {
       console.error("Error fetching data:", error);
     }
   };
-  console.log("slides:", slides);
 
   useEffect(() => {
     getSlides();

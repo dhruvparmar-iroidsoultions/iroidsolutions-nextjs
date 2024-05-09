@@ -638,13 +638,33 @@
   flex: 1;
 } */
 
-.activeService img {
-  filter: brightness(0) saturate(100%) invert(15%) sepia(89%) saturate(3081%)
-    hue-rotate(190deg) brightness(96%) contrast(102%);
+/* .service-details {
+  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+} */
+
+.service-link:hover {
+  color: #005490 !important;
+  border-bottom: 1px solid #00406d;
+}
+
+.service-hr {
+  height: 1px;
+  opacity: 20%;
+  background-color: #005490;
+  border: 1px solid #005490;
+  width: 96%;
+  margin: auto;
 }
 
 .service-details {
-  background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+  border: 1.5px solid #00549099;
+  box-shadow: 0px 4px 25px 0px #00549033;
+}
+
+.service-img img {
+  opacity: 0.6;
+  filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%)
+    hue-rotate(129deg) brightness(97%) contrast(101%);
 }
 
 .service-details ul li::marker {
@@ -665,7 +685,7 @@
   width: 5px;
   height: 20%;
   background: #005490;
-  z-index: 999;
+  z-index: 99;
   top: var(--indicatorPosition, 0%);
   transition: all 0.4s ease-in;
 }
@@ -695,6 +715,16 @@
   background-size: cover;
 }
 
+.scrollers {
+  max-width: 1620px;
+}
+
+.ind-ws-card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
 .ind-ws-card {
   max-width: 300px;
   border-radius: 20px;
@@ -705,6 +735,11 @@
 
 .ind-ws-card:hover {
   border: 2px solid #005490;
+}
+
+.ind-ws-card h6 {
+  font-size: 14px;
+  line-height: 20.16px;
 }
 
 .ind-ws-card .img-con {
@@ -753,6 +788,23 @@
 /* .home-blogs-swiper {
   padding: 4rem !important;
 } */
+
+.blog {
+  background: #ffffff99;
+  cursor: pointer;
+  scale: 0.85;
+  /* min-height: 32rem !important; */
+}
+
+.blog:hover {
+  background: white;
+  box-shadow: 0px 4px 50px 0px #00549033;
+}
+
+.card-img-con img {
+  width: 100%;
+  height: auto;
+}
 
 .home-blogs-swiper::before {
   content: " ";
@@ -813,6 +865,76 @@
       justify-content: center;
     }
   } */
+
+@media only screen and (min-width: 1199px) {
+  .activeService {
+    color: #005490;
+  }
+  .service-details {
+    background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+  }
+
+  .activeService.service-btn {
+    border: 2px solid #00549099;
+    font-weight: 600 !important;
+    box-shadow: 0px 4px 25px 0px #00549033;
+  }
+
+  .activeService .service-img {
+    background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%) !important;
+  }
+
+  .service-img img {
+    opacity: 0.6;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%)
+      hue-rotate(129deg) brightness(97%) contrast(101%);
+  }
+
+  .activeService img {
+    opacity: 1;
+    filter: none;
+  }
+
+  .service-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+  }
+  .service {
+    height: 100%;
+  }
+
+  .service-details {
+    background: white;
+  }
+
+  .service-btn {
+    min-width: 240px;
+    height: 100%;
+    border: 1.5px solid transparent;
+  }
+  .service-btn p {
+    max-width: 195px;
+  }
+  .service-con {
+    background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+  }
+  .service-btn .sevice-h,
+  .service-btn p {
+    flex: 1;
+  }
+
+  .activeService.service-btn {
+    border: 1.5px solid #00549099;
+  }
+  .service-btn .service-img img {
+    max-width: 50px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
 @media only screen and (max-width: 1199px) {
   .f48 {
     font-size: 40px;
@@ -878,6 +1000,9 @@
   #companyYT .swiper-slide-next {
     height: 20rem !important;
   } */
+  .ind-ws-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media only screen and (max-width: 1000px) {
   .f48 {
@@ -1013,6 +1138,9 @@
     top: -7px;
     left: 0;
   }
+  .ind-ws-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media only screen and ((min-width: 567) and (max-width: 991px)) {
@@ -1069,6 +1197,9 @@
   .map-animation {
     top: -5px;
     left: 0;
+  }
+  .blog {
+    scale: 1;
   }
   .homeGridItem {
     padding: 20px 20px 0px 20px;
@@ -1262,6 +1393,9 @@
   .ytBlur {
     background: transparent;
   }
+  .ind-ws-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   /* .homeContactUs .container {
     width: 95%;
@@ -1305,6 +1439,12 @@
   .map-animation {
     top: -3px;
     left: 0;
+  }
+  .ind-ws-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ind-ws-card {
+    max-width: 500px;
   }
 }
 

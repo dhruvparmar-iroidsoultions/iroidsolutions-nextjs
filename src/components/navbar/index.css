@@ -1,7 +1,28 @@
+.nav-scroll-row {
+  background: #005490;
+}
+
+.socialMedia img {
+  max-width: 28px;
+}
+
+.nav-top-middle,
+.nav-top-last {
+  background: #f1f9ff33;
+}
+
+.fs-8 {
+  font-size: 16px;
+}
+
 .navbar {
-  z-index: 999999;
+  z-index: 999;
   box-shadow: 0px 4px 30px 0px #00549033;
   transform: translateY(-1px);
+}
+
+.offcanvas {
+  z-index: 9999;
 }
 
 .nav-item a {
@@ -24,8 +45,22 @@
   box-shadow: none;
 }
 
+/* .header_dropdown .dropdown-menu {
+  display: flex !important;
+} */
+
+.dropdown-menu {
+  box-shadow: 0px 4px 50px 0px #00549033;
+  border: 0;
+  border-radius: 30px;
+}
+
 .header_dropdown:hover .dropdown-menu {
   display: flex;
+}
+
+.deepUl {
+  display: flex !important;
 }
 
 .dropdown-menu {
@@ -33,12 +68,17 @@
   overflow: hidden;
 }
 
+.service-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 10%;
+}
+
 .options ul li {
-  list-style: none;
-  font-family: "Work Sans";
+  /* list-style: none; */
   font-size: 16px;
   font-weight: 500;
-  line-height: 19px;
+  /* line-height: 19px; */
   margin-block: 10px;
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -47,13 +87,16 @@
 .options ul li div {
   color: #005490;
   font-weight: 600;
-  font-size: 16px;
-  font-family: "Work Sans";
+  font-size: 18px;
 }
 
 .options a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.dropMain li::before {
+  content: url(/nav-industry-bullet.png);
 }
 
 .dropdown-item.active,
@@ -73,6 +116,17 @@
 .deepUl li div ul:hover {
   background-color: transparent;
 }
+
+.nav-industries-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nav-industries-container li::marker {
+  content: url(/nav-industry-bullet.png);
+  padding-left: 5px;
+}
+
 #navbarSideCanavs,
 #canvasToggler {
   /* background-color: #005490; */
@@ -103,11 +157,7 @@
 
 #navbarToggler ul li {
   color: rgba(0, 0, 0, 0.6);
-  font-family: "Open Sans";
   font-size: 18px;
-  font-style: normal;
-  /* font-weight: 400; */
-  line-height: normal;
 }
 
 #navbarToggler ul li a:hover {
@@ -203,3 +253,30 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 1599px) {
+  .fs-8 {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1399px) {
+  .fs-8 {
+    font-size: 11px;
+  }
+
+  .nav-top-img {
+    max-width: 15px;
+    width: 100%;
+    height: auto;
+  }
+}
+/* @media only screen and (max-width: 1299px) {
+  .fs-8 {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1299px) {
+  .fs-8 {
+    font-size: 14px;
+  }
+} */
