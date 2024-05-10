@@ -180,7 +180,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <p className="m-0 text-005490 fs-6 fw-medium d-none d-lg-block">
-                    + 91 90238 68898
+                    +91 90238 68898
                   </p>
                 </div>
                 <div className="d-flex">
