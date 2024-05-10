@@ -1,0 +1,64 @@
+.rotate-text-container {
+  background-color: #005490 !important;
+}
+
+.scroll-text {
+  display: flex;
+  white-space: nowrap;
+}
+
+.rotate-text p {
+  font-family: "Mulish";
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.rotate-text-img {
+  animation: rotate-text 5s infinite linear;
+}
+
+.fs-60 {
+  font-size: 60px;
+}
+
+@keyframes rotate-text {
+  0% {
+    rotate: 0deg;
+  }
+  /* 50% {
+      rotate: 180deg;
+    } */
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .fs-60 {
+    font-size: 55px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .fs-60 {
+    font-size: 53px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .fs-60 {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .fs-60 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .fs-60 {
+    font-size: 30px;
+  }
+}

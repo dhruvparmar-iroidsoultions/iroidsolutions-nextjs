@@ -1,0 +1,29 @@
+.link-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.link-container-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.text-b a {
+  color: black;
+}
+
+.text-b a:hover {
+  color: #005490;
+}
+
+.link-container li,
+.link-container-2 li {
+  margin-right: 12px;
+}
+
+.link-container li::marker,
+.link-container-2 li::marker {
+  content: url(/sitemap-bullet.png);
+}

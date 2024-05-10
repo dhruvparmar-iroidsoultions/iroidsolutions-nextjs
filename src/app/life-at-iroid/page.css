@@ -1,0 +1,114 @@
+.iRoid-team {
+  min-height: 145vh;
+  background: url(/iroid-team.svg);
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  /* position: absolute;
+  top: -225px; */
+}
+
+.mw-1265 {
+  max-width: 1265px;
+}
+
+.mw-1065 {
+  max-width: 1065px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery video {
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+}
+
+.gallery video:hover {
+  border-color: #005490;
+}
+
+.gallery img {
+  width: 100%;
+  /* height: revert-layer; */
+  object-fit: cover;
+}
+
+.active-gallery-page {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%) !important;
+}
+
+.gallery-pagination-btn {
+  min-width: 32px;
+  background: white;
+  border: 1px solid #f1f1f1;
+}
+
+@media only screen and (max-width: 1400px) {
+  .iRoid-team {
+    min-height: 135vh;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .iRoid-team {
+    min-height: 128vh;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .iRoid-team {
+    min-height: 120vh;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .iRoid-team {
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 884px) {
+  .iRoid-team {
+    min-height: 69vh;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .iRoid-team {
+    min-height: 58vh;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .iRoid-team {
+    min-height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .iRoid-team {
+    min-height: 45vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .iRoid-team {
+    min-height: 55vh;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .iRoid-team {
+    min-height: 47vh;
+  }
+}

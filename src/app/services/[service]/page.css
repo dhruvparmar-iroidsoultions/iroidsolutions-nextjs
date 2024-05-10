@@ -1,0 +1,13 @@
+.service-content {
+  box-shadow: 0px 4px 50px 0px #00549033;
+  text-align: justify;
+}
+
+.service-content-text {
+  text-indent: 3rem;
+}
+
+.service-img-container img {
+  width: 100%;
+  height: auto;
+}

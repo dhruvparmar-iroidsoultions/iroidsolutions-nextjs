@@ -1,0 +1,17 @@
+.service-info-header {
+  background: white;
+  transition: all 0.3s;
+}
+
+.service-info:hover .service-info-header {
+  background: #e7ecf1;
+}
+
+.service-info img {
+  filter: grayscale();
+  transition: all 0.2s;
+}
+
+.service-info ul li::marker {
+  content: url(/service-bullet.png);
+}

@@ -1,0 +1,19 @@
+import axiosApi from "@/api/axiosConfig";
+import VideoTestimonial from "@/components/VideoTestimonialComponent";
+import React from "react";
+
+const GetVideoTestimonial = async () => {
+  try {
+    // const videoTestimonialResponse = await axiosApi.get(
+    //   "getAllVideoTestimonials"
+    // );
+    // const videoTestimonialArray = videoTestimonialResponse.data;
+
+    return <VideoTestimonial videoTestimonialArray={[]} />;
+  } catch (error) {
+    console.error("Error fetching video testimonials:", error);
+    return <VideoTestimonial videoTestimonialArray={[]} />;
+  }
+};
+
+export default GetVideoTestimonial;

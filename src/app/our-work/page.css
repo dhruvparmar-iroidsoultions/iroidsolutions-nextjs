@@ -1,0 +1,85 @@
+.our-work-card-p {
+  background: #f0f9ff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.our-work-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.our-work-card-p:hover {
+  background: white;
+  box-shadow: 0px 4.81px 60.17px 0px #00549033;
+}
+
+.work-project-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.our-work-portfolio-category {
+  color: #005490;
+  cursor: pointer;
+  background: #e9f1f6;
+}
+
+.activePortfolioLi {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+.our-work-portfolio-project-tech {
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.project-link {
+  background: white;
+  box-shadow: 0px 4px 10px 0px #0054904d;
+}
+
+.project-link a img {
+  width: 100%;
+  height: auto;
+  transition: all 0.1s;
+}
+
+.our-work-card-p:hover .our-work-portfolio-project-tech {
+  background: #e9f1f6;
+}
+
+.our-work-card-p:hover .project-link {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+.our-work-card-p:hover .project-link img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(305deg) brightness(103%) contrast(101%);
+}
+
+@media only screen and (max-width: 1199px) {
+  .our-work-card-container {
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .our-work-card-p img {
+    max-height: 150px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .our-work-card-p img {
+    max-height: 300px;
+  }
+  .our-work-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}

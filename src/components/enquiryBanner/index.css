@@ -1,0 +1,56 @@
+.enquiryBanner {
+  background: #005490;
+  border-radius: 30px;
+}
+
+.enquiryBanner p {
+  color: white;
+  font-family: "Work Sans";
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 51px;
+  max-width: 550px;
+  width: fit-content;
+  /* padding-right: 0 !important; */
+}
+
+.enquiryBanner button {
+  width: 324.9px;
+  padding: 17.26px;
+  border-radius: 20.31px;
+  color: #005490;
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .enquiryBanner img {
+    position: relative;
+    rotate: 110deg;
+    scale: 0.8;
+    top: 10px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .enquiryBanner p {
+    padding-inline: 10px;
+    /*  */
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .enquiryBanner img {
+    scale: 0.65;
+    top: 5px;
+  }
+  .enquiryBanner {
+    width: 95%;
+    text-align: center;
+  }
+  .enquiryBanner button {
+    width: fit-content;
+    padding: 10px 50px;
+  }
+}

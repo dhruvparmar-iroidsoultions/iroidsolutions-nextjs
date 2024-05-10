@@ -1,0 +1,25 @@
+.our-promise {
+  background: #e7ecf1;
+}
+
+.our-promise div:nth-child(2) {
+  max-width: 1000px;
+}
+
+/* @media only screen and ((min-width: 767px) and (max-width: 991px)) {
+  .our-promise p {
+    text-align: start;
+    width: 100%;
+  }
+} */
+
+@media only screen and (max-width: 767px) {
+  .our-promise p {
+    text-align: start;
+    width: 100%;
+  }
+  .our-promise p span {
+    width: 100%;
+    display: block;
+  }
+}

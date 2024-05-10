@@ -1,0 +1,38 @@
+.apply-job-img {
+  top: 30%;
+  left: 2%;
+}
+
+.apply-job-input {
+  background: #f7f7f7 !important;
+  border: 1.5px solid transparent;
+}
+
+.applyForm-container-modal button:focus,
+.apply-job-input:focus {
+  box-shadow: 0px 4px 50px 0px #00549033;
+  border: 1.5px solid #005490;
+}
+
+.apply-cancel-btn {
+  background: linear-gradient(
+    92.62deg,
+    rgba(0, 106, 182, 0.1) 0%,
+    rgba(0, 64, 109, 0.1) 100%
+  );
+}
+
+.apply-submit-btn {
+  background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+@media only screen and (min-width: 991px) {
+  .applyForm-container-modal {
+    min-width: 880px;
+  }
+}
+/* @media only screen and (min-width: 767px) {
+  .applyForm-container-modal {
+    min-width: 440px;
+  }
+} */
