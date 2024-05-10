@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
 import Button from "../button";
@@ -35,7 +35,7 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
     return (
       <SwiperSlide className="card testimonialCardContainer" key={review.id}>
         <div className="card-body d-flex flex-column text-start py-2 py-md-4 px-5">
-          <div className="d-flex align-items-center justify-content-between gap-3">
+          <div className="d-flex align-items-center justify-content-between gap-3 mb-lg-3">
             <ul className="list-unstyled d-flex">{stars}</ul>
             <Image src={"/quote-up-right.svg"} alt="" width={55} height={55} />
           </div>
@@ -46,27 +46,27 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
           {/* <p className="my-3 testimonialReview f20 wow animate__animated animate__fadeInRight">
             “{removeTags(review.description)}”
           </p> */}
-          <div className="testimonialProfileContainer d-flex align-items-center gap-4">
+          <div className="testimonialProfileContainer d-flex align-items-center gap-4 mt-lg-3">
             <div className="d-flex justify-content-center">
               <Image
                 src={review.profilepic}
                 alt="profile"
                 className="testimonial-img rounded-circle"
-                width={60}
-                height={60}
+                width={1200}
+                height={1200}
               />
             </div>
             <div className="testimonialProfile">
-              <h5 className="font-weight-bold mb-0 text-capitalize">
+              <p className="fw-semibold mb-0 text-capitalize fs-4 text-005490">
                 {review.clientname}
-              </h5>
-              <h6 className="font-weight-bold my-1 text-uppercase">
+              </p>
+              <h6 className="fw-normal text-00000099 text-uppercase">
                 {review.position}
               </h6>
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           className="modal fade"
           id="client-home-review-modal"
           data-bs-backdrop="static"
@@ -107,8 +107,8 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
                       src={review.profilepic}
                       alt="profile"
                       className="testimonial-img rounded-circle"
-                      width={60}
-                      height={60}
+                      width={1200}
+                      height={1200}
                     />
                   </div>
                   <div className="testimonialProfile">
@@ -123,7 +123,7 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </SwiperSlide>
     );
   });
@@ -154,12 +154,12 @@ const TestimonialReview = ({ clientTestimonial = [] }) => {
 
         <div className="testimonialBlur position-absolute"></div>
       </Swiper>
-      <Button linkPath={"/testimonials"} />
+      <Button linkPath={"/testimonials"} m={"my-2 my-md-5 mt-lg-4 mb-lg-5"} />
     </div>
   );
 };
 
-// export default TestimonialReview;
-export default dynamic(() => Promise.resolve(TestimonialReview), {
-  ssr: false,
-});
+export default TestimonialReview;
+// export default dynamic(() => Promise.resolve(TestimonialReview), {
+//   ssr: false,
+// });

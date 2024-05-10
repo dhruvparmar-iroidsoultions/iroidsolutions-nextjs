@@ -32,6 +32,7 @@ const PortfolioHome = () => {
         `/portfolio?page=1&perPage=7&category_id=${selectedCategory}`
       );
       const portfolios = response.data.data;
+      console.log(portfolios);
       setPortfolio(portfolios);
     } catch (error) {
       console.error("Error fetching data:", error);

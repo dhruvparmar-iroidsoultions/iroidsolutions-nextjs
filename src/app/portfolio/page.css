@@ -34,9 +34,9 @@
   background: #e9f1f6;
 }
 
-.activePortfolioLi {
+/* .activePortfolioLi {
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
-}
+} */
 
 .our-work-portfolio-project-tech {
   transition: all 0.3s;

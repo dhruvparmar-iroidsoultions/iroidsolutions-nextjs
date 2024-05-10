@@ -299,7 +299,7 @@ const Blogs = () => {
         </ul>
       </div>
       <div className="container blogContainer gap-3 w-100 pb-5">{mapBlogs}</div>
-      <div className="blog-pagination d-flex align-items-center justify-content-center py-2 gap-2">
+      <div className="blog-pagination d-flex align-items-center justify-content-center py-2 pb-md-5 gap-2">
         <button
           className={`py-2 px-3 fs-6 fw-semibold text-center rounded-4 border-0 blog-pagination-btn`}
           disabled={currentPage === 1}

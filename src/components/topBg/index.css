@@ -5,7 +5,7 @@
   box-shadow: 0px 4px 50px 0px #00549066;
   min-height: 520px;
   background-color: transparent;
-  z-index: 9;
+  /* z-index: 9; */
 }
 
 .top-bg-star {

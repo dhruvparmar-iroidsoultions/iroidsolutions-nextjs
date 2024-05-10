@@ -25,7 +25,7 @@ export default async function Home() {
     const response = await axiosApi.get("index");
     const data = response.data.data;
     return (
-      <main>
+      <>
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
@@ -43,10 +43,10 @@ export default async function Home() {
           }
         />
         <TestimonialReview clientTestimonial={data.testimonials} />
-        <PortfolioHome portfolio={[]} />
+        <PortfolioHome />
         <Map />
         {/* <ScrollerLine /> */}
-        {/* <Numbers /> */}
+        <Numbers />
         {/* <OurSkills /> */}
         <OfcEnviroment slides={data.our_office_environment} />
         <Process />
@@ -58,12 +58,12 @@ export default async function Home() {
         <FAQs faqs={data.faqs} />
         <Blogs blogs={data.blogs} />
         <ContactUs />
-      </main>
+      </>
     );
   } catch (error) {
     console.error(error);
     return (
-      <main>
+      <>
         {/* <HeroSection /> */}
         <HeroSection />
         <Quality_and_award />
@@ -76,7 +76,7 @@ export default async function Home() {
         {/* <OurSkills /> */}
         <ListedPlatforms />
         <ContactUs />
-      </main>
+      </>
     );
   }
 }

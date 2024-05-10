@@ -33,7 +33,7 @@ const Quality_and_award = () => {
     },
     {
       awardImage: "/award 2.svg",
-      awardOf: "Tech Behemonths",
+      awardOf: "TrueFirmsTM",
       awardTitle: "Top Mobile App Development",
       year: 2023,
     },

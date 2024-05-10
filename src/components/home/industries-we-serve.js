@@ -1,6 +1,26 @@
+"use client";
+
+import axiosApi from "@/api/axiosConfig";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const IndustriesWeServe = () => {
+  const [industries, setIndustries] = useState([]);
+
+  const getInudstries = async () => {
+    try {
+      const { data } = await axiosApi.get("/industries");
+      setIndustries(data.data);
+    } catch (error) {
+      console.error("Fetching industires error: ", error);
+    }
+  };
+
+  useEffect(() => {
+    getInudstries();
+  }, []);
+
   const line = [
     {
       img: "/education.png",
@@ -81,26 +101,32 @@ const IndustriesWeServe = () => {
       </p>
       <div className="scrollers mx-auto py-3 py-md-5">
         <div className="w-100 ind-ws-card-container px-4 py-md-4">
-          {line.map((l, idx) => (
-            <div
-              className={`p-2 p-md-4 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+          {industries.map((l, idx) => (
+            <Link
+              className={`p-2 p-md-4 text-decoration-none d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+              href={`/solutions/${l.slug}`}
               key={idx}
             >
               <div className="img-con d-flex align-items-start justify-content-center">
-                <Image src={l.img} alt="" width={70} height={70} />
+                <Image src={l.icon} alt="" width={70} height={70} />
               </div>
-              <h5 className="fw-semibold">{l.title}</h5>
-              <h6 className="fw-medium w-100 opacity-50">{l.desc}</h6>
-            </div>
+              <h5 className="fw-semibold text-black">{l.name}</h5>
+
+              <h6
+                className="fw-medium w-100 opacity-50 text-black"
+                dangerouslySetInnerHTML={{ __html: l.description }}
+              />
+            </Link>
           ))}
-          <div
-            className={`p-2 p-md-4 d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+          <Link
+            className={`p-2 p-md-4 text-decoration-none d-flex flex-column align-items-center justify-content-center gap-1 ind-ws-card bg-white`}
+            href={"/industries"}
           >
             <div className="d-flex align-items-start justify-content-center">
               <Image src={"/more-indu.png"} alt="" width={60} height={60} />
             </div>
-            <h5 className="fw-semibold">See more</h5>
-          </div>
+            <h5 className="fw-semibold text-black">See more</h5>
+          </Link>
         </div>
       </div>
     </div>

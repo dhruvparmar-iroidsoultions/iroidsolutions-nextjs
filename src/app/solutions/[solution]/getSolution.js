@@ -48,12 +48,10 @@ const GetSolution = ({ slug }) => {
       />
       <div className="container py-3 py-md-5">
         <p className="fs-1 fw-semibold text-center mw-1100 mx-auto">
-          Education Management App Development Services For Your Business:
+          {solutionDetail.title}
         </p>
         <p className="fs-5 fw-medium text-center text-00000099 mw-1060 mx-auto">
-          Developing an education management app can be a valuable endeavor,
-          whether it's for schools, universities, or other educational
-          institutions.
+          {solutionDetail.subtitle}
         </p>
         <div className="solution-d-container my-3 my-md-4 my-lg-5">
           {solutionDetail.paragraph?.map((p, idx) =>
@@ -93,6 +91,12 @@ const GetSolution = ({ slug }) => {
           )}
         </div>
         <div className="prime-feature my-3 my-md-4 my-lg-5">
+          <p className="fs-1 fw-semibold text-center mw-1100 mx-auto mt-lg-2">
+            {solutionDetail.manage_app_title}
+          </p>
+          <p className="fs-5 fw-medium text-center text-00000099 mw-1060 mx-auto mb-lg-5">
+            {solutionDetail.manage_app_subtitle}
+          </p>
           <div className="feature-container">
             {solutionDetail.manage_app?.map((app, idx) => (
               <div

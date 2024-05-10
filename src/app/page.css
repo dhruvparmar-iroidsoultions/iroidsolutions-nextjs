@@ -310,6 +310,12 @@
   max-width: 540px;
 }
 
+.testimonial-img {
+  max-width: 84px;
+  width: 100%;
+  height: auto;
+}
+
 .testimonialProfile h6 {
   font-size: 18px;
   font-weight: 400;
@@ -457,8 +463,8 @@
 
 .homeGridContainer {
   display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
   width: 100%;
 }
 
@@ -470,18 +476,18 @@
   background-color: #fff;
 }
 
-.homeGridItem h1 {
+/* .homeGridItem h1 {
   font-size: 42px;
   font-weight: 700;
   line-height: 57px;
   margin-top: 10px;
-}
+} */
 
 .homeGridItem p {
-  font-size: 22px !important;
+  font-size: 18px !important;
   font-weight: 400 !important;
   line-height: 30px !important;
-  opacity: 0.8 !important;
+  /* opacity: 0.8 !important; */
 }
 
 .wwr-bg {
@@ -747,12 +753,24 @@
 }
 
 .process-ul li {
-  border-bottom: 3px solid transparent;
+  position: relative; /* Ensure positioning context for pseudo-element */
   cursor: pointer;
+  border-bottom: 3px solid transparent;
 }
 
-.process-ul .activeProcess {
-  border-bottom: 3px solid #005490;
+.process-ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Adjust to match border width */
+  left: 0;
+  width: var(--progress-width, 0); /* Use CSS variable for width */
+  height: 3px; /* Adjust to match border width */
+  background-color: #005490; /* Color of the progress */
+  transition: width 0.3s ease; /* Smooth transition */
+}
+
+.process-ul .activeProcess::after {
+  width: 100%; /* Show full width for active item */
 }
 
 .autoplay-progress {

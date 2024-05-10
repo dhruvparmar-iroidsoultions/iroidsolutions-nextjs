@@ -31,7 +31,6 @@ const Navbar = () => {
   const getIndustry = async () => {
     try {
       const { data } = await axiosApi.get("/industries-list");
-      console.log("header industries: ", data);
       setIndustries(data);
     } catch (error) {
       console.error("Fetching nav industries error: ", error);
@@ -46,7 +45,7 @@ const Navbar = () => {
     <>
       <div className="nav-scroll-row py-2 py-md-3">
         <div className="container d-flex  align-itesms-center justify-content-between gap-1 p-lg-0 gap-lg-2">
-          <div className="socialMedia d-none d-lg-flex align-items-center gap-3">
+          <div className="socialMedia d-none d-lg-flex align-items-center gap-2">
             <Link href={""}>
               <Image
                 src={"/Facebook.png"}
@@ -88,10 +87,10 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <div className="nav-top-middle d-flex flex-wrap align-items-center gap-1 text-005490 rounded-3 overflow-hiddden">
-            <div className="text-white px-2">Bussiness:</div>
-            <div className="nav-con-details text-white bg-white rounded-2 px-2 d-flex py-1">
-              <div className="d-flex flex-wrap align-items-center gap-2">
+          <div className="nav-top-middle d-flex flex-wrap align-items-center gap-1 text-005490 rounded-3 overflow-hiddden ps-xxl-2">
+            <div className="text-white px-2">Business:</div>
+            <div className="nav-con-details text-white ps-2 d-flex">
+              <div className="nav-con-detail d-flex flex-wrap align-items-center gap-2 rounded-2 py-1">
                 <div className="d-flex flex-wrap">
                   <div className="text-005490 mx-2">
                     <Link href={"https://wa.me/+917778869939"} target="_blank">
@@ -113,10 +112,11 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <p className="m-0 text-005490 fs-6 fw-medium d-none d-lg-block">
+                  <p className="m-0 text-005490 fs-6 fw-medium d-none d-lg-block me-xl-1">
                     + 91 77788 69939
                   </p>
                 </div>
+                <div className="position-relative h-100 borderd-1 d-none d-xl-block top-nav-divider"></div>
                 <div className="d-flex flex-wrap">
                   <div className="text-005490 mx-2 ">
                     <Link
@@ -131,10 +131,11 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block">
+                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block me-xl-1">
                     business@iroidsolutions.in
                   </p>
                 </div>
+                <div className="position-relative h-100 borderd-1 d-none d-xl-block top-nav-divider"></div>
                 <div className="d-flex flex-wrap">
                   <div className="text-005490 mx-2">
                     <Link href="skype:daxeshpatel7224?chat" target="_blank">
@@ -146,7 +147,7 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block">
+                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block pe-xl-2">
                     daxeshpatel7224
                   </p>
                 </div>
@@ -155,8 +156,8 @@ const Navbar = () => {
           </div>
           <div className="nav-top-last d-flex flex-wrap align-items-center gap-1 text-005490 rounded-3 overflow-hiddden">
             <div className="text-white px-2">HR:</div>
-            <div className="nav-con-details text-white bg-white rounded-2 px-2 d-flex py-1">
-              <div className="d-flex flex-wrap align-items-center gap-2">
+            <div className="nav-con-details text-white ps-2 d-flex">
+              <div className="nav-con-detail d-flex flex-wrap align-items-center gap-2 rounded-2 py-1">
                 <div className="d-flex">
                   <div className=" text-005490 mx-2">
                     <Link href={"https://wa.me/+919023868898"} target="_blank">
@@ -193,7 +194,7 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block">
+                  <p className="m-0 fs-6 fw-medium text-005490 d-none d-lg-block pe-lg-2">
                     hr@iroidsolutions.in
                   </p>
                 </div>
@@ -253,8 +254,9 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
                   <div
-                    className="dropdown-toggle options fw-medium"
+                    className="dropdown-toggle options fw-medium py-4"
                     role="button"
+                    // style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
                     Services
                     <ul className="dropdown-menu deepUl text-capitalize service-dropdown">
@@ -264,7 +266,7 @@ const Navbar = () => {
                           type="button"
                         >
                           Mobile App
-                          <ul className="dropdown-item dropMain">
+                          <ul className="dropdown-item list-unstyled dropMain">
                             <li>
                               <Link href="/services/iphone-app-development">
                                 Android App Development
@@ -289,7 +291,7 @@ const Navbar = () => {
                         </div>
                         <div className="dropdown-item " type="button">
                           Web Development
-                          <ul className="dropdown-item dropMain">
+                          <ul className="dropdown-item list-unstyled dropMain">
                             <li>
                               <Link href="/services/Website">
                                 Landing Page (1-Page Website)
@@ -319,7 +321,7 @@ const Navbar = () => {
                       <li>
                         <div className="dropdown-item " type="button">
                           Custom Software Development
-                          <ul className="dropdown-item dropMain">
+                          <ul className="dropdown-item list-unstyled dropMain">
                             <li>
                               <Link href="/services/Website">
                                 MVP Development
@@ -332,9 +334,9 @@ const Navbar = () => {
                             </li>
                           </ul>
                         </div>
-                        <div className="dropdown-item " type="button">
+                        <div className="dropdown-item" type="button">
                           AI & ML
-                          <ul className="dropdown-item dropMain">
+                          <ul className="dropdown-item list-unstyled dropMain">
                             <li>
                               <Link href="/services/Website">
                                 Artificial Intelligence and Machine Learning
@@ -367,14 +369,22 @@ const Navbar = () => {
                     Solutions
                   </Link>
                 </li>
-                <li className="nav-item header_dropdown">
-                  <div className={`dropdown-toggle options`} role="button">
+
+                {/* do not delete this this is li that shows all industries */}
+
+                {/* <li className="nav-item header_dropdown">
+                  <div
+                    className={`dropdown-toggle options fw-medium py-4 ${
+                      pathname.includes("solutions") ? "activeLink" : ""
+                    }`}
+                    role="button"
+                  >
                     Solutions
-                    <ul className="dropdown-menu deepUl text-capitalize bg-light-subtle py-0">
+                    <ul className="dropdown-menu deepUl solutions-dropdown text-capitalize bg-light-subtle py-0">
                       <li className="m-0">
                         <ul className="dropdown-item px-3 bg-light-subtle nav-industries-container">
                           {industries.map((i, idx) => (
-                            <li className="mx-2" key={idx}>
+                            <li className="mx-3 ps-2" key={idx}>
                               <Link href={`/solutions/${i.slug}`}>
                                 {i.name}
                               </Link>
@@ -384,7 +394,9 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
+
+                {/* do not delete this this is li that shows all industries */}
 
                 {/* <li className="nav-item">
                 <Link
@@ -493,35 +505,67 @@ const Navbar = () => {
       <div className="fixed-top">
         <div className="container-fluid">
           <div
-            className="offcanvas offcanvas-end"
+            className="offcanvas offcanvas-end py-3 py-lg-4"
             tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                Menu
-              </h5>
+            <div className="offcanvas-header d-flex flex-wrap align-items-start justify-content-between gap-2">
+              <Link
+                className="offcanvas-title"
+                href="/"
+                id="offcanvasNavbarLabel"
+              >
+                <Image
+                  src={"/iRoid-sidebar-logo.svg"}
+                  alt=""
+                  width={100}
+                  height={200}
+                />
+              </Link>
               <button
                 type="button"
-                className="btn-close"
+                className="closeBtn bg-transparent border-0"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
                 id="closeCanvas"
-              ></button>
+              >
+                <Image
+                  src={"/sidebar-close-btn.svg"}
+                  alt=""
+                  width={1200}
+                  height={1200}
+                />
+              </button>
             </div>
-            <div className="offcanvas-body px-2">
+            <div className="footer-hr-line opacity-25 bg-white my-lg-2"></div>
+            <div className="offcanvas-body px-2 main-offcanvas-body">
               <ul
                 className="navbar-nav justify-content-end flex-grow-1 pe-3"
                 onClick={handleLiClick}
               >
-                <li className="nav-item">
+                {/* <li className="nav-item d-flex align-items-center">
                   <Link className="nav-link" href="/">
                     Home
                   </Link>
+                </li> */}
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/casestudy">
+                    Case Studies
+                  </Link>
+                </li>
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/portfolio">
+                    Portfolio
+                  </Link>
+                </li>
+                <li className="nav-item d-flex align-items-center d-lg-none">
+                  <Link className="nav-link fs-5" href="/testimonials">
+                    Testimonials
+                  </Link>
                 </li>
                 <li
-                  className="nav-item dropdown-toggle my-1 mx-2"
+                  className="nav-item fs-5 dropdown-toggle my-1 d-lg-none"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#servicesCanvas"
                   aria-controls="offcanvasRightLabel"
@@ -529,38 +573,39 @@ const Navbar = () => {
                 >
                   Services
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/portfolio">
-                    Portfolio
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/engagement-model">
+                    Engagement Model
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/testimonials">
-                    Testimonials
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/career">
+                    Career
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/blog">
-                    Blog
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/internship">
+                    internship
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/casestudy">
-                    Case Study
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/life-at-iroid">
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/life-at-iroid">
                     Life at iRoid
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/industries">
+                <li className="nav-item d-flex align-items-center d-lg-none">
+                  <Link className="nav-link fs-5" href="/blog">
+                    Blog
+                  </Link>
+                </li>
+
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/industries">
                     Industries
                   </Link>
                 </li>
                 <li
-                  className="nav-item dropdown-toggle my-1 mx-2"
+                  className="nav-item dropdown-toggle my-1 fs-5 d-lg-none"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#solutionsCanvas"
                   aria-controls="offcanvasSolutionsCanvasLabel"
@@ -569,57 +614,128 @@ const Navbar = () => {
                   Solutions
                 </li>
 
-                <li className="nav-item">
-                  <Link className="nav-link" href="/ourClients">
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/ourClients">
                     Our Clients
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/hireUs">
-                    Hire Us
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/FAQs">
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/FAQs">
                     FAQs
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/career">
-                    Career
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/hireUs">
+                    Hire Us
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/about-us">
+                <li className="nav-item d-flex align-items-center d-lg-none">
+                  <Link className="nav-link fs-5" href="/about-us">
                     About Us
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="/contact-us">
-                    Contact Us
+                <li className="nav-item d-flex align-items-center sidebar-contact-us">
+                  <Link
+                    className="nav-link fs-5 d-flex align-items-center"
+                    href="/contact-us"
+                  >
+                    Contact Us&nbsp;
+                    <Image
+                      src={"/left-hand.png"}
+                      alt="handshake"
+                      width={1200}
+                      height={1200}
+                    />
+                    <Image
+                      src={"/right-hand.png"}
+                      alt="handshake"
+                      width={1200}
+                      height={1200}
+                    />
+                  </Link>
+                </li>
+                <li className="nav-item d-flex align-items-center">
+                  <Link className="nav-link fs-5" href="/become-a-partner">
+                    Become a Partner
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div className="offcanvas-body-footer follow ms-3 ms-lg-5 my-lg-3">
+              <p className="fs-5 fw-medium opacity-50">Follow #IROID</p>
+              <div className="d-flex flex-wrap flex-sm-nowrap align-items-center gap-3">
+                <Link href={"https://www.facebook.com"}>
+                  <Image
+                    src={"/Facebook.png"}
+                    alt="Facebook"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
+
+                <Link href={"https://www.facebook.com"}>
+                  <Image
+                    src={"/Instagram.png"}
+                    alt="Instagram"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
+
+                <Link href={"https://www.facebook.com"}>
+                  <Image
+                    src={"/LinkedIn.png"}
+                    alt="LinkedIn"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
+
+                <Link href={"https://www.facebook.com"}>
+                  <Image
+                    src={"/Youtube.png"}
+                    alt="Youtube"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
+
+                <Link href={"https://www.facebook.com"}>
+                  <Image
+                    src={"/Twitter.png"}
+                    alt="Twitter"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div
-        className="offcanvas mt-5 offcanvas-end"
+        className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="servicesCanvas"
         aria-labelledby="offcanvasRightLabel"
       >
-        <div className="offcanvas-header mt-1 pb-0 pt-4">
-          <h5 className="offcanvas-title" id="offcanvasRightLabel">
+        <div className="offcanvas-header mt-1 pb-0 pt-4 d-flex align-items-center justify-content-between">
+          <h5 className="offcanvas-title fw-semibold" id="offcanvasRightLabel">
             Go Back
           </h5>
           <button
             type="button"
-            className="btn-close"
+            className="closeBtn bg-transparent border-0"
             onClick={() => document.getElementById("navbarSideCanavs").click()}
-          ></button>
+          >
+            <Image
+              src={"/sidebar-close-btn.svg"}
+              alt=""
+              width={1200}
+              height={1200}
+            />
+          </button>
           <button
             type="button"
             className="btn-close d-none"
@@ -631,31 +747,31 @@ const Navbar = () => {
         </div>
         <div className="offcanvas-body secondCanvas">
           <ul className="text-capitalize ps-1" onClick={handleLiClick}>
-            <li>
-              <div className="">
+            <li className="no-bullet">
+              <div className="text-white fw-semibold">
                 Mobile App
-                <ul className="">
-                  <li>
+                <ul className="p-0 text-white my-3">
+                  <li className="fs-6 lh-base">
                     <Link href="/services/iphone-app-development">
                       iphone App development
                     </Link>
                   </li>
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/android-app-development">
                       Android app development
                     </Link>
                   </li>
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/flutter">Flutter</Link>
                   </li>
                 </ul>
               </div>
             </li>
-            <li>
-              <div className="">
+            <li className="no-bullet my-3">
+              <div className="text-white fw-semibold">
                 Web Development
                 <ul className="">
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link
                       href="/services/Website"
                       state={"Website development"}
@@ -663,23 +779,23 @@ const Navbar = () => {
                       Website
                     </Link>
                   </li>
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/Web-App">Web App</Link>
                   </li>
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/PWA">PWA</Link>
                   </li>
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/API-Backend">API & Backend</Link>
                   </li>
                 </ul>
               </div>
             </li>
-            <li>
-              <div className="">
+            <li className="no-bullet">
+              <div className="text-white fw-semibold">
                 product Design
                 <ul className="">
-                  <li>
+                  <li className="fs-6 lh-base">
                     <Link href="/services/web-frontend-design">
                       Web Frontend Design
                     </Link>
@@ -692,20 +808,30 @@ const Navbar = () => {
       </div>
 
       <div
-        className="offcanvas mt-5 offcanvas-end"
+        className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="solutionsCanvas"
         aria-labelledby="offcanvasSolutionsCanvasLabel"
       >
-        <div className="offcanvas-header mt-1 pb-0 pt-4">
-          <h5 className="offcanvas-title" id="offcanvasSolutionsCanvasLabel">
+        <div className="offcanvas-header mt-1 pb-0 pt-4 d-flex align-items-center justify-content-between">
+          <h5
+            className="offcanvas-title fw-semibold"
+            id="offcanvasSolutionsCanvasLabel"
+          >
             Go Back
           </h5>
           <button
             type="button"
-            className="btn-close"
+            className="closeBtn bg-transparent border-0"
             onClick={() => document.getElementById("navbarSideCanavs").click()}
-          ></button>
+          >
+            <Image
+              src={"/sidebar-close-btn.svg"}
+              alt=""
+              width={1200}
+              height={1200}
+            />
+          </button>
           <button
             type="button"
             className="btn-close d-none"
@@ -717,35 +843,13 @@ const Navbar = () => {
         </div>
         <div className="offcanvas-body thirdCanvas">
           <ul className="ps-1" onClick={handleLiClick}>
-            <li>
-              <Link href="/solutions/hotel-booking-app">
-                Hotel Booking App Development
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/solutions/education-management-app">
-                Education Management App Development
-              </Link>
-            </li>
-            <li>
-              <Link href="/solutions/food-delivery-app">
-                Food Delivery App Development
-              </Link>
-            </li>
-            <li>
-              <Link href="/solutions/ecommerce-app">
-                E-Commerce App Development
-              </Link>
-            </li>
-            <li>
-              <Link href="/solutions/fintech">Fintech App Development</Link>
-            </li>
-            <li>
-              <Link href="/solutions/social-networking-app">
-                Social Networking
-              </Link>
-            </li>
+            {industries.map((i, idx) => (
+              <li key={idx}>
+                <Link className="fs-6" href={`/solutions/${i.slug}`}>
+                  {i.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

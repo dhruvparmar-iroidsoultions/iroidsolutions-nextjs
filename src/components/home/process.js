@@ -58,6 +58,7 @@ const Process = () => {
   const progressContent = useRef(null);
   const [activeProcess, setActiveProcess] = useState(0);
   const [process, setProcess] = useState(allProcess[0]);
+  const processSwiper = useRef(null);
 
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressLine.current.style.setProperty("--progress", 1 - progress);
@@ -65,9 +66,11 @@ const Process = () => {
   };
 
   const updateProcess = (idx) => {
-    // setActiveProcess(idx);
-
-    document.getElementsByClassName("swiper-pagination-bullet")[idx].click();
+    setActiveProcess(idx);
+    // If Swiper instance is available, use its API to change the slide
+    if (processSwiper.current && processSwiper.current.swiper) {
+      processSwiper.current.swiper.slideTo(idx);
+    }
   };
 
   const prevProcess = () => {
@@ -102,6 +105,7 @@ const Process = () => {
                   : "text-005490 d-none d-md-block"
               }  px-2 px-md-1 py-3 py-md-2 py-lg-3 fs-6 mb-0 fw-bolder position-relative`}
               key={idx}
+              onClick={() => updateProcess(idx)}
             >
               {/* <p
                 className={``}
@@ -140,6 +144,7 @@ const Process = () => {
             </div>
           </div>
           <Swiper
+            ref={processSwiper}
             className="process-swiper w-100"
             // loop={true}
             autoplay={{
