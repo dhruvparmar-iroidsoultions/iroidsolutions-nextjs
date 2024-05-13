@@ -91,8 +91,8 @@ const Services = () => {
         state={"Our IT Services"}
         text={"Managed IT services for your industry"}
       />
-      <div className="container text-center py-5 ">
-        <h1 className="fw-semibold py-3 py-md-5">
+      <div className="container text-center pt-5 ">
+        <h1 className="fw-semibold py-3 pb-md-5">
           What Services We’re Offering
         </h1>
         {services.map((service) => (
@@ -103,7 +103,7 @@ const Services = () => {
             <ServiceCard info={service} id={service.id} />
           </div>
         ))}
-        <div className="py-3 py-md-5">
+        <div className="pt-3 pt-md-5">
           <p className="fs-1 fw-bolder mt-5">Our Tech Stacks</p>
           <OurStackComponent categoryBgClass={"bg-e7ecf1"} />
         </div>

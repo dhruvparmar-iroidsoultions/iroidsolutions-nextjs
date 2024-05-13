@@ -7,6 +7,7 @@ import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import "./index.css";
+import Link from "next/link";
 
 const ContactUs = () => {
   const [isMessageSent, setIsMessageSent] = useState(false);
@@ -61,7 +62,7 @@ const ContactUs = () => {
         setIsMessageSent(false);
         setIsMessageSending(true);
 
-        const response = await axiosApi.post("contact-us", contactDetail);
+        const response = await axiosApi.post("/contact-us", contactDetail);
         if (response.status === 200) {
           setContactDetail({
             name: "",
@@ -104,76 +105,110 @@ const ContactUs = () => {
         email. We'd love to talk to you!
       </p>
       <div className="container homeContact d-flex flex-column flex-lg-row py-5 mb-5 mb-lg-0 rounded-5">
-        <div className="px-1 px-sm-3 px-md-5 mx-auto d-flex flex-column justify-content-evenly gap-4 gap-xl-0 flexElem">
-          <h1 className="fw-bolder m-0">
-            Let’s Discuss on Something
-            <span className="text-005490"> Cool </span>
-            Together {""}
-            <span>
-              <Image
-                src={"/service-bullet.png"}
-                alt=""
-                width={30}
-                height={30}
-              />
-            </span>
-          </h1>
-          <div className="position-relative w-100">
-            <hr className="mt-0 position-absolute w-100 top-0 opacity-25" />
-          </div>
-          <div className="d-flex align-start  gap-2 gap-sm-4">
-            <Image
-              className="w-100 h-100"
-              src={"/n-call.png"}
-              alt=""
-              width={100}
-              height={100}
-              data-bs-toggle="tooltip"
-              data-bs-title="+ 91 90238 68898"
-            />
-            <div className="conContainer">
-              <p className=" p-0 fs-6 fw-medium mb-2">+ 91 90238 68898 (HR)</p>
-              <p className=" p-0 fs-6 fw-medium mb-2">
-                + 91 77788 69939 (Business)
-              </p>
+        <div className="c-details mx-lg-auto flexElem py-lg-5 d-flex flex-column justify-content-between">
+          <div className="px-1 px-sm-3 px-md-5 mx-lg-0 d-flex flex-column gap-2 gap-lg-4 gap-xl-0">
+            <p className="fs-3 fw-semibold text-005490 lh-base mt-2 mt-lg-0 mb-0">
+              Need a mobile app or website?
+            </p>
+            <p className="fs-4 fw-medium text-00000099">
+              Get a free consultation!{" "}
+              <span>
+                <Image
+                  src={"/new-contact-star.png"}
+                  alt=""
+                  width={30}
+                  height={30}
+                />
+              </span>
+            </p>
+            <div className="d-flex flex-wrap gap-3">
+              <Link href={"tel:+917778869939"}>
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-call.png"}
+                  alt="call"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <Link href={"https://wa.me/+917778869939"} target="_blank">
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-whatsapp.png"}
+                  alt="whatsapp"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <Link href={"mailto:business@iroidsolutions.in"}>
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-email.png"}
+                  alt="email"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <Link href={"skype:daxeshpatel7224?chat"}>
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-skype.png"}
+                  alt="skype"
+                  width={100}
+                  height={100}
+                />
+              </Link>
             </div>
           </div>
-          <div className="d-flex align-start  gap-2 gap-sm-4">
-            <Image
-              className="w-100 h-100"
-              src={"/n-email.png"}
-              alt=""
-              width={100}
-              height={100}
-            />
-            <div className="conContainer">
-              <p className=" p-0 fs-6 fw-medium mb-2">
-                hr@iroidsolutions.in (HR)
-              </p>
-              <p className=" p-0 fs-6 fw-medium mb-2">
-                business@iroidsolutions.in (Business)
-              </p>
-            </div>
-          </div>
-          <div className="d-flex align-start  gap-2 gap-sm-4">
-            <Image
-              className="w-100 h-100"
-              src={"/n-location.png"}
-              alt=""
-              width={100}
-              height={100}
-            />
-            <div className="conContainer">
-              <p className=" p-0 fs-6 fw-medium mb-2">
-                318 A/318 B, Fortune High Street, Opp. Western Arena , Nr.
-                Madhuvan Circle, LP Savani Rd, Adajan, Surat, Gujarat 395009
-              </p>
+          <div className="px-1 px-sm-3 px-md-5 mx-lg-0 d-flex flex-column gap-2 gap-lg-4 gap-xl-0">
+            <p className="fs-3 fw-semibold text-005490 lh-base mt-2 mt-lg-0 mb-0">
+              Passionate about mobile apps & website?
+            </p>
+            <p className="fs-4 fw-medium text-00000099">
+              Join our growing team!{" "}
+              <span>
+                <Image
+                  src={"/new-contact-star.png"}
+                  alt=""
+                  width={30}
+                  height={30}
+                />
+              </span>
+            </p>
+            <div className="d-flex flex-wrap gap-3">
+              <Link href={"tel:+919023868898"}>
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-call.png"}
+                  alt="call"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <Link href={"https://wa.me/+919023868898"} target="_blank">
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-whatsapp.png"}
+                  alt="whatsapp"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+              <Link href={"mailto:hr@iroidsolutions.in"}>
+                <Image
+                  className="w-100 h-100"
+                  src={"/n-email.png"}
+                  alt="email"
+                  width={100}
+                  height={100}
+                />
+              </Link>
             </div>
           </div>
         </div>
         <form
           onSubmit={onSubmit}
-          className="flexElem mt-3 mt-lg-0 px-2 px-sm-3 px-md-5 bg-white rounded-5"
+          className="c-details mx-lg-auto flexElem mt-3 mt-lg-0 px-2 mx-sm-3 px-md-5 bg-white rounded-5"
           noValidate
         >
           <p className="fs-4 fw-medium text-center text-black my-3 my-md-5">

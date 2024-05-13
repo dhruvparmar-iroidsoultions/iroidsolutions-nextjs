@@ -104,7 +104,9 @@ const CaseStudyCom = ({ caseStudy }) => {
               className="d-flex flex-column align-items-center justify-content-center"
               key={idx}
             >
-              <p className="fs-6 fw-semibold">Mobile App</p>
+              <p className="fs-6 fw-semibold text-capitalize">
+                {tech.subtitle}
+              </p>
               <div className="tech-card flexElem rounded-4 border-0 bg-white d-flex flex-column align-items-center justify-content-center p-2 px-lg-5 py-lg-4">
                 <Image
                   className="casestudy-img tech-card-img mb-4"

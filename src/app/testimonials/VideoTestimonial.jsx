@@ -9,7 +9,9 @@ const VideoTestimonial = () => {
   const [shouldShow, setShouldShow] = useState(false);
   const getTestimonials = async () => {
     try {
-      const response = await axiosApi.get("/video-testimonials?page=1&limit=6");
+      const response = await axiosApi.get(
+        "/video-testimonials?page=1&limit=10"
+      );
       const data = response.data.data;
       setServices(data);
       setShouldShow(true);

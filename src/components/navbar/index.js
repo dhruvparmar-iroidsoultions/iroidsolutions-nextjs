@@ -359,7 +359,7 @@ const Navbar = () => {
                     Industries
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link
                     className={`nav-link py-4 mx-lg-0 mx-xl-2 ${
                       pathname.includes("solutions") ? "activeLink" : ""
@@ -368,11 +368,11 @@ const Navbar = () => {
                   >
                     Solutions
                   </Link>
-                </li>
+                </li> */}
 
                 {/* do not delete this this is li that shows all industries */}
 
-                {/* <li className="nav-item header_dropdown">
+                <li className="nav-item header_dropdown">
                   <div
                     className={`dropdown-toggle options fw-medium py-4 ${
                       pathname.includes("solutions") ? "activeLink" : ""
@@ -394,7 +394,7 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </li> */}
+                </li>
 
                 {/* do not delete this this is li that shows all industries */}
 
@@ -615,7 +615,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-item d-flex align-items-center">
-                  <Link className="nav-link fs-5" href="/ourClients">
+                  <Link className="nav-link fs-5" href="/our-clients">
                     Our Clients
                   </Link>
                 </li>
@@ -625,7 +625,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item d-flex align-items-center">
-                  <Link className="nav-link fs-5" href="/hireUs">
+                  <Link className="nav-link fs-5" href="/hire-us">
                     Hire Us
                   </Link>
                 </li>

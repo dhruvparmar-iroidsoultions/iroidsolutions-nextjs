@@ -33,7 +33,7 @@ const OurWork = () => {
 
   const getCaseStudies = async () => {
     try {
-      const { data } = await axiosApi.get("case-studies?page=1&limit=6");
+      const { data } = await axiosApi.get("/case-studies?page=1&limit=6");
       setCasestudies(data.data);
       console.log(data);
     } catch (error) {

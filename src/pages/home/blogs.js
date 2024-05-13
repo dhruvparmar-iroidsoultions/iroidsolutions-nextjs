@@ -5,7 +5,7 @@ const FetchBlogs = async ({ show }) => {
   try {
     // const response = await axiosApi.get("allBlogsForWeb");
     // const data = response.data;
-    const response = await axiosApi.get("blogs?page=1&latest=1");
+    const response = await axiosApi.get("/blogs?page=1&latest=1");
     const blogs = response.data.data;
     return <Blogs blogs={blogs} show={show} />;
   } catch (error) {

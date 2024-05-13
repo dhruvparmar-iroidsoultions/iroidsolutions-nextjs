@@ -9,7 +9,7 @@ const GetFaqs = () => {
 
   const getFAQs = async () => {
     try {
-      const { data } = await axiosApi.get("faqs");
+      const { data } = await axiosApi.get("/faqs");
       setAllFaqs(data.data);
     } catch (error) {
       console.error(error);

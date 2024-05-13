@@ -51,7 +51,7 @@ const ContactUs = () => {
         setIsMessageSent(false);
         setIsMessageSending(true);
 
-        const response = await axiosApi.post("contact-us", contactDetail);
+        const response = await axiosApi.post("/contact-us", contactDetail);
         if (response.status === 200) {
           setContactDetail({
             name: "",

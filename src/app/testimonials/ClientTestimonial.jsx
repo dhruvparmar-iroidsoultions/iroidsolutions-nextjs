@@ -13,7 +13,7 @@ const ClientTestimonial = () => {
   const getTestimonials = async () => {
     try {
       const response = await axiosApi.get(
-        "/client-testimonials?page=1&limit=6"
+        "/client-testimonials?page=1&limit=10"
       );
       const data = response.data.data;
       setTestimonials(data);

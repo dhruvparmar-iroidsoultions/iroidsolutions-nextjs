@@ -10,7 +10,7 @@ import axiosApi from "@/api/axiosConfig";
 const CaseStudy = async ({ params }) => {
   try {
     const response = await axiosApi.get(
-      `case-study/detail/${params.casestudy}`
+      `/case-study/detail/${params.casestudy}`
     );
     const casestudy = response.data.data;
     return <CaseStudyCom caseStudy={casestudy} />;

@@ -3,9 +3,10 @@ import "./index.css";
 
 const TopBg = ({ state, text, extra }) => {
   return (
-    <div className="topBg position-relative py-3 py-md-5 overflow-hidden d-flex align-items-center justify-content-center">
+    <div className="topBg position-relative py-5 py-sm-0 py-lg-5 overflow-hidden d-flex align-items-center justify-content-center">
       <div className="contentText m-auto text-light text-center px-2 py-3 py-md-5">
-        <h1 className="fs-1 text-capitalize mb-2 mb-md-4 mt-5">
+        {/* <h1 className="fs-1 text-capitalize mb-2 mb-md-4 mt-5"> */}
+        <h1 className="fs-1 mb-2 mb-md-4 mt-sm-5">
           {state}{" "}
           <span className="position-relative overflow-hidden">
             <Image

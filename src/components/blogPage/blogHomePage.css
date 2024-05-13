@@ -1,7 +1,11 @@
+.blogCat {
+  background: #e9f1f6;
+}
+
 .activeBlogSelection {
   color: white;
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .blogContent span img {

@@ -68,8 +68,8 @@ const Blogs = () => {
     try {
       const response = await axiosApi.get(
         searchText.length === 0
-          ? `blogs?page=1&limit=9&latest=1`
-          : `blogs?page=1&limit=9&search=${searchText}&latest=1'`
+          ? `/blogs?page=1&limit=9&latest=1`
+          : `/blogs?page=1&limit=9&search=${searchText}&latest=1'`
       );
       console.log(response);
       const blogs = response.data.data;
@@ -272,8 +272,8 @@ const Blogs = () => {
           <li
             className={
               showBlogOn.name.toLowerCase() === "all"
-                ? "activeBlogSelection pe-auto"
-                : "pe-auto"
+                ? "activeBlogSelection rounded-3  pe-auto"
+                : "pe-auto text-005490 rounded-3 blogCat"
             }
             onClick={() => {
               newBlogs({ name: "all", id: 0 });
@@ -285,8 +285,8 @@ const Blogs = () => {
             <li
               className={
                 showBlogOn.name.toLowerCase() === category.name.toLowerCase()
-                  ? "activeBlogSelection pe-auto"
-                  : "pe-auto"
+                  ? "activeBlogSelection rounded-3 pe-auto"
+                  : "pe-auto text-005490 rounded-3 blogCat"
               }
               key={idx}
               onClick={() => {

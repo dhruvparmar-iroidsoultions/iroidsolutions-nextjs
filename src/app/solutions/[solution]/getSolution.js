@@ -20,7 +20,7 @@ const GetSolution = ({ slug }) => {
 
   const getSolution = async () => {
     try {
-      const { data } = await axiosApi.get(`industrie/detail/${slug}`);
+      const { data } = await axiosApi.get(`/industrie/detail/${slug}`);
       setSolutionDetail(data.data);
     } catch (error) {
       console.error("fetching solution error: ", error);

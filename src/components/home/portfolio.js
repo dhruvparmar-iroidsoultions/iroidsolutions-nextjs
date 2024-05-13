@@ -128,7 +128,8 @@ const PortfolioHome = () => {
                     <Card
                       cardOfClass={"project"}
                       img={project.thumbnail}
-                      cardText={category.join(", ")}
+                      // cardText={category.join(", ")}
+                      cardText={category.industry_name}
                       cardTitle={project.projectname}
                       isDoted={false}
                     />
