@@ -128,6 +128,8 @@ const ContactUs = () => {
               alt=""
               width={100}
               height={100}
+              data-bs-toggle="tooltip"
+              data-bs-title="+ 91 90238 68898"
             />
             <div className="conContainer">
               <p className=" p-0 fs-6 fw-medium mb-2">+ 91 90238 68898 (HR)</p>

@@ -53,7 +53,6 @@ const Process = () => {
       img: "/process-3.svg",
     },
   ];
-  // const [percentage, setPercentage] = useState(8);
   const progressLine = useRef(null);
   const progressContent = useRef(null);
   const [activeProcess, setActiveProcess] = useState(0);
@@ -67,7 +66,6 @@ const Process = () => {
 
   const updateProcess = (idx) => {
     setActiveProcess(idx);
-    // If Swiper instance is available, use its API to change the slide
     if (processSwiper.current && processSwiper.current.swiper) {
       processSwiper.current.swiper.slideTo(idx);
     }
@@ -85,6 +83,18 @@ const Process = () => {
       .getElementById("process-swiper")
       ?.getElementsByClassName("swiper-button-next")[0]
       ?.click();
+  };
+
+  const handleMouseEnter = () => {
+    if (processSwiper.current && processSwiper.current.swiper) {
+      processSwiper.current.swiper.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (processSwiper.current && processSwiper.current.swiper) {
+      processSwiper.current.swiper.autoplay.start();
+    }
   };
 
   return (
@@ -107,13 +117,7 @@ const Process = () => {
               key={idx}
               onClick={() => updateProcess(idx)}
             >
-              {/* <p
-                className={``}
-                onClick={() => updateProcess(idx)}
-                key={idx}
-              > */}
               {process.title}
-              {/* </p> */}
             </li>
           ))}
         </ul>
@@ -124,7 +128,6 @@ const Process = () => {
               “{process.description}”
             </p>
             <div className="iwsButtons w-100 d-flex align-items-center justify-content-center gap-5">
-              {/* if get arrow problem just add prevBtn class to the button */}
               <button
                 className="d-flex align-items-center justify-content-center"
                 onClick={prevProcess}
@@ -146,7 +149,6 @@ const Process = () => {
           <Swiper
             ref={processSwiper}
             className="process-swiper w-100"
-            // loop={true}
             autoplay={{
               delay: 10000,
             }}
@@ -166,9 +168,14 @@ const Process = () => {
             id="process-swiper"
           >
             {allProcess.map((process, idx) => (
-              <SwiperSlide key={process.id} className="bg-transparent">
+              <SwiperSlide
+                key={process.id}
+                className="bg-transparent"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Image
-                  className="w-100 h-100 rounded-4"
+                  className="w-100 h-100 rounded-4 process-img"
                   src={process.img}
                   alt=""
                   width={100}

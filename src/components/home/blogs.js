@@ -84,7 +84,7 @@ const Blogs = ({ blogs = [], show = true }) => {
                   clickable: true,
                 }}
                 modules={[Navigation, Pagination]}
-                className="home-blogs-swiper blogs p-5 pb-0 wow animate__animated animate__fadeIn"
+                className="home-blogs-swiper blogs px-5 py-0 wow animate__animated animate__fadeIn"
                 data-wow-duration="2s"
                 slideActiveClass="home-blogs-active-slide"
                 slidesPerView={1}

@@ -1,5 +1,44 @@
+.player-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.player-intro-img-con img {
+  max-width: 260px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.player-intro-img-con {
+  background: url(/player-bg.svg);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.playerName {
+  font-size: 18px;
+}
+
+.all-player-container::-webkit-scrollbar {
+  display: none;
+}
+
+.team-img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #00549099;
+  box-shadow: 0px 4px 50px 0px #00549033;
+}
+
 .amazing-fact {
   background: #e7ecf1;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .vmc-card-container {
@@ -32,4 +71,30 @@
 
 .vmc-m-card-container {
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);
+}
+
+@media only screen and (max-width: 991px) {
+  .player-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .amazing-fact {
+    background: #e7ecf1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .amazing-fact {
+    background: #e7ecf1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .player-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
@@ -30,6 +31,7 @@ const OfficeVideoComponent = ({}) => {
       );
       const data = response.data.data;
       setSlides(data);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

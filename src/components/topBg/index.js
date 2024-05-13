@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./index.css";
 
-const TopBg = ({ state, text }) => {
+const TopBg = ({ state, text, extra }) => {
   return (
     <div className="topBg position-relative py-3 py-md-5 overflow-hidden d-flex align-items-center justify-content-center">
       <div className="contentText m-auto text-light text-center px-2 py-3 py-md-5">
@@ -18,6 +18,7 @@ const TopBg = ({ state, text }) => {
           </span>
         </h1>
         <p className="fs-5 top-bg-text fw-medium m-auto px-2">{text}</p>
+        {extra}
       </div>
     </div>
   );

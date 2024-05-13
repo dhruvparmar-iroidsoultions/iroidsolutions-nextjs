@@ -636,6 +636,15 @@
   flex: 1;
 } */
 
+.process-img {
+  filter: grayscale();
+  transition: all 0.2s;
+}
+
+.process-img:hover {
+  filter: none;
+}
+
 .process-detail p {
   text-align: justify;
 }
@@ -888,9 +897,9 @@
   .activeService {
     color: #005490;
   }
-  .service-details {
+  /* .service-details {
     background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
-  }
+  } */
 
   .activeService.service-btn {
     border: 2px solid #00549099;
@@ -924,6 +933,7 @@
 
   .service-details {
     background: white;
+    min-height: 510px;
   }
 
   .service-btn {

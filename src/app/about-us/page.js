@@ -1,11 +1,84 @@
 import NumberFacts from "@/components/number-facts";
 import TopBg from "@/components/topBg";
-import "./page.css";
 import Image from "next/image";
 import OfficeVideoComponent from "@/components/OfficeVideoComponent";
 import Button from "@/components/button";
+import LifeAtIroidDemo from "../career/LifeAtIroidDemo";
+import "@/app/career/page.css";
+import "./page.css";
 
 const AboutUs = () => {
+  const players = [
+    {
+      img: "/text-ceo.png",
+      name: "Daxesh Patel",
+      position: "CEO, Founder",
+    },
+    {
+      img: "/text-hr.png",
+      name: "Ami Vaidya",
+      position: "HR",
+    },
+    {
+      img: "/text-pm.png",
+      name: "Hardik Parmar",
+      position: "Project Manager",
+    },
+    {
+      img: "/text-pm2.png",
+      name: "Salman Anasari",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-tl1.png",
+      name: "Payal Patel",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-shr.png",
+      name: "ABCD",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-spm.png",
+      name: "Kartik Patel",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-tl2.png",
+      name: "Laxman",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-tl3.png",
+      name: "Akashay",
+      position: "Team Leader",
+    },
+    {
+      img: "/text-tl4.png",
+      name: "Nikhil",
+      position: "Team Leader",
+    },
+  ];
+
+  const teamImg = [
+    "/team-img-1.png",
+    "/team-img-2.png",
+    "/team-img-3.png",
+    "/team-img-4.png",
+    "/team-img-1.png",
+    "/team-img-2.png",
+    "/team-img-3.png",
+    "/team-img-4.png",
+    "/team-img-1.png",
+    "/team-img-2.png",
+    "/team-img-3.png",
+    "/team-img-4.png",
+    "/team-img-1.png",
+    "/team-img-2.png",
+    "/team-img-3.png",
+    "/team-img-4.png",
+  ];
   return (
     <>
       <TopBg
@@ -14,9 +87,49 @@ const AboutUs = () => {
           "We believe the greatest minds achieve more together. Our team isn't just a collection of skills, it's a collaborative force dedicated to understanding your challenges. Through open communication and a deep empathy for human needs, we transform obstacles into ingenious solutions with a lasting impact."
         }
       />
-      <div className="amazing-fact py-5">
+      <div className="container px-2 py-3 py-lg-5 gap-2 gap-lg-4 player-container">
+        {players.map((player, idx) => (
+          <div
+            className="player-intro d-flex flex-column align-items-center justify-content-end"
+            key={idx}
+          >
+            <div className="player-intro-img-con  px-2 pt-2">
+              <Image
+                src={player.img}
+                alt={player.name}
+                width={1200}
+                height={300}
+              />
+            </div>
+            <p className="playerName fw-semibold mt-2 mt-lg-3 mb-1">
+              {player.name}
+            </p>
+            <p className="playerPosition fs-6 fw-medium opacity-60">
+              {player.position}
+            </p>
+          </div>
+        ))}
+      </div>
+      <h1 className="fw-semibold text-center mt-2 mt-lg-5">Hello</h1>
+      <h5 className="text-center opacity-60 lh-base">
+        "We're iRoid, a dynamic team of designers, strategists, and tech experts
+        shaping tomorrow's possibilities."
+      </h5>
+      <div className="all-player-container px-2 d-flex gap-3 gap-lg-5 overflow-auto py-3 py-lg-5">
+        {teamImg.map((img, idx) => (
+          <Image
+            className="team-img rounded-5"
+            src={img}
+            alt="team"
+            width={1200}
+            height={800}
+            key={idx}
+          />
+        ))}
+      </div>
+      <div className="amazing-fact">
         <div className="container text-center">
-          <h1 className="fw-semibold my-3 my-md-5">Amazing Facts</h1>
+          <h1 className="fw-semibold my-3 mb-md-5">Amazing Facts</h1>
           <NumberFacts />
         </div>
       </div>
@@ -113,11 +226,11 @@ const AboutUs = () => {
         <h1 className="text-center fw-semibold mt-3 my-md-4">
           "Experience our vibrant workplace culture."
         </h1>
-        <p className="mb-2 mx-auto f20 text-center fs-5 fw-medium wow animate__animated animate__fadeInRight">
+        <h5 className="mb-2 mx-auto text-00000099 text-center fs-5 fw-medium wow animate__animated animate__fadeInRight">
           Discover a culture that inspires and supports you
-        </p>
-        <div className="d-flex align-items-center justify-content-center">
-          <Button text={"Life at iRoid"} linkPath={"/life-at-iroid"} />
+        </h5>
+        <div className="container mt-3 mt-lg-5">
+          <LifeAtIroidDemo />
         </div>
       </div>
     </>

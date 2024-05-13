@@ -239,7 +239,7 @@ const Services = () => {
               </li>
             ))}
           </ul>
-          <Button linkPath={"/services"} m={"mt-2 mb-5"} />
+          {/* <Button linkPath={"/services"} m={"mt-2 mb-5"} /> */}
         </div>
       </div>
     </div>
