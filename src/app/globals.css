@@ -345,6 +345,11 @@
   .fs-50 {
     font-size: 34px;
   }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
 }
 
 /* @media only screen and (max-width: 1000px) {
