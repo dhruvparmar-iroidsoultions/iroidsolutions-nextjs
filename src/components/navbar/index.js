@@ -252,9 +252,11 @@ const Navbar = () => {
                     Testimonials
                   </Link>
                 </li>
-                <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
+                {/* <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
                   <div
-                    className="dropdown-toggle options fw-medium py-4"
+                    className={`dropdown-toggle options fw-medium py-4 ${
+                      pathname.includes("services") ? "activeLink" : ""
+                    }`}
                     role="button"
                     // style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
@@ -347,7 +349,7 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
 
                 <li className="nav-item">
                   <Link
