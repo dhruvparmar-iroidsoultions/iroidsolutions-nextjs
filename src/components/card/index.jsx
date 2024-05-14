@@ -15,13 +15,14 @@ const Card = ({
   readMore,
   readMoreLink,
   readmoreArrow,
+  onclick,
 }) => {
   // const imgPath = img.replace(/uploads\\/g, "/");
   const longText = cardTitle;
   const words = longText?.split(" ");
   const first15Words = words?.slice(0, 16).join(" ");
   return (
-    <div className={`${cardOfClass} card h-100`}>
+    <div className={`${cardOfClass} card h-100`} onClick={onclick}>
       <div className="w-100 overflow-hidden rounded-4 p-lg-2 card-img-con">
         <Image
           src={img}

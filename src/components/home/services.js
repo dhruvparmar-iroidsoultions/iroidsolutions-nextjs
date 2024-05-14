@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../button";
 import Link from "next/link";
+import axiosApi from "@/api/axiosConfig";
 
 const Service = ({
   id,
@@ -32,7 +33,7 @@ const Service = ({
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <div className="sevice-h">
+        <div className="sevice-h d-flex align-items-center justify-content-center">
           <div className="service-img d-flex align-items-center justify-content-center rounded-2 px-1 px-xl-2 py-xl-1">
             <Image className="p-1" src={img} alt="" width={60} height={60} />
           </div>
@@ -54,14 +55,13 @@ const Service = ({
           <p className="fs-5 opacity-50 m-0">{subtitle}</p>
         </div>
         <ul className="my-3">
-          {list.map((l, idx) => (
+          {list?.map((l, idx) => (
             <li key={idx} className="ps-3 mb-2 fs-6 opacity-75">
               <Link
                 className="fw-semibold text-decoration-none text-body service-link"
-                href={l.link}
+                href={`/services/${l.slug}`}
               >
-                {" "}
-                {l.title}
+                {l.name}
               </Link>
             </li>
           ))}
@@ -82,102 +82,63 @@ const Services = () => {
         "Mobile app development is the creation of software applications for smartphones and tablets.",
       subtitle:
         "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
-      list: [
-        {
-          title: "Android App Development",
-          link: "/services/android-app-development",
-        },
-        { title: "iOS App Development", link: "/services/iOS-app-development" },
-        {
-          title: "Cross-platform App Development Using Flutter",
-          link: "/services/cross-platform-app-development-using-flutter",
-        },
-        {
-          title: "Mobile App Support & Maintenance",
-          link: "/services/mobile-app-support-and-maintenance",
-        },
-      ],
       indicatorHeight: "0",
+      slug: "mobile-app-development",
     },
     {
       id: "2",
       img: "/service-img-2.png",
       service: "Web Development",
       title:
-        "Mobile app development is the creation of software applications for smartphones and tablets.",
+        "Web development is the creation of software applications for smartphones and tablets.",
       subtitle:
-        "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
-      list: [
-        {
-          title: "Android App Development",
-          link: "/services/android-app-development",
-        },
-        { title: "iOS App Development", link: "/services/iOS-app-development" },
-        {
-          title: "Cross-platform App Development Using Flutter",
-          link: "/services/cross-platform-app-development-using-flutter",
-        },
-        {
-          title: "Mobile App Support & Maintenance",
-          link: "/services/mobile-app-support-and-maintenance",
-        },
-      ],
+        "Web development is a vast field with many specializations. There are different types of apps you can create.",
       indicatorHeight: "27",
+      slug: "web-development",
     },
     {
       id: "3",
       img: "/service-img-3.png",
       service: "Custom Software Development",
       title:
-        "Mobile app development is the creation of software applications for smartphones and tablets.",
+        "Custom software development is the creation of software applications for smartphones and tablets.",
       subtitle:
-        "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
-      list: [
-        {
-          title: "Android App Development",
-          link: "/services/android-app-development",
-        },
-        { title: "iOS App Development", link: "/services/iOS-app-development" },
-        {
-          title: "Cross-platform App Development Using Flutter",
-          link: "/services/cross-platform-app-development-using-flutter",
-        },
-        {
-          title: "Mobile App Support & Maintenance",
-          link: "/services/mobile-app-support-and-maintenance",
-        },
-      ],
+        "Custom software development is a vast field with many specializations. There are different types of apps you can create.",
       indicatorHeight: "53.5",
+      slug: "custom-software-development",
     },
     {
       id: "4",
       img: "/service-img-4.png",
       service: "AI & ML",
       title:
-        "Mobile app development is the creation of software applications for smartphones and tablets.",
+        "AI & ML development is the creation of software applications for smartphones and tablets.",
       subtitle:
-        "Mobile app development is a vast field with many specializations. There are different types of apps you can create.",
-      list: [
-        {
-          title: "Android App Development",
-          link: "/services/android-app-development",
-        },
-        { title: "iOS App Development", link: "/services/iOS-app-development" },
-        {
-          title: "Cross-platform App Development Using Flutter",
-          link: "/services/cross-platform-app-development-using-flutter",
-        },
-        {
-          title: "Mobile App Support & Maintenance",
-          link: "/services/mobile-app-support-and-maintenance",
-        },
-      ],
+        "AI & ML development is a vast field with many specializations. There are different types of apps you can create.",
       indicatorHeight: "80",
+      slug: "ai-&-ml",
     },
   ];
 
   const [serviceL, setServiceL] = useState(services[0]);
+  const [serviceList, setServiceList] = useState([]);
   const [indicatorPosition, setIndicatorPosition] = useState(0);
+
+  const getServiceList = async (service) => {
+    try {
+      const { data } = await axiosApi.get(
+        `/development-title/detail/${service}`
+      );
+      setServiceList(data);
+    } catch (error) {
+      console.error("Fetching service list error: ", error);
+    }
+  };
+
+  useEffect(() => {
+    getServiceList("mobile-app-development");
+  }, []);
+
   return (
     <div className="container py-5 my-5 text-center">
       <h3 className="fs-4 fw-semibold">Our Services</h3>
@@ -196,15 +157,19 @@ const Services = () => {
               key={service.id}
               id={service.id}
               img={service.img}
-              list={service.list}
+              list={serviceList}
               service={service.service}
               subtitle={service.subtitle}
               title={service.title}
               activeTab={serviceL.id === service.id ? true : false}
               onClick={() => {
                 setServiceL(service);
-                setIndicatorPosition(service.indicatorHeight);
+                getServiceList(service.slug);
               }}
+              // onClick={() => {
+              //   setServiceL(service);
+              //   setIndicatorPosition(service.indicatorHeight);
+              // }}
               //   onMouseEnter={() => setIndicatorPosition(service.indicatorHeight)}
               //   onMouseLeave={() =>
               //     setIndicatorPosition(serviceL.indicatorHeight)
@@ -228,13 +193,13 @@ const Services = () => {
           </div>
           <hr className="service-hr px-2" />
           <ul className="my-3">
-            {serviceL.list.map((l, idx) => (
+            {serviceList.map((l, idx) => (
               <li key={idx} className="ps-3 mb-2 fs-6 opacity-75">
                 <Link
                   className="fw-semibold text-decoration-none text-body service-link"
-                  href={l.link}
+                  href={`/services/${l.slug}`}
                 >
-                  {l.title}
+                  {l.name}
                 </Link>
               </li>
             ))}

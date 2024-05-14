@@ -4,9 +4,12 @@ import axiosApi from "@/api/axiosConfig";
 import Card from "@/components/card";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const GetPortfolio = () => {
+  const router = useRouter();
+
   const portfolioCategories = [
     "All",
     "iPhone/iPad",
@@ -28,7 +31,6 @@ const GetPortfolio = () => {
       const { data } = await axiosApi.get(
         `/portfolio?page=1&perPage=6&category_id=${id}`
       );
-      console.log(data.data);
       setPortfolios(data.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -57,49 +59,40 @@ const GetPortfolio = () => {
       </ul>
       <div className="portfolios our-work-card-container">
         {portfolios.map((portfolio) => (
+          // <Link
+          //   className="text-decoration-none"
+          //   href={`/portfolio/${portfolio.slug}`}
+          //   key={portfolio.id}
+          //   passHref
+          // >
           <Card
-            key={portfolio.id}
+            onclick={() => router.push(`/portfolio/${portfolio.slug}`)}
             cardOfClass={"our-work-card-p p-3 rounded-5 border-0"}
             imgExtraClass={"rounded-5 overflow-hidden"}
             img={portfolio.thumbnail}
-            cardText={"Fitness Industry"}
+            cardText={portfolio.industry_name}
             textStyle={"fs-6 fw-semibold text-005490"}
             cardTitle={portfolio.projectname}
             titlestyle={"m-0 fs-3 fw-semibold"}
             isDoted={false}
+            key={portfolio.id}
             cardBodyExtraClass={"d-flex flex-column justify-content-between"}
             tag={
-              <Link
-                href={`/portfolio/${portfolio.projectname}`}
-                className="my-2 text-decoration-none"
-              >
+              <>
                 <p className="work-project-desc m-0 text-black fs-6 fw-medium opacity-75">
                   {/* {removeTags(portfolio.descriptions)} */}
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempr incididunt ut labore et.
+                  {portfolio.sub_title}
                 </p>
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
                   <ul className="list-unstyled rounded-4 my-2 bg-transparent d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-start justify-content-lg-center gap-1 bg-white overflow-hidden wow animate__animated animate__fadeIn">
-                    {/* {portfolio.tag_title !== null ||
-                      (undefined &&
-                        portfolio.tag_title.split(",").map((item, idx) => (
-                          <li
-                            className="fs-7 fw-semibold mx-lg-1 py-2 px-2 our-work-portfolio-project-tech border-0 rounded-3 text-005490"
-                            // style={{ background: "#E9F1F6" }}
-                            key={idx}
-                          >
-                            {item.trim()}
-                          </li>
-                        )))} */}
-                    <li className="fs-7 fw-semibold mx-lg-1 py-2 px-2 our-work-portfolio-project-tech border-0 rounded-3 text-005490">
-                      Android
-                    </li>
-                    <li className="fs-7 fw-semibold mx-lg-1 py-2 px-2 our-work-portfolio-project-tech border-0 rounded-3 text-005490">
-                      Kotlin
-                    </li>
-                    <li className="fs-7 fw-semibold mx-lg-1 py-2 px-2 our-work-portfolio-project-tech border-0 rounded-3 text-005490">
-                      Laravel
-                    </li>
+                    {portfolio.tag_title?.split(",").map((item, idx) => (
+                      <li
+                        className="fs-7 fw-semibold mx-lg-1 py-2 px-2 our-work-portfolio-project-tech border-0 rounded-3 text-005490"
+                        key={idx}
+                      >
+                        {item.trim()}
+                      </li>
+                    ))}
                   </ul>
                   <div className="project-link rounded-pill d-flex align-items-center justify-content-around px-1 py-2">
                     {portfolio.ioslink && (
@@ -134,7 +127,7 @@ const GetPortfolio = () => {
                     )}
                   </div>
                 </div>
-              </Link>
+              </>
             }
           />
         ))}

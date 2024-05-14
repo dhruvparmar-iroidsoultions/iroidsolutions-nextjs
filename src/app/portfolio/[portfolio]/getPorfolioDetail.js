@@ -6,61 +6,40 @@ import TopBg from "@/components/topBg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const GetPorfolioDetail = ({ projectName }) => {
-  const [portfolioDetail, setPortfolioDetail] = useState({
-    projectName: "Fruit Market App",
-    subtitle:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    img: "/test-portfolio.png",
-    about_project:
-      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-    tech_stack: [
-      {
-        title: "Mobile App",
-        subtitle: "Flutter",
-        tech_stack_image: "/test-flutter.png",
-      },
-      {
-        title: "Mobile App",
-        subtitle: "Flutter",
-        tech_stack_image: "/test-flutter.png",
-      },
-      {
-        title: "Mobile App",
-        subtitle: "Flutter",
-        tech_stack_image: "/test-flutter.png",
-      },
-    ],
-    key_feature:
-      "Delivery, Booking, Order, Browse Products, Payment, Real-Time Tracking, Offers, Reviews and Ratings, Order History, Map, Notifications",
-  });
+const GetPorfolioDetail = ({ slug }) => {
+  const [portfolioDetail, setPortfolioDetail] = useState({});
 
-  //   const getPorfolioDetail = async () => {
-  //     try {
-  //       const { data } = await axiosApi.get("");
-  //     } catch (error) {}
-  //   };
+  const getPorfolioDetail = async (slug) => {
+    try {
+      const { data } = await axiosApi.get(`/portfolio-details/${slug}`);
+      setPortfolioDetail(data.data);
+    } catch (error) {
+      console.error("Fetching portfolio details error: ", error);
+    }
+  };
 
-  //   useEffect(() => {
-  //     getPorfolioDetail();
-  //   }, []);
+  useEffect(() => {
+    getPorfolioDetail(slug);
+  }, []);
 
   return (
     <>
       <TopBg
-        state={portfolioDetail.projectName}
-        text={portfolioDetail.subtitle}
+        state={portfolioDetail.projectname}
+        text={portfolioDetail.sub_title}
         extra={
           <div className="d-flex flex-wrap justify-content-center my-3 gap-2 gap-lg-3">
             <Image
               className="portfolio-d-img download-img"
               src={"/apple-store.svg"}
+              alt=""
               width={1200}
               height={800}
             />
             <Image
               className="portfolio-d-img download-img"
               src={"/play-store.svg"}
+              alt=""
               width={1200}
               height={800}
             />
@@ -68,13 +47,16 @@ const GetPorfolioDetail = ({ projectName }) => {
         }
       />
       <div className="container py-3 py-lg-5">
-        <Image
-          className="portfolio-d-img rounded-5 overflow-hidden"
-          src={portfolioDetail.img}
-          alt="portfolio-d-img"
-          width={12000}
-          height={12000}
-        />
+        {portfolioDetail.thumbnail && (
+          <Image
+            className="portfolio-d-img rounded-5 overflow-hidden"
+            // src={portfolioDetail.thumbnail}
+            src={`${portfolioDetail.thumbnail}`}
+            alt="portfolio-d-img"
+            width={12000}
+            height={12000}
+          />
+        )}
         <div
           className="my-3 my-lg-5"
           dangerouslySetInnerHTML={{ __html: portfolioDetail.about_project }}
@@ -83,7 +65,7 @@ const GetPorfolioDetail = ({ projectName }) => {
       <div className="tech-stack-container text-center py-3 py-lg-5">
         <h1 className="text-005490 fw-bolder">Technology Stack</h1>
         <div className="tech_stacks d-flex align-items-center justify-content-center gap-3 gap-lg-5 py-3 py-lg-5">
-          {portfolioDetail.tech_stack.map((tech, idx) => (
+          {portfolioDetail.techstack?.map((tech, idx) => (
             <div
               className="d-flex flex-column align-items-center justify-content-center"
               key={idx}
@@ -93,7 +75,7 @@ const GetPorfolioDetail = ({ projectName }) => {
                 <Image
                   className="portfolio-d-img tech-card-img mb-4"
                   src={tech.tech_stack_image}
-                  alt={tech.title}
+                  alt={""}
                   width={100}
                   height={100}
                 />
@@ -108,7 +90,7 @@ const GetPorfolioDetail = ({ projectName }) => {
       <div className="container text-center py-3 py-lg-5 mt-lg-5">
         <h1 className="text-005490 fw-bolder">Key Features</h1>
         <div className="key-feature mw-1060 mx-auto d-flex flex-wrap align-items-center justify-content-center gap-3 py-3 py-lg-5 px-1 px-sm-3">
-          {portfolioDetail.key_feature.split(",").map((item, idx) => (
+          {portfolioDetail.key_features?.split(",").map((item, idx) => (
             <p
               className="fs-6 fw-medium border-0 px-3 py-1 rounded-3 fw-semibold"
               style={{ background: "#E7ECF1" }}
@@ -121,6 +103,7 @@ const GetPorfolioDetail = ({ projectName }) => {
         <Image
           className="portfolio-d-img star"
           src={"/key-feature-star.png"}
+          alt=""
           width={100}
           height={100}
         />

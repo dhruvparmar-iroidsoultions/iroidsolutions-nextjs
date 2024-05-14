@@ -3,6 +3,7 @@ import TopBg from "@/components/topBg";
 import "./page.css";
 import ContactUs from "@/components/contactUs";
 import OurStackComponent from "@/components/our-stack";
+import GetServices from "./getServices";
 
 const Services = () => {
   const services = [
@@ -95,14 +96,16 @@ const Services = () => {
         <h1 className="fw-semibold py-3 pb-md-5">
           What Services We’re Offering
         </h1>
-        {services.map((service) => (
+        {console.log("console before getservice")}
+        <GetServices />
+        {/* {services.map((service) => (
           <div
             className="sevice-card-container p-3 my-3 w-100 rounded-5"
             key={service.id}
           >
             <ServiceCard info={service} id={service.id} />
           </div>
-        ))}
+        ))} */}
         <div className="pt-3 pt-md-5">
           <p className="fs-1 fw-bolder mt-5">Our Tech Stacks</p>
           <OurStackComponent categoryBgClass={"bg-e7ecf1"} />

@@ -2,6 +2,14 @@
   background: #e9f1f6;
 }
 
+.blog-p-bg {
+  background: #f0f9ff !important;
+}
+
+.blog-p-bg:hover {
+  background: white !important;
+}
+
 .activeBlogSelection {
   color: white;
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%);

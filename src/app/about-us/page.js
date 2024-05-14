@@ -6,6 +6,7 @@ import Button from "@/components/button";
 import LifeAtIroidDemo from "../career/LifeAtIroidDemo";
 import "@/app/career/page.css";
 import "./page.css";
+import TeamImgSwiper from "./team-image-swiper";
 
 const AboutUs = () => {
   const players = [
@@ -61,24 +62,6 @@ const AboutUs = () => {
     },
   ];
 
-  const teamImg = [
-    "/team-img-1.png",
-    "/team-img-2.png",
-    "/team-img-3.png",
-    "/team-img-4.png",
-    "/team-img-1.png",
-    "/team-img-2.png",
-    "/team-img-3.png",
-    "/team-img-4.png",
-    "/team-img-1.png",
-    "/team-img-2.png",
-    "/team-img-3.png",
-    "/team-img-4.png",
-    "/team-img-1.png",
-    "/team-img-2.png",
-    "/team-img-3.png",
-    "/team-img-4.png",
-  ];
   return (
     <>
       <TopBg
@@ -115,17 +98,8 @@ const AboutUs = () => {
         "We're iRoid, a dynamic team of designers, strategists, and tech experts
         shaping tomorrow's possibilities."
       </h5>
-      <div className="all-player-container px-2 d-flex gap-3 gap-lg-5 overflow-auto py-3 py-lg-5">
-        {teamImg.map((img, idx) => (
-          <Image
-            className="team-img rounded-5"
-            src={img}
-            alt="team"
-            width={1200}
-            height={800}
-            key={idx}
-          />
-        ))}
+      <div className="all-player-container px-2 py-3 py-lg-5">
+        <TeamImgSwiper />
       </div>
       <div className="amazing-fact">
         <div className="container text-center">

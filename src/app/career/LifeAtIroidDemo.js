@@ -23,9 +23,6 @@ const LifeAtIroidDemo = () => {
     getDemo();
   }, []);
 
-  useEffect(() => {
-    console.log(videoLink);
-  }, [videoLink]);
   return (
     <div className="d-flex flex-column align-items-center justify-content-center">
       <div className="functions">

@@ -117,12 +117,13 @@ const CaseStudies = () => {
                   </p>
                 ))}
               </div>
-              <p
+              <div dangerouslySetInnerHTML={{ __html: cs.descriptions }} />
+              {/* <p
                 className="fs-6 fw-normal opacity-75 lh-base"
                 style={{ color: "#000000E5" }}
               >
                 {removeTags(cs.descriptions)}
-              </p>
+              </p> */}
               <Button linkPath={`/casestudy/${cs.slug}`} text={"Read More"} />
             </div>
             <div className="mx-3 mx-md-5 wow animate__animated animate__fadeInRight d-flex align-items-center justify-content-center">

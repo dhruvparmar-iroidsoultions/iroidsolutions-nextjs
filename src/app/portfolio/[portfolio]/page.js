@@ -1,12 +1,8 @@
 import GetPorfolioDetail from "./getPorfolioDetail";
 import "./page.css";
 
-const PorfolioDetail = () => {
-  return (
-    <div>
-      <GetPorfolioDetail />
-    </div>
-  );
+const PorfolioDetail = ({ params }) => {
+  return <GetPorfolioDetail slug={params.portfolio} />;
 };
 
 export default PorfolioDetail;

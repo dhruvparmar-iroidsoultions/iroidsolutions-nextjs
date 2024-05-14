@@ -165,9 +165,14 @@ const CaseStudyCom = ({ caseStudy }) => {
             >
               <div className="ct-left p-3 p-md-5">
                 <Image src={"/quote-up.svg"} alt="''" width={50} height={50} />
-                <p className="mb-lg-5 lh-base fs-6">
+                {/* <p className="mb-lg-5 lh-base fs-6">
                   “{removeTags(caseStudy.client_descriptions)}.”
-                </p>
+                </p> */}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: caseStudy.client_descriptions,
+                  }}
+                />
                 <h3 className="fw-bolder" style={{ color: "#005490" }}>
                   {caseStudy.client_name}
                 </h3>

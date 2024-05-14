@@ -51,8 +51,8 @@ const Blogs = () => {
     try {
       const response = await axiosApi.get(
         id === 0
-          ? `blogs?page=${pageNumber}&limit=9&latest=1`
-          : `blogs?page=${pageNumber}&limit=9&categoryId=${id}&latest=1`
+          ? `/blogs?page=${pageNumber}&limit=9&latest=1`
+          : `/blogs?page=${pageNumber}&limit=9&categoryId=${id}&latest=1`
       );
       console.log(response);
       const blogs = response.data.data;
@@ -97,7 +97,7 @@ const Blogs = () => {
 
     return (
       <Link
-        className="blog p-3 text-decoration-none text-dark wow animate__animated animate__fadeInRight w-100 overflow-hidden"
+        className="blog blog-p-bg p-3 text-decoration-none text-dark wow animate__animated animate__fadeInRight w-100 overflow-hidden"
         key={idx}
         href={`/blog/${blog.slug}`}
       >
@@ -119,7 +119,7 @@ const Blogs = () => {
               width={1200}
               height={1200}
             />
-            <span>John Andrew</span> {blog.postBy}
+            <span>{blog.blog_user}</span>
           </p>
           <p className="mb-0 fs-6 d-flex align-items-center justify-content-center gap-1 blog-d">
             <Image

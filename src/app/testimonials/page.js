@@ -35,7 +35,7 @@ const Testimonial = () => {
           vision
         </p>
         <div className="d-flex align-items-center justify-content-center">
-          <Button text={"Get in Touch"} linkPath={"/life-at-iroid"} />
+          <Button text={"Get in Touch"} linkPath={"/contact-us"} />
         </div>
       </div>
     </>
