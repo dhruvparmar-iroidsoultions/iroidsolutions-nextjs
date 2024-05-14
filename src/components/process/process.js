@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./process.css";
 
 const Process = () => {
   const allProcess = [
@@ -152,11 +153,12 @@ const Process = () => {
             autoplay={{
               delay: 10000,
             }}
-            pagination={{
-              clickable: true,
-            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
+            // modules={[Autoplay, Navigation, Pagination]}
             navigation={true}
-            modules={[Autoplay, Navigation, Pagination]}
+            modules={[Autoplay, Navigation]}
             onSlideChange={(swiper) => {
               const newIndex = swiper.activeIndex % allProcess.length;
               setProcess(allProcess[newIndex]);

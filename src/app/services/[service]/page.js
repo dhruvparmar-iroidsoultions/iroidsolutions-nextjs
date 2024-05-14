@@ -3,7 +3,7 @@ import "./page.css";
 import TopBg from "@/components/topBg";
 import HtmlContent from "@/components/htmlContent";
 import Image from "next/image";
-import Process from "@/components/home/process";
+import Process from "@/components/process/process";
 import NumberFacts from "@/components/number-facts";
 import WhyHireUs from "@/components/why-hire-us";
 import ContactUs from "@/components/contactUs";

@@ -14,7 +14,7 @@ import HeroSection from "@/components/home/newHero";
 import Quality_and_award from "@/components/home/quality_and_award";
 import Map from "@/components/home/world_map";
 import ScrollerLine from "@/components/home/project-scroller";
-import Process from "@/components/home/process";
+import Process from "@/components/process/process";
 import Services from "@/components/home/services";
 import TechStacks from "@/components/home/tech-stacks";
 import ListedPlatforms from "@/components/home/scrolling-plateforms";

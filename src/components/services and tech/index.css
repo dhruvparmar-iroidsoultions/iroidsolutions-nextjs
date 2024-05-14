@@ -137,10 +137,10 @@ p.iwsText {
   rotate: 180deg;
 }
 
-.iwsButtons button:hover {
+/* .iwsButtons button:hover {
   background-color: white;
   border: 2px solid #005490;
-}
+} */
 
 .iwsButtons button:hover img {
   filter: none;

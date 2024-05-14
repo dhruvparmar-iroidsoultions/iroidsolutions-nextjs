@@ -69,8 +69,12 @@
   border-radius: 30px;
 }
 
+.dropdown-menu {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .header_dropdown:hover .dropdown-menu {
-  display: flex;
+  display: grid;
 }
 
 /* .deepUl {
@@ -80,6 +84,14 @@
 .dropdown-menu {
   display: none;
   overflow: hidden;
+}
+
+.service-con-d {
+  color: #005490 !important;
+}
+
+.dropdown-item:hover {
+  background: transparent;
 }
 
 .service-dropdown {

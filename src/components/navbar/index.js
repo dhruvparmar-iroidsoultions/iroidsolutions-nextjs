@@ -252,7 +252,7 @@ const Navbar = () => {
                     Testimonials
                   </Link>
                 </li>
-                {/* <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
+                <li className="nav-item header_dropdown mx-lg-0 mx-xl-2">
                   <div
                     className={`dropdown-toggle options fw-medium py-4 ${
                       pathname.includes("services") ? "activeLink" : ""
@@ -270,22 +270,22 @@ const Navbar = () => {
                           Mobile App
                           <ul className="dropdown-item list-unstyled dropMain">
                             <li>
-                              <Link href="/services/iphone-app-development">
+                              <Link href="/services/android-app-development">
                                 Android App Development
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/android-app-development">
+                              <Link href="/services/ios-app-development">
                                 iOS App Development
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/flutter">
+                              <Link href="/services/cross-platform-app-development-using-flutter">
                                 Cross-platform App Development Using Flutter
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/flutter">
+                              <Link href="/services/mobile-app-support-maintenance">
                                 Mobile App Support & Maintenance
                               </Link>
                             </li>
@@ -295,25 +295,27 @@ const Navbar = () => {
                           Web Development
                           <ul className="dropdown-item list-unstyled dropMain">
                             <li>
-                              <Link href="/services/Website">
+                              <Link href="/services/landing-page-1-page-website)">
                                 Landing Page (1-Page Website)
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/Web-App">
+                              <Link href="/services/web-app-development">
                                 Web App Development
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/Web-App">Web Design</Link>
+                              <Link href="/services/web-design">
+                                Web Design
+                              </Link>
                             </li>
                             <li>
-                              <Link href="/services/Web-App">
+                              <Link href="/services/progressive-web-app-development-pwa">
                                 Progressive Web App Development (PWA)
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/Web-App">
+                              <Link href="/services/web-application-support-manitenance">
                                 Web Application Support & Manitenance
                               </Link>
                             </li>
@@ -325,12 +327,12 @@ const Navbar = () => {
                           Custom Software Development
                           <ul className="dropdown-item list-unstyled dropMain">
                             <li>
-                              <Link href="/services/Website">
+                              <Link href="/services/mvp-development">
                                 MVP Development
                               </Link>
                             </li>
                             <li>
-                              <Link href="/services/Web-App">
+                              <Link href="/services/full-stack-development">
                                 Full Stack Development
                               </Link>
                             </li>
@@ -340,7 +342,7 @@ const Navbar = () => {
                           AI & ML
                           <ul className="dropdown-item list-unstyled dropMain">
                             <li>
-                              <Link href="/services/Website">
+                              <Link href="/services/artificial-intelligence-and-machine-learning">
                                 Artificial Intelligence and Machine Learning
                               </Link>
                             </li>
@@ -349,7 +351,7 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </li> */}
+                </li>
 
                 <li className="nav-item">
                   <Link
