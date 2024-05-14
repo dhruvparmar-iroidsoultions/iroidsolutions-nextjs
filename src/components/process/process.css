@@ -1,3 +1,8 @@
+.ourprocess {
+  /* color: white; */
+  background-image: url("/case-study-bg.svg");
+}
+
 .process-nav {
   background: linear-gradient(92.62deg, #006ab6 0%, #00406d 100%) left /
     var(--process) no-repeat;
@@ -48,6 +53,11 @@
 
 .process-ul .activeProcess::after {
   width: 100%; /* Show full width for active item */
+}
+
+.process-swiper .swiper-button-prev,
+.process-swiper .swiper-button-next {
+  display: none;
 }
 
 .autoplay-progress {

@@ -113,6 +113,7 @@ const PortfolioHome = () => {
               }}
             >
               {portfolio.map((project) => {
+                console.log(project.industry_name);
                 const category = [];
                 const decodeC = JSON.parse(project.category);
                 decodeC.includes("1") && category.push("iPhone");
@@ -129,7 +130,7 @@ const PortfolioHome = () => {
                       cardOfClass={"project"}
                       img={project.thumbnail}
                       // cardText={category.join(", ")}
-                      cardText={category.industry_name}
+                      cardText={project.industry_name}
                       cardTitle={project.projectname}
                       isDoted={false}
                     />

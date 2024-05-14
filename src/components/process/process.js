@@ -86,17 +86,17 @@ const Process = () => {
       ?.click();
   };
 
-  const handleMouseEnter = () => {
-    if (processSwiper.current && processSwiper.current.swiper) {
-      processSwiper.current.swiper.autoplay.stop();
-    }
-  };
+  // const handleMouseEnter = () => {
+  //   if (processSwiper.current && processSwiper.current.swiper) {
+  //     processSwiper.current.swiper.autoplay.stop();
+  //   }
+  // };
 
-  const handleMouseLeave = () => {
-    if (processSwiper.current && processSwiper.current.swiper) {
-      processSwiper.current.swiper.autoplay.start();
-    }
-  };
+  // const handleMouseLeave = () => {
+  //   if (processSwiper.current && processSwiper.current.swiper) {
+  //     processSwiper.current.swiper.autoplay.start();
+  //   }
+  // };
 
   return (
     <div className="ourprocess">
@@ -152,6 +152,8 @@ const Process = () => {
             className="process-swiper w-100"
             autoplay={{
               delay: 10000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             // pagination={{
             //   clickable: true,
@@ -170,12 +172,7 @@ const Process = () => {
             id="process-swiper"
           >
             {allProcess.map((process, idx) => (
-              <SwiperSlide
-                key={process.id}
-                className="bg-transparent"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
+              <SwiperSlide key={process.id} className="bg-transparent">
                 <Image
                   className="w-100 h-100 rounded-4 process-img"
                   src={process.img}

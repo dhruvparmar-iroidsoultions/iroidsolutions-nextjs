@@ -65,7 +65,7 @@ const Blogs = ({ blogs = [], show = true }) => {
           )}
           <div className="iwsButtons w-100 p-0 position-relative">
             <button
-              className="prevBtn position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
+              className="position-absolute top-50 start-0 translate-middle-y d-flex align-items-center justify-content-center border border-0 z-3"
               onClick={prevSlide}
             >
               <img src={"/swiper-left-arrow.png"} alt="read more" />

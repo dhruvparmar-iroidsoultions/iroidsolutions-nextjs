@@ -373,6 +373,10 @@
   max-width: 1006px;
 }
 
+.homePortfolio .activePortfolioLi {
+  background: white !important;
+}
+
 .techStacks-container ul li,
 .homePortfolio ul li {
   cursor: pointer;
@@ -615,11 +619,6 @@
     rgba(255, 255, 255, 0) 65%,
     rgb(255 255 255) 75%
   );
-}
-
-.ourprocess {
-  /* color: white; */
-  background-image: url("/case-study-bg.svg");
 }
 
 /* .service-details {
