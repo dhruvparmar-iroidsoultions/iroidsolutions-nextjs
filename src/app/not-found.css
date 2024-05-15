@@ -11,8 +11,14 @@
   font-size: 100px;
 }
 
-@media only screen and (min-width: 1199px) {
+@media only screen and (min-width: 991px) {
   .go-to-home button {
     min-width: 480px;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .errorHeading {
+    font-size: 50px;
   }
 }
