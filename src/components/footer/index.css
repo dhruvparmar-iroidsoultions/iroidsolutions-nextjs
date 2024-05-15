@@ -97,23 +97,58 @@
   top: -40px;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .explore-iroid {
   background: linear-gradient(
     100.65deg,
     rgba(241, 249, 255, 0.1) 51.87%,
     rgba(217, 239, 255, 0.1) 98.04%
   );
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  transform: translateX(10px);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  /* transform: translateX(10px); */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.explore-iroid li::marker {
+.explore-iroid li {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.explore-iroid li::before {
   content: url(/footer-bullet.png);
+  padding-right: 10px;
+}
+
+.get-in-touch-cover {
+  background: linear-gradient(
+    100.65deg,
+    rgba(241, 249, 255, 0.1) 51.87%,
+    rgba(217, 239, 255, 0.1) 98.04%
+  );
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .get-in-touch {
   background: linear-gradient(100.65deg, #f1f9ff 51.87%, #d9efff 98.04%);
+}
+
+.get-in-touch img {
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.footer-touch-star {
+  max-width: 18px !important;
+  height: auto;
 }
 
 .go-to-top {
@@ -130,13 +165,20 @@
   .company_info h6 {
     max-width: fit-content;
   }
+  .foo-g-1 {
+    grid-column: 1/12;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .explore-iroid,
   .get-in-touch {
     height: 100%;
   }
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .footerLinks a {
@@ -153,8 +195,21 @@
   /* new footer */
   .explore-iroid {
     width: 100%;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .foo-g-2,
+  .foo-g-3 {
+    grid-column: 1/12;
+  }
+  .get-in-touch-cover {
+    background: none;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .explore-iroid {
+    grid-template-columns: repeat(1, auto);
   }
 }
 

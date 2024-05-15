@@ -28,6 +28,20 @@ form.c-details {
   flex: 1;
 }
 
+.c-hr {
+  height: 1px;
+  opacity: 20%;
+  background-color: #005490;
+  border: 1px solid #005490;
+  width: 96%;
+  margin: auto;
+}
+
+.c-us-p-map {
+  width: 100%;
+  border: 2px solid #00549099 !important;
+}
+
 /* .conContainer {
   padding-right: 6rem;
 } */
@@ -109,5 +123,14 @@ form.c-details {
   .homeContactUs .container img {
     max-width: 60px;
     max-height: 60px;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .c-us-p-map-con {
+    max-width: 600px;
+  }
+  .change-flex {
+    flex: 1;
   }
 }

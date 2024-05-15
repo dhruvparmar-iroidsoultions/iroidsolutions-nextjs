@@ -8,8 +8,8 @@ const NewFooter = () => {
     <footer className="w-100 new-footer" id="footer">
       <div className="footer-top-radius bg-white rounded-top position-relative d-none d-md-block"></div>
       <div className="container mt-3 mt-md-5">
-        <div className="row">
-          <div className="col-12 col-lg-4 col-xxl-5 text-white">
+        <div className="footer-grid">
+          <div className="text-white foo-g-1">
             <Link href="/home">
               <Image
                 className="mb-4"
@@ -32,7 +32,7 @@ const NewFooter = () => {
                 maintenance of software applications.
               </p>
             </div>
-            <div className="follow">
+            <div className="follow mb-4">
               <p className="fs-5 fw-semibold">Follow #IROID</p>
               <div className="d-flex flex-wrap flex-sm-nowrap align-items-center gap-3">
                 <Link href={"https://www.facebook.com"}>
@@ -94,144 +94,210 @@ const NewFooter = () => {
               </ul> */}
             </div>
           </div>
-          <div className="col text-white f-s-part mt-4 mt-lg-0">
-            <div className="d-flex flex-wrap flex-md-nowrap">
-              <div className="">
-                <p className="fs-3 fw-bolder">Explore iRoid</p>
-                <ul className="explore-iroid row row-cols-2 row-cols-md-2">
-                  <li className="col col-sm-3 my-4 mb-md-0 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/about-us"}
-                    >
-                      About Us
+          <div className=" text-white f-s-part mt-lg-0 d-flex flex-column foo-g-2 mb-4 mb-md-0">
+            <p className="fs-3 fw-bolder">Explore iRoid</p>
+            <ul className="explore-iroid p-4 m-0 h-100">
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/about-us"}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/life-at-iroid"}
+                >
+                  Life at iRoid
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/testimonials"}
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/hire-us"}
+                >
+                  Hire Us
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/services"}
+                >
+                  Services
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/career"}
+                >
+                  Career
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/industries"}
+                >
+                  Industries
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/contact-us"}
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/solutions"}
+                >
+                  Solutions
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white"
+                  href={"/our-clients"}
+                >
+                  Our Clients
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none text-white w-100"
+                  href={"/blogs"}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="ps-2 fw-medium mb-3">
+                <Link
+                  className="text-decoration-none me-md-3 text-white w-100"
+                  href={"/become-a-partner"}
+                >
+                  Become a Partner
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="w-100 d-flex flex-column foo-g-3">
+            <p className="fs-3 fw-bolder text-white">Get In Touch</p>
+            <div className="get-in-touch-cover h-100">
+              <div className="get-in-touch c-details p-2 flexElem rounded-4 py-lg-4 d-flex flex-column justify-content-between gap-lg-4 h-100">
+                <div className="px-1 px-sm-3 px-md-4 mx-lg-0 d-flex flex-column gap-2 gap-lg-4 gap-xl-0">
+                  <h5 className="lh-base fw-semibold text-005490 lh-base mt-2 mt-lg-0 mb-0">
+                    Need a mobile app or website?
+                  </h5>
+                  <h5 className=" fw-medium text-00000099">
+                    Get a free consultation!{" "}
+                    <span>
+                      <Image
+                        className="footer-touch-star"
+                        src={"/new-contact-star.png"}
+                        alt=""
+                        width={30}
+                        height={30}
+                      />
+                    </span>
+                  </h5>
+                  <div className="d-flex flex-wrap gap-3">
+                    <Link href={"tel:+917778869939"}>
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-call.png"}
+                        alt="call"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
-                  </li>
-                  <li className="col col-sm-3 my-4 mb-md-0 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/life-at-iroid"}
-                    >
-                      Life at iRoid
+                    <Link href={"https://wa.me/+917778869939"} target="_blank">
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-whatsapp.png"}
+                        alt="whatsapp"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 my-sm-4 mb-md-0 mb-md-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/testimonials"}
-                    >
-                      Testimonials
+                    <Link href={"mailto:business@iroidsolutions.in"}>
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-email.png"}
+                        alt="email"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 my-sm-4 mb-md-0 mb-md-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/hire-us"}
-                    >
-                      Hire Us
+                    <Link href={"skype:daxeshpatel7224?chat"}>
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-skype.png"}
+                        alt="skype"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/services"}
-                    >
-                      Services
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/career"}
-                    >
-                      Career
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/industries"}
-                    >
-                      Industries
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/contact-us"}
-                    >
-                      Contact Us
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/solutions"}
-                    >
-                      Solutions
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white"
-                      href={"/our-clients"}
-                    >
-                      Our Clients
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 mb-sm-2 fw-medium">
-                    <Link
-                      className="text-decoration-none text-white w-100"
-                      href={"/blogs"}
-                    >
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="col col-sm-3 mb-4 mb-sm-2 fw-medium">
-                    <Link
-                      className="text-decoration-none me-md-3 text-white w-100"
-                      href={"/become-a-partner"}
-                    >
-                      Become a Partner
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="w-100">
-                <p className="fs-3 fw-bolder">Get In Touch</p>
-                <div className="get-in-touch d-flex flex-column justify-content-between gap-1 p-3 py-md-4 px-md-4 rounded-5">
-                  <div className="mb-3 d-flex align-items-top gap-2 gap-sm-4 fw-medium">
-                    <Image src={"/phone.png"} alt="" width={50} height={50} />
-                    <div className="">
-                      <p className="mb-1 text-005490">+ 91 90238 68898 (HR)</p>
-                      <p className="mb-1 text-005490">
-                        + 91 77788 69939 (Business)
-                      </p>
-                    </div>
                   </div>
-                  <div className="d-flex align-items-top gap-2 gap-sm-4 fw-medium">
-                    <Image src={"/email.png"} alt="" width={50} height={50} />
-                    <div className="">
-                      <p className="mb-1 text-005490">
-                        hr@iroidsolutions.in (HR)
-                      </p>
-                      <p className="mb-1 text-005490">
-                        business@iroidsolutions.in (Business)
-                      </p>
-                    </div>
-                  </div>
-                  <div className="d-flex align-items-top gap-2 gap-sm-4 fw-medium">
-                    <Image
-                      src={"/location.png"}
-                      alt=""
-                      width={50}
-                      height={50}
-                    />
-                    <p className="mb-1 text-005490">
-                      318 A/318 B, Fortune High Street, Opp. Western Arena , Nr.
-                      Madhuvan Circle, LP Savani Rd, Adajan, Surat, Gujarat
-                      395009
-                    </p>
+                </div>
+                <div className="px-1 px-sm-3 px-md-4 mx-lg-0 d-flex flex-column gap-2 gap-lg-4 gap-xl-0">
+                  <h5 className="lh-base fw-semibold text-005490 lh-base mt-2 mt-lg-0 mb-0">
+                    Passionate about mobile apps & website?
+                  </h5>
+                  <h5 className=" fw-medium text-00000099">
+                    Join our growing team!{" "}
+                    <span>
+                      <Image
+                        className="footer-touch-star"
+                        src={"/new-contact-star.png"}
+                        alt=""
+                        width={30}
+                        height={30}
+                      />
+                    </span>
+                  </h5>
+                  <div className="d-flex flex-wrap gap-3">
+                    <Link href={"tel:+919023868898"}>
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-call.png"}
+                        alt="call"
+                        width={100}
+                        height={100}
+                      />
+                    </Link>
+                    <Link href={"https://wa.me/+919023868898"} target="_blank">
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-whatsapp.png"}
+                        alt="whatsapp"
+                        width={100}
+                        height={100}
+                      />
+                    </Link>
+                    <Link href={"mailto:hr@iroidsolutions.in"}>
+                      <Image
+                        className="w-100 h-100"
+                        src={"/n-email.png"}
+                        alt="email"
+                        width={100}
+                        height={100}
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -43,7 +43,6 @@ const Blogs = () => {
   };
 
   const getBlogs = async (id, pageNumber = 1) => {
-    console.log(pageNumber);
     // let url
     // if( id === 0){
     //   url = `blogs?page=${pageNumber}&limit=9&latest=1`
@@ -54,7 +53,6 @@ const Blogs = () => {
           ? `/blogs?page=${pageNumber}&limit=9&latest=1`
           : `/blogs?page=${pageNumber}&limit=9&categoryId=${id}&latest=1`
       );
-      console.log(response);
       const blogs = response.data.data;
       const lastPage = response.data.meta.last_page;
       setBlogs(blogs);
@@ -71,7 +69,6 @@ const Blogs = () => {
           ? `/blogs?page=1&limit=9&latest=1`
           : `/blogs?page=1&limit=9&search=${searchText}&latest=1'`
       );
-      console.log(response);
       const blogs = response.data.data;
       setBlogs(blogs);
     } catch (error) {
@@ -103,7 +100,8 @@ const Blogs = () => {
       >
         <div className="blogImgContainer overflow-hidden w-100">
           <Image
-            src={blog.thumbnail}
+            src={"/blogImg1.png"}
+            // src={blog.thumbnail}
             alt=""
             className=""
             width={1200}
@@ -212,7 +210,6 @@ const Blogs = () => {
   }, []);
   useEffect(() => {
     pagination(1, lastPage);
-    console.log("updating...");
   }, [lastPage]);
 
   return (
