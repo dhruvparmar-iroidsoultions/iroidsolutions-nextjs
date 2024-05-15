@@ -53,7 +53,7 @@ const CaseStudy = ({ casestudy, containerTitle, containerSubtitle }) => {
                 alt=""
                 width={1200}
                 height={500}
-                layout="responsive"
+                // layout="responsive"
               />
             </Tilt>
           </div>
